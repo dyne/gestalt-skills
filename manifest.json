@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "repository": "dyne/gestalt-skills",
   "source": "https://github.com/dyne/gestalt-skills",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "skills": [
     {
       "name": "c-cpp",
@@ -53,6 +53,32 @@
         {
           "path": "skills/nuklear-gui/references/integration.md",
           "sha256": "260573a40734cb71d1d8318574feaf2c870ee520bd96bb67313627cd1f29f9ab"
+        }
+      ]
+    },
+    {
+      "name": "svelte",
+      "entry": "skills/svelte/SKILL.md",
+      "files": [
+        {
+          "path": "skills/svelte/SKILL.md",
+          "sha256": "f0aa951275f337513dea80ef6f614bdbc9819f94fa8214b158f5ae0ab53379a1"
+        },
+        {
+          "path": "skills/svelte/references/components.md",
+          "sha256": "064524b205dd2ebb4e80e1a075642d95f4ca8f369fe3ecf1d1c57ac3098a3431"
+        },
+        {
+          "path": "skills/svelte/references/reactivity.md",
+          "sha256": "b280d5da257aa346dce4d46ff744fb0267c16ed9dd56a88af9bc430044af4bf3"
+        },
+        {
+          "path": "skills/svelte/references/ssr-async.md",
+          "sha256": "dea57b9dc7d5e53dababb9d73e72a38d1b08aeb75735ecb362c5528997dd9584"
+        },
+        {
+          "path": "skills/svelte/references/tooling.md",
+          "sha256": "698b5b184eb19af3cb34eb5e50f41b827afea3913e4c299dbcd50dbd4483a5f6"
         }
       ]
     }
