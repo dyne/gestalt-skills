@@ -1,0 +1,51 @@
+{
+  "checked_on": "2026-10-31",
+  "supplied_material": {
+    "handbook": {
+      "filename": "Dear_ImGui_Engineering_Reference.md",
+      "sha256": "c9911b57565b3e0838a6bead7402d4613dbce77916709aaf2aa49fd1b2e60d31"
+    },
+    "package": {
+      "filename": "Dear_ImGui_Research_Package.zip",
+      "sha256": "24817d29b5edee5d07f04263c1ce619c1332fd7b75960c6d71626a3202679b46",
+      "files": 19,
+      "crc_check": "passed",
+      "path_and_symlink_checks": "passed",
+      "archived_handbook_matches_standalone_bytes": true
+    },
+    "handoff_prompt_read": true
+  },
+  "current_execution": {
+    "core_tag": "v1.93.0",
+    "core_commit": "c1aaac65e896a45f81f47a4d68f9959e0f86c859",
+    "docking_tag_commit_verified": "b916186e66aa3c02b72c6ca17455516512ed8049",
+    "cpp_flags": [
+      "-std=c++17", "-O1", "-g", "-Wall", "-Wextra", "-Wpedantic",
+      "-DIMGUI_DISABLE_OBSOLETE_FUNCTIONS"
+    ],
+    "example_compile": "passed",
+    "null_backend_smoke_frames": 8,
+    "synthetic_input_checks": [
+      "mouse activates custom toggle",
+      "selection retains stable application ID",
+      "Shift+End from the second row selects the remaining 100 records in a clipped 101-record view"
+    ],
+    "python_helper_tests": 18,
+    "package_contract_tests": 17,
+    "ccache": "not found; ordinary compiler used"
+  },
+  "scenario_review": {
+    "cases": 40,
+    "method": "author walkthrough with concrete response/action and reference mapping",
+    "independent_model_evaluation": false,
+    "all_cases_runtime_tested": false
+  },
+  "not_validated": [
+    "GPU rendering and inspected pixel captures",
+    "real platform input, focus and IME",
+    "physical or mixed-monitor DPI",
+    "docking and OS viewports runtime behavior",
+    "Test Engine integration",
+    "all extension combinations and every example's interaction behavior"
+  ]
+}
