@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "repository": "dyne/gestalt-skills",
+  "source": "https://github.com/dyne/gestalt-skills",
+  "version": "0.1.0",
+  "skills": [
+    {
+      "name": "nuklear-gui",
+      "entry": "skills/nuklear-gui/SKILL.md",
+      "files": [
+        {
+          "path": "skills/nuklear-gui/SKILL.md",
+          "sha256": "622bb13cb36b633ed7862e0e9454805b0d918af4516d61fead41f4c5466484d2"
+        },
+        {
+          "path": "skills/nuklear-gui/references/integration.md",
+          "sha256": "260573a40734cb71d1d8318574feaf2c870ee520bd96bb67313627cd1f29f9ab"
+        }
+      ]
+    }
+  ]
+}
