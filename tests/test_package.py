@@ -32,9 +32,10 @@ class PackageContract(unittest.TestCase):
             package.check(self.root)
 
     def test_valid_distribution_and_reproducible_generation(self):
+        version = self.original["version"]
         self.assertEqual(package.check(self.root), self.original)
-        self.assertEqual(package.build(self.root, "0.1.0"), self.original)
-        self.assertEqual(package.build(self.root, "0.1.0"), package.build(self.root, "0.1.0"))
+        self.assertEqual(package.build(self.root, version), self.original)
+        self.assertEqual(package.build(self.root, version), package.build(self.root, version))
 
     def test_drift(self):
         with (self.root / "skills/nuklear-gui/SKILL.md").open("a") as file:

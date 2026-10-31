@@ -7,10 +7,13 @@ import shutil
 import subprocess
 import tempfile
 
+from package import check
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
+    expected = [skill["name"] for skill in check(ROOT)["skills"]]
     with tempfile.TemporaryDirectory(prefix="gestalt-skills-discovery-") as temporary:
         root = Path(temporary)
         distribution = root / "distribution"
@@ -27,9 +30,9 @@ def main():
         # In the pinned tool's list format, names have four spaces after the
         # vertical bar; descriptions have six. Never infer names from prose.
         names = re.findall(r"^│ {4}(\S+)\s*$", output, flags=re.MULTILINE)
-        if names != ["nuklear-gui"]:
+        if sorted(names) != expected:
             raise SystemExit(f"unexpected discovered names: {names!r}; {output[-2000:]}")
-        print("skills@1.5.0 clean distribution discovery: ['nuklear-gui']; 1 passed, 0 failed")
+        print(f"skills@1.5.0 clean distribution discovery: {sorted(names)!r}; 1 passed, 0 failed")
 
 
 if __name__ == "__main__":

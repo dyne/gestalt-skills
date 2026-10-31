@@ -4,9 +4,15 @@ Optional, maintained agent skills from Dyne.org. Original content is MIT license
 This is an independent collection, separate from the `gestalt-agents`
 infrastructure plugin and its third-party `--extra-skills` bundle.
 
-The canonical tree is `skills/<name>/`; the initial release is `0.1.0` and
-contains `nuklear-gui`. It supplies instructions, not Nuklear, SDL, fonts, or
-application assets. No runtime downloads or Python dependencies are required.
+The canonical tree is `skills/<name>/`; collection version `0.2.0` contains:
+
+- `c-cpp`: C/C++ implementation, CMake/Meson/Make builds, GDB debugging,
+  static analysis, sanitizers and LLVM tooling. A short shared workflow loads
+  focused references only for the task at hand.
+- `nuklear-gui`: Nuklear C/C++ graphical interfaces and SDL2 integration.
+
+Skills supply instructions, not compilers, libraries, fonts or application
+assets. No runtime downloads or Python dependencies are required.
 
 ## Installation and activation
 
@@ -71,17 +77,17 @@ After editing skill files, update the release version intentionally and generate
 the deterministic manifest (same inputs produce identical bytes):
 
 ```sh
-python3 scripts/package.py generate --version 0.1.0
+python3 scripts/package.py generate --version 0.2.0
 python3 scripts/package.py check
 ```
 
-Run the available Codex `skill-creator/scripts/quick_validate.py` against
-`skills/nuklear-gui`, then run `python3 scripts/discovery.py`. It copies the
+Run the available Codex `skill-creator/scripts/quick_validate.py` against each
+`skills/<name>` directory, then run `python3 scripts/discovery.py`. It copies the
 distribution to an empty temporary tree and runs
 `npx --cache <temporary-cache> --yes skills@1.5.0 add <absolute-copy-path> --list`.
 This development check may fetch its pinned discovery tool; installed skills do
-not fetch anything. It strips terminal control codes and asserts the returned
-name is exactly `nuklear-gui`, once. Inspect all local links and release changes
-before committing.
+not fetch anything. It strips terminal control codes and asserts that every
+manifest skill is discovered exactly once, with no extra names. Inspect all
+local links and release changes before committing.
 Publish only after an immutable upstream revision is retrievable. Preserve any
 separate upstream license if imported material is introduced later.
