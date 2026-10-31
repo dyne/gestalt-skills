@@ -4,11 +4,14 @@ Optional, maintained agent skills from Dyne.org. Original content is MIT license
 This is an independent collection, separate from the `gestalt-agents`
 infrastructure plugin and its third-party `--extra-skills` bundle.
 
-The canonical tree is `skills/<name>/`; collection version `0.3.0` contains:
+The canonical tree is `skills/<name>/`; collection version `0.4.0` contains:
 
 - `c-cpp`: C/C++ implementation, CMake/Meson/Make builds, GDB debugging,
   static analysis, sanitizers and LLVM tooling. A short shared workflow loads
   focused references only for the task at hand.
+- `golang`: Go implementation, design, errors/resources, concurrency, secure
+  I/O, testing, performance and module/toolchain workflows. Adapted guidance
+  retains its upstream MIT notice inside the skill.
 - `nuklear-gui`: Nuklear C/C++ graphical interfaces and SDL2 integration.
 - `svelte`: Svelte components and reactive modules, with focused guidance for
   reactivity, templates/DOM integration, SSR/async and documentation/validation.
@@ -79,7 +82,7 @@ After editing skill files, update the release version intentionally and generate
 the deterministic manifest (same inputs produce identical bytes):
 
 ```sh
-python3 scripts/package.py generate --version 0.3.0
+python3 scripts/package.py generate --version 0.4.0
 python3 scripts/package.py check
 ```
 

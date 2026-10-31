@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "repository": "dyne/gestalt-skills",
   "source": "https://github.com/dyne/gestalt-skills",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "skills": [
     {
       "name": "c-cpp",
@@ -39,6 +39,48 @@
         {
           "path": "skills/c-cpp/references/meson.md",
           "sha256": "8320bd08600bc02dfbe3023728979801ce055a43fc8163d99578ed21796af392"
+        }
+      ]
+    },
+    {
+      "name": "golang",
+      "entry": "skills/golang/SKILL.md",
+      "files": [
+        {
+          "path": "skills/golang/LICENSE.upstream",
+          "sha256": "4165752ed66e45dbb7f335f820c78d348f2d11bffca31de2aeef3783d5a62a3b"
+        },
+        {
+          "path": "skills/golang/SKILL.md",
+          "sha256": "a0878c5a15bb1737508ff41a24d5a61e8e9dde41dd8ec86615f22e5c059f7662"
+        },
+        {
+          "path": "skills/golang/references/concurrency.md",
+          "sha256": "536b8f32e3a835b21bd545e6708408018d5e317521e3d28b14ecaf786cb4eb65"
+        },
+        {
+          "path": "skills/golang/references/errors-resources.md",
+          "sha256": "96e33ab89ac3d6f99e30604e62e120a9feb756aa50909f4bc4d56eccc5d27ab3"
+        },
+        {
+          "path": "skills/golang/references/io-security.md",
+          "sha256": "9818edeff386bb8773fd3f6b49348600c8dc55e982add4779d69eb1920f8c550"
+        },
+        {
+          "path": "skills/golang/references/language-design.md",
+          "sha256": "8845880ace27d22279019f40a07f6bc50a0b9baed9e84963858a890564a7b6ad"
+        },
+        {
+          "path": "skills/golang/references/performance.md",
+          "sha256": "e0625901d83179a765525f27324e219e80bf7729c249a1d3a77d3e194a34115c"
+        },
+        {
+          "path": "skills/golang/references/testing.md",
+          "sha256": "929ea0f3f8bacdabd5376b3426816d13784c6db0c731a5d9435e19a0f57e1671"
+        },
+        {
+          "path": "skills/golang/references/tooling.md",
+          "sha256": "6b49be8b4703589852ffb8e8de0248b858d1fa8903fb59fb24e8d17c6946c6be"
         }
       ]
     },
