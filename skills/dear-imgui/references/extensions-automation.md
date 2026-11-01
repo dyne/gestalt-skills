@@ -28,20 +28,11 @@ or an explicit adopted fork rather than silently changing the dependency.
 
 ## Test Engine
 
-Inspect the engine's matching checkout/configuration before integration. Keep
-core test hooks/configuration consistent; create, start, drive and destroy the
-engine in the lifecycle order its example requires. Register tests after their
-UI functions are available, and execute them through the engine's frame/yield
-model rather than issuing unsynchronized clicks from arbitrary worker code.
-Use stable semantic item paths, bring items into view and establish focus,
-popup and window state before actions. A screen-coordinate click or a sleep
-alone is not a reliable semantic test. Follow local headers for captures,
-coroutine dependencies and application integration; do not invent APIs.
-
-The engine's license is distinct from the core library's MIT license. Check
-the exact engine, test-suite, helper and asset notices and the user's usage
-terms before adoption; do not infer eligibility from core licensing or make
-unnecessary dependency/licensing changes as part of a small UI task.
+Use the dedicated [UI automation guide](automation.md) for setup/lifecycle,
+named paths, simulated actions, synchronization, assertions, CI and captures.
+The engine's own license is distinct from core MIT. Confirm the actual
+core/engine/backend combination and usage terms before adoption; the guide's
+headless example tests behavior without certifying pixels or OS event delivery.
 
 Sources: [official extension directory](https://github.com/ocornut/imgui/wiki/Useful-Extensions),
 [Test Engine](https://github.com/ocornut/imgui_test_engine),

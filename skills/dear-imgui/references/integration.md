@@ -20,6 +20,11 @@ minimized/zero-framebuffer handling and reverse ownership order during shutdown.
 
 ## Input and ownership
 
+Enable keyboard navigation through `io.ConfigFlags |=
+ImGuiConfigFlags_NavEnableKeyboard` when required. Gamepad navigation also
+needs the selected backend's actual gamepad input support. A custom item's
+navigation flag alone does not enable navigation for the whole application.
+
 Always forward relevant input/focus/text events through the selected backend,
 even if capture is false. `WantCaptureMouse` / `WantCaptureKeyboard` gate the
 underlying application's reactions, not input delivery to ImGui. Hover tests

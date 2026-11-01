@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "repository": "dyne/gestalt-skills",
   "source": "https://github.com/dyne/gestalt-skills",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "skills": [
     {
       "name": "c-cpp",
@@ -48,7 +48,7 @@
       "files": [
         {
           "path": "skills/dear-imgui/SKILL.md",
-          "sha256": "bbf325915488f16187013090f8ba4c7eaf5c636efa6e2af4d0f523320bbda998"
+          "sha256": "e638b2570bf89c5e1f155be11bcc2922e6bf61931617bb002189e46814fa6142"
         },
         {
           "path": "skills/dear-imgui/evals/acceptance_cases.json",
@@ -56,15 +56,23 @@
         },
         {
           "path": "skills/dear-imgui/evals/author-review.md",
-          "sha256": "9714a802135cf103ea901ea226d0dd82ae264b59f46e81535fe3e91e1a06870d"
+          "sha256": "705a7e84ce49b10840c3880c20864dde64aa20f077e3eee2a9822f237bd23ae6"
         },
         {
           "path": "skills/dear-imgui/evals/validation.json",
-          "sha256": "92bf765c82e9cb8a9d9aa752b75b9c6be6213bd960293309dac7cd35ee40eb2b"
+          "sha256": "7f5842cbe8f2d4c789c5625132fc28a5ae84b95a08c7917e05c4605d64893c4b"
         },
         {
           "path": "skills/dear-imgui/examples/README.md",
-          "sha256": "fb40ac4232e22b96f47ec6a20f26821bb7b3178b3d7b0a04eac8e3df9e6a9c1c"
+          "sha256": "072a302a6a4fad053caa1d80aed77bd6987ad7eff55329f1e10a445dc3bf22c4"
+        },
+        {
+          "path": "skills/dear-imgui/examples/automation_config.h",
+          "sha256": "3fe2c99e7ff367f7f163a2efcebd55c7477f81c4d25c3f85a93c8483c4ba6ba3"
+        },
+        {
+          "path": "skills/dear-imgui/examples/automation_main.cpp",
+          "sha256": "4ea9bc8e67c0ed3a59dd3f7ba20bf14ec0dfdcafd6399566785cbe3f56736835"
         },
         {
           "path": "skills/dear-imgui/examples/core_patterns.cpp",
@@ -79,12 +87,32 @@
           "sha256": "f4256cdf9cf4406051274e2d13bab1e4a75b9a1b8e49d93568dcc80c4b3a7162"
         },
         {
+          "path": "skills/dear-imgui/examples/settings_model_main.cpp",
+          "sha256": "68e905325e296b767b146fbb1090e8ea5e45763d74959ac9553fad5cd6573b7c"
+        },
+        {
+          "path": "skills/dear-imgui/examples/settings_panel.cpp",
+          "sha256": "e78f1fbab4810beb4780d0d1a4d65793801cfd1e69a8e0d0a4044e9c6f49cc8b"
+        },
+        {
+          "path": "skills/dear-imgui/examples/settings_panel.h",
+          "sha256": "9aa3d7de234e23bb8953eb98607fa2135f5faea896b31e1710b222e9ee8c20c5"
+        },
+        {
           "path": "skills/dear-imgui/examples/smoke_main.cpp",
           "sha256": "d577e12cdab2bd994a9b48e8c9e98cb6b51addd6a3932d0e71a66f03c96253b2"
         },
         {
+          "path": "skills/dear-imgui/references/automation-sources.json",
+          "sha256": "aba2f696f938f0ead4e7ce9894ccd1acf5303ba54e84234fb8caaf2f67a692ee"
+        },
+        {
+          "path": "skills/dear-imgui/references/automation.md",
+          "sha256": "1f09faf6412261b07fd83cc6ad10453e3f8c808010cd27174c1be1409a4f2213"
+        },
+        {
           "path": "skills/dear-imgui/references/core-interaction.md",
-          "sha256": "9fe9b6a3f306fd3b1801f9e1c89321ff2ff212be1a518df4f4d3b6d772b41947"
+          "sha256": "458c76771a8421d992c2462e25e7be419fda34faaab6bc5c777fbaf163fad322"
         },
         {
           "path": "skills/dear-imgui/references/data-selection.md",
@@ -92,7 +120,7 @@
         },
         {
           "path": "skills/dear-imgui/references/extensions-automation.md",
-          "sha256": "968e70f1757c8b2304dda41499124985cf2250acbd84bc33eecd55d46245f41f"
+          "sha256": "5a4f87c0a75a542d17bd009a29243d62fdb5ca3fccebe34896842118367b6701"
         },
         {
           "path": "skills/dear-imgui/references/extensions.json",
@@ -103,8 +131,12 @@
           "sha256": "aeb8b1504ab5b501d025ca29b7a3a7deb57dced8cf5638404d399df6eed75d25"
         },
         {
+          "path": "skills/dear-imgui/references/gui-workflow.md",
+          "sha256": "dec49accc4c6a0113b8f8714b0619931174b83bdc04b07843a6cc413bd721e5f"
+        },
+        {
           "path": "skills/dear-imgui/references/integration.md",
-          "sha256": "d054f8b0eee3aac26959a7ea2597590fd468358fc547d567418c61ebb66670ad"
+          "sha256": "77f2aae4347a9a2a70714cab1c6eb23e7c9192cba24c483b6fb6f33da2b1d674"
         },
         {
           "path": "skills/dear-imgui/references/profile.md",
@@ -115,8 +147,12 @@
           "sha256": "517616d6e820b7ddeaeae362ae449a2f083f6feb620d2bd2c4967f14abe2486a"
         },
         {
+          "path": "skills/dear-imgui/references/styling.md",
+          "sha256": "8d41fbab35c2ae131ec4287ef0cde1596bccfc021e14442fe763ecd7fdd1a7e3"
+        },
+        {
           "path": "skills/dear-imgui/references/testing-debugging.md",
-          "sha256": "619a9a9854b2ea3b79c60b0919620989f3c4683ba9a3feacccbe9deae34f11f0"
+          "sha256": "4c8a80659efb923e17bd75359bf2d12d4722cd026c7ac9cb4b1d6076dbc51760"
         },
         {
           "path": "skills/dear-imgui/scripts/inspect_imgui.py",

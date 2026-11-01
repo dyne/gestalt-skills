@@ -59,6 +59,9 @@ referent's lifetime.
 
 ## Layout and custom widgets
 
+For theme tokens, style overrides, density and appearance checks, use
+[styling](styling.md); keep IDs and interactive behavior stable while reskinning.
+
 Use layout cursor, groups, children, tables and available content size before
 manual placement. Window-local cursor positions and screen-space draw-list
 coordinates are different; test moved/scrolled/docked windows. Set next-window
