@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "repository": "dyne/gestalt-skills",
   "source": "https://github.com/dyne/gestalt-skills",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "skills": [
     {
       "name": "c-cpp",
@@ -243,6 +243,36 @@
         {
           "path": "skills/svelte/references/tooling.md",
           "sha256": "698b5b184eb19af3cb34eb5e50f41b827afea3913e4c299dbcd50dbd4483a5f6"
+        }
+      ]
+    },
+    {
+      "name": "vite",
+      "entry": "skills/vite/SKILL.md",
+      "files": [
+        {
+          "path": "skills/vite/LICENSE.upstream",
+          "sha256": "2a596f697b619094b6f4067936e0f385027a393bce32211383db0478774c1cb2"
+        },
+        {
+          "path": "skills/vite/SKILL.md",
+          "sha256": "73840a21db33241d19520fb0db7836421ad664423cae7810ee0a50b2789577f3"
+        },
+        {
+          "path": "skills/vite/references/frontpages.md",
+          "sha256": "53f05860f50baa0130226036f0196a631b9f62748daefa2a7fb01ea4b10891e0"
+        },
+        {
+          "path": "skills/vite/references/vite-advanced.md",
+          "sha256": "1f7f914a6b9be0cfd2ef845534b5754a89e2d8f0fbc90213f838f9bed426d778"
+        },
+        {
+          "path": "skills/vite/references/vite-core.md",
+          "sha256": "6714495d42d6d20fabb5ff55a804b5b5a404987a723f9715af1cbe08921184b0"
+        },
+        {
+          "path": "skills/vite/references/vitepress.md",
+          "sha256": "612555c343bb02b188e23908d483a52a448fac5f64077450acb1852ec0bfafc2"
         }
       ]
     }

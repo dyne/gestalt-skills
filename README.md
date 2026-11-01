@@ -4,7 +4,7 @@ Optional, maintained agent skills from Dyne.org. Original content is MIT license
 This is an independent collection, separate from the `gestalt-agents`
 infrastructure plugin and its third-party `--extra-skills` bundle.
 
-The canonical tree is `skills/<name>/`; collection version `0.6.0` contains:
+The canonical tree is `skills/<name>/`; collection version `0.7.0` contains:
 
 - `c-cpp`: C/C++ implementation, CMake/Meson/Make builds, GDB debugging,
   static analysis, sanitizers and LLVM tooling. A short shared workflow loads
@@ -18,6 +18,10 @@ The canonical tree is `skills/<name>/`; collection version `0.6.0` contains:
 - `nuklear-gui`: Nuklear C/C++ graphical interfaces and SDL2 integration.
 - `svelte`: Svelte components and reactive modules, with focused guidance for
   reactivity, templates/DOM integration, SSR/async and documentation/validation.
+- `vite`: Vite configuration, assets/env, plugins, builds, SSR and migrations,
+  with optional VitePress guidance for content, themes and custom front pages
+  sharing a VitePress build or deployed alongside a separate Vite app. Adapted
+  guidance retains its upstream MIT notice inside the skill.
 
 Skills supply instructions, not compilers, libraries, fonts or application
 assets. No runtime downloads or Python dependencies are required.
@@ -85,7 +89,7 @@ After editing skill files, update the release version intentionally and generate
 the deterministic manifest (same inputs produce identical bytes):
 
 ```sh
-python3 scripts/package.py generate --version 0.6.0
+python3 scripts/package.py generate --version 0.7.0
 python3 scripts/package.py check
 ```
 
