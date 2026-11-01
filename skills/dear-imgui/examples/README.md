@@ -68,6 +68,69 @@ No GPU, pixel, docking or real-platform input validation.
 
 These checks passed against v1.93.0 with obsolete APIs disabled. They validate these specific synthetic-input scenarios, not the complete behavior of every example. In particular, they do not validate the undo helper, changing selection views, real keyboard layouts, OS input delivery, visual appearance or GPU rendering.
 
+## Optional Test Engine fixture
+
+`settings_panel.h` keeps validation and in-memory commit independent of ImGui;
+`settings_panel.cpp` draws a staged editor reusable by an app and the tests.
+Call `DrawSettingsPanel(model, panel)` between `NewFrame`/`Render`; the host owns
+both states, initializes the draft from the chosen record and handles record
+changes/external edits. For multiple instances, pass distinct stable window
+titles through the optional third argument, e.g. `"Record A###settings-42"`.
+Parent `PushID` scopes do not distinguish separate top-level windows. The
+example disables saved window settings and does not persist records to disk.
+
+First run `c++ -std=c++17 -Wall -Wextra -Wpedantic settings_model_main.cpp -o settings_model_checks`
+and `./settings_model_checks`: five context-free checks verify valid commits,
+negative amounts, empty names and unterminated buffers, including unchanged
+committed state after rejection. No ImGui source or backend is needed.
+
+`automation_main.cpp` and `automation_config.h` add two named-widget tests:
+check/uncheck/scalar/text input, staged state, click and keyboard Save, and
+Cancel on the shared panel; then stable integer/`###` paths and modal
+confirmation. A separate negative test
+deliberately fails. The runner exports JUnit, returns nonzero on failure or no
+executed tests, and has a 5,000-frame guard; also use an outer process timeout
+because a stalled callback can prevent the frame guard from advancing.
+
+Reviewed combination: core v1.93.0 commit
+`c1aaac65e896a45f81f47a4d68f9959e0f86c859`; Test Engine commit
+`7c808483d6f0a69b9d0843d5f4a141f0a9f74a58`. Supply those compatible checkouts
+yourself and inspect the engine's separate license; its implementation is not
+bundled. From this directory, on a POSIX toolchain:
+
+```sh
+imgui_source=/absolute/path/to/imgui
+engine_source=/absolute/path/to/imgui_test_engine
+c++ -std=c++17 -O1 -g -pthread -Wall -Wextra -Wpedantic \
+  -DIMGUI_USER_CONFIG='"automation_config.h"' \
+  -I. -I"$imgui_source" -I"$imgui_source/backends" -I"$engine_source" \
+  automation_main.cpp settings_panel.cpp \
+  "$imgui_source/imgui.cpp" "$imgui_source/imgui_draw.cpp" \
+  "$imgui_source/imgui_widgets.cpp" "$imgui_source/imgui_tables.cpp" \
+  "$imgui_source/imgui_demo.cpp" "$imgui_source/backends/imgui_impl_null.cpp" \
+  "$engine_source"/imgui_test_engine/*.cpp \
+  -o automation_smoke
+./automation_smoke skill_demo results.xml
+```
+
+The normal selection must run exactly two successful tests. Run
+`./automation_smoke skill_negative failure.xml` expecting exit 1 and one failed
+JUnit case, and `./automation_smoke no_such_test empty.xml` expecting exit 1
+with zero executed cases. These filters/report arguments belong to this
+fixture; other applications must implement their own runner interface. Inspect
+both exit status and XML: the exporter includes registered but unselected tests
+as skipped cases, so count executed identities/statuses rather than all XML
+`testcase` elements. Do not mistake the intentional failure for a passing
+test suite or zero selected tests for success.
+
+Apply the same config to every core/backend/engine/example translation unit;
+do not link existing objects built without the hooks. The config disables
+capture/ImPlot, enables the std::thread coroutine and obsolete-API checking.
+There is no GPU/framebuffer, screenshot, OS input or renderer validation in
+this fixture. Keep it opt-in and test-only when adapting to an application;
+reuse the actual UI instead of replacing it with a fixture merely to get green
+tests. Follow the existing C/C++ workflow for compilers, launchers and builds.
+
 ## Primary references
 
 - [Public API and comments](https://github.com/ocornut/imgui/blob/v1.93.0/imgui.h)

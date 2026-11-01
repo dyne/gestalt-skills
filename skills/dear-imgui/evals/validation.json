@@ -20,7 +20,12 @@
     "core_commit": "c1aaac65e896a45f81f47a4d68f9959e0f86c859",
     "docking_tag_commit_verified": "b916186e66aa3c02b72c6ca17455516512ed8049",
     "cpp_flags": [
-      "-std=c++17", "-O1", "-g", "-Wall", "-Wextra", "-Wpedantic",
+      "-std=c++17",
+      "-O1",
+      "-g",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
       "-DIMGUI_DISABLE_OBSOLETE_FUNCTIONS"
     ],
     "example_compile": "passed",
@@ -45,7 +50,110 @@
     "real platform input, focus and IME",
     "physical or mixed-monitor DPI",
     "docking and OS viewports runtime behavior",
-    "Test Engine integration",
+    "Test Engine integration in a real application/backend",
     "all extension combinations and every example's interaction behavior"
-  ]
+  ],
+  "automation_execution": {
+    "checked_on": "2026-11-01",
+    "core_tag": "v1.93.0",
+    "core_commit": "c1aaac65e896a45f81f47a4d68f9959e0f86c859",
+    "engine_commit": "7c808483d6f0a69b9d0843d5f4a141f0a9f74a58",
+    "example": "examples/automation_main.cpp",
+    "configuration": "examples/automation_config.h; same config for all core/backend/engine/example units",
+    "build": "Unchanged pinned/configured core/backend/engine objects reused; automation_main.cpp and settings_panel.cpp rebuilt with identical flags and linked",
+    "ccache": "not found; ordinary compiler used",
+    "backend": "official null backend; capture and ImPlot disabled",
+    "process_timeout_seconds": 30,
+    "frame_budget": 5000,
+    "runs": [
+      {
+        "filter": "skill_demo",
+        "exit_status": 0,
+        "executed": 2,
+        "successful": 2,
+        "frames": 184,
+        "identities": [
+          "skill_demo/click_and_edit",
+          "skill_demo/stable_paths_and_popup"
+        ],
+        "asserted_behavior": [
+          "shared application drawing function hosts staged settings editor",
+          "check and uncheck update draft",
+          "scalar and text edits leave committed model unchanged until Save",
+          "mouse Save commits 42 and updated exactly once",
+          "keyboard activation of Save commits 43 exactly once",
+          "Cancel restores draft after invalid input and leaves committed state/count unchanged",
+          "integer PushID and ### path resolve",
+          "focused modal confirms application action"
+        ],
+        "junit": "parsed; two executed successes; one registered negative test skipped"
+      },
+      {
+        "filter": "skill_negative",
+        "exit_status": 1,
+        "executed": 1,
+        "successful": 0,
+        "identities": [
+          "skill_negative/expected_failure"
+        ],
+        "junit": "parsed; one failure and two skipped positive tests; intentional failure path verified"
+      },
+      {
+        "filter": "no_such_test",
+        "exit_status": 1,
+        "executed": 0,
+        "successful": 0,
+        "identities": [],
+        "junit": "parsed; all three registered cases skipped; zero execution correctly rejected"
+      }
+    ],
+    "scope": "Shared reusable panel and fixture headless engine interaction only; no independent model forward-test or real host application integration"
+  },
+  "workflow_and_styling_review": {
+    "checked_on": "2026-11-01",
+    "core_commit": "c1aaac65e896a45f81f47a4d68f9959e0f86c859",
+    "pinned_sources": [
+      {
+        "path": "imgui.h",
+        "sha256": "314462301948fbd5673f5ead6f9a53acf54767cbee57e186e69f8f8b022c7094"
+      },
+      {
+        "path": "imgui_demo.cpp",
+        "sha256": "22e9ee38114cb901be73109fee402ffc1626e5c3bc51d6aca9583c11ea718386"
+      },
+      {
+        "path": "docs/FAQ.md",
+        "sha256": "04dd8e9edb859c27b0e1bf8fe5548497d79b6a2f3f352f5fe9a199ffeac542fd"
+      }
+    ],
+    "toolkit_scope_source": "https://github.com/ocornut/imgui#the-pitch; reviewed on 2026-11-01",
+    "model_example": "examples/settings_model_main.cpp",
+    "model_checks": {
+      "executed": 5,
+      "passed": 5,
+      "context_required": false,
+      "covers": [
+        "initial commit",
+        "changed commit",
+        "negative amount rejection",
+        "empty name rejection",
+        "unterminated buffer rejection"
+      ],
+      "command": "c++ -std=c++17 -Wall -Wextra -Wpedantic settings_model_main.cpp -o settings_model_checks; ./settings_model_checks"
+    },
+    "style_example": "references/styling.md cpp block",
+    "style_checks": {
+      "executed": 3,
+      "passed": 3,
+      "scope": "snippet compiled and ran in an ImGui context; layout/font scale at 1.5, repeated 1.5, restored 1.0; no rendered pixels"
+    },
+    "supplemental_scenarios": 6,
+    "scenario_method": "author walkthrough in evals/author-review.md; not independent model evaluation",
+    "not_runtime_validated": [
+      "persistence and service errors",
+      "undo and external edit conflicts",
+      "visual baselines and responsive appearance",
+      "accessibility and internationalization"
+    ]
+  }
 }

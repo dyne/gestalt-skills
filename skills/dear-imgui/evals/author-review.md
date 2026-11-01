@@ -48,6 +48,21 @@ model evaluation or 40 executed UI tests. Reference names below are under
 | IMGUI-39 | Mark an unmerged API as proposed/branch-only and find a supported local alternative. | profile.md |
 | IMGUI-40 | Compose a public interactive item and draw list instead of adding an unnecessary internal header. | core-interaction.md |
 
-The supplied compiled harnesses exercise API/frame/scope paths and specific
-synthetic toggle/clipped-range scenarios. They do not runtime-test every case
-above, the Test Engine, GPU pixels, physical DPI, IME, docking or all extensions.
+At the original review date, the supplied harnesses exercised API/frame/scope
+paths and specific synthetic toggle/clipped-range scenarios. They did not
+runtime-test every case above, the Test Engine, GPU pixels, physical DPI, IME,
+docking or all extensions. Later execution is recorded in `validation.json`.
+
+## Workflow and styling review, 2026-11-01
+
+These additional author judgments supplement the original 40 prose acceptance
+scenarios. Neither set is an independent model evaluation or a runtime suite.
+
+| Request or risk | Response/action | Evidence or limit |
+| --- | --- | --- |
+| Build a new editor and its tests | Keep validation/commit independent; host the same drawing function in the app and UI test. | Shared settings panel: five model checks and two engine tests executed. |
+| Save invalid data through a non-UI caller | Command rejects it without modifying committed data; a disabled button alone is insufficient. | Negative amount, empty name and unterminated-buffer rejection executed; disabled appearance not visually inspected. |
+| Reskin a tool and change scale repeatedly | Use theme tokens and reconstruct from unscaled metrics; retain semantic IDs and interaction states. | Style snippet compiled; three reconstruction checks executed; no rendered baseline. |
+| Custom drawn toggle fails ItemCheck | Checkable metadata is a separate contract; use built-in controls or click and assert model state. | Current engine/context and core internal declarations reviewed; no new custom metadata integration tested. |
+| Async Save appears complete when merely queued | Wait for observable service completion, expose failure/retry and isolate test services. | Workflow guidance only; no service or persistence integration supplied. |
+| Product requires screen readers or complex-script text | Assess actual stack support before promising accessibility or full internationalization. | Official toolkit scope reviewed; no accessibility certification. |

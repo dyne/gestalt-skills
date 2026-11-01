@@ -23,12 +23,20 @@ animation and pending texture/platform work.
 
 | Check | What it establishes |
 | --- | --- |
+| Context-free model/command tests | Validation and state/side-effect contracts independently of widget submission |
 | Compile with selected headers/config, optionally obsolete APIs disabled | API/configuration compatibility for that build |
 | Context + null-backend frames | Exercised frame/scope paths without GPU output |
 | Synthetic input | Specific state transitions under the injected event sequence |
 | Test Engine | Semantic actions/assertions on the configured application |
 | Rendered captures | Actual inspected pixels for the captured renderer/scale/theme |
 | Real platform tests | Observed focus, IME, input, windowing/DPI/device behavior on that platform |
+
+For named-widget actions, input injection, CI exit codes/JUnit and capture
+prerequisites, load [UI automation](automation.md). Prefer assertions on the
+application outcome, and verify nonzero intended execution counts. The optional
+engine fixture also checks deliberate failure and empty-selection reporting.
+For a new panel, follow the [build-to-test workflow](gui-workflow.md); for
+appearance and baseline review, follow [styling](styling.md).
 
 Use stable object identity assertions and explicit preconditions. Test rename,
 sort/filter/delete, hidden/collapsed windows, popup cancellation, edit completion
@@ -39,7 +47,9 @@ texture create/update/destroy, clipping/offsets, resize/device-loss and in-fligh
 resource-lifetime checks. Do not require this whole matrix for a tooltip edit.
 
 The skill's `examples/README.md` gives compile/run commands for 12
-original patterns and two harnesses. The research reports eight smoke frames
+original patterns, two direct-input/scope harnesses, a context-free command
+check and an optional Test Engine fixture using a shared settings panel.
+The research reports eight smoke frames
 plus toggle/selection checks; rerun those against the selected checkout before
 claiming current results. Neither harness validates all twelve interactions,
 undo behavior, pixels, docking, IME, physical DPI or all extension combinations.
