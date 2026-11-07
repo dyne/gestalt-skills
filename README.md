@@ -1,10 +1,14 @@
 # Gestalt skills
 
 Optional, maintained agent skills from Dyne.org. Original content is MIT licensed.
+Adapted material retains the licenses identified in each skill's notices.
 This is an independent collection, separate from the `gestalt-agents`
 infrastructure plugin and its third-party `--extra-skills` bundle.
 
-The canonical tree is `skills/<name>/`; collection version `0.7.0` contains:
+The canonical tree is `skills/<name>/`; collection version `0.8.0` contains:
+
+- `academic`: Scholarly arguments, section structure, literature synthesis,
+  claim–evidence alignment, citations, and research limitations.
 
 - `c-cpp`: C/C++ implementation, CMake/Meson/Make builds, GDB debugging,
   static analysis, sanitizers and LLVM tooling. A short shared workflow loads
@@ -15,6 +19,12 @@ The canonical tree is `skills/<name>/`; collection version `0.7.0` contains:
 - `golang`: Go implementation, design, errors/resources, concurrency, secure
   I/O, testing, performance and module/toolchain workflows. Adapted guidance
   retains its upstream MIT notice inside the skill.
+- `humanizer`: Drafting and editing clear English or Italian prose, with
+  reader-oriented composition, grammar, idiom, voice, and semantic fidelity.
+  An optional Unicode hygiene helper preserves its upstream MIT attribution.
+- `latex`: Mathematical paper exposition, TeX formatting, venue conversion,
+  build repair, PDF reconstruction, and rendered checks. An optional standalone
+  build checker is included; MIT and CC BY 4.0 adaptations retain their notices.
 - `nuklear-gui`: Nuklear C/C++ graphical interfaces and SDL2 integration.
 - `svelte`: Svelte components and reactive modules, with focused guidance for
   reactivity, templates/DOM integration, SSR/async and documentation/validation.
@@ -24,7 +34,16 @@ The canonical tree is `skills/<name>/`; collection version `0.7.0` contains:
   guidance retains its upstream MIT notice inside the skill.
 
 Skills supply instructions, not compilers, libraries, fonts or application
-assets. No runtime downloads or Python dependencies are required.
+assets. Optional Python helpers use only the standard library; the LaTeX build
+helper additionally needs the project's selected TeX engine/backend on `PATH`.
+No runtime downloads or third-party Python dependencies are required.
+
+The writing skills have separate responsibilities: `academic` owns research
+argument and evidence, `humanizer` owns English/Italian prose quality, and
+`latex` owns mathematical exposition and TeX source/rendering. Each works on its
+own; a mixed task can use the relevant skills without a chain of prerequisites.
+Entrypoints route to focused references instead of loading every source guide.
+See [writing-skill maintenance and evaluation](tests/writing-skills.md).
 
 ## Installation and activation
 
@@ -89,7 +108,7 @@ After editing skill files, update the release version intentionally and generate
 the deterministic manifest (same inputs produce identical bytes):
 
 ```sh
-python3 scripts/package.py generate --version 0.7.0
+python3 scripts/package.py generate --version 0.8.0
 python3 scripts/package.py check
 ```
 

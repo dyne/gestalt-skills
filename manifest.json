@@ -2,8 +2,30 @@
   "schemaVersion": 1,
   "repository": "dyne/gestalt-skills",
   "source": "https://github.com/dyne/gestalt-skills",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "skills": [
+    {
+      "name": "academic",
+      "entry": "skills/academic/SKILL.md",
+      "files": [
+        {
+          "path": "skills/academic/NOTICE.md",
+          "sha256": "bad057cdb925476c0fc9a68154ff5ee41e5933765c6446bb294a5c375614d12e"
+        },
+        {
+          "path": "skills/academic/SKILL.md",
+          "sha256": "576f0b6a9817b4220c6a8bde165423757a76a2012ef8900d051e599481c1dff3"
+        },
+        {
+          "path": "skills/academic/references/evidence-and-sources.md",
+          "sha256": "3cbca67d350eb16d08807875957ecff65b76d9a314f76b1d545eaac09e63fc9f"
+        },
+        {
+          "path": "skills/academic/references/research-structures.md",
+          "sha256": "e4686a798b8bf1ae7c9289436266bad06b84d495bee58126e030b6306d534749"
+        }
+      ]
+    },
     {
       "name": "c-cpp",
       "entry": "skills/c-cpp/SKILL.md",
@@ -203,6 +225,86 @@
         {
           "path": "skills/golang/references/tooling.md",
           "sha256": "6b49be8b4703589852ffb8e8de0248b858d1fa8903fb59fb24e8d17c6946c6be"
+        }
+      ]
+    },
+    {
+      "name": "humanizer",
+      "entry": "skills/humanizer/SKILL.md",
+      "files": [
+        {
+          "path": "skills/humanizer/LICENSE.upstream",
+          "sha256": "80940eeb88eb0b90c7ca6640baa08378ef9cd63625fd54eace9d0567e0ba0af3"
+        },
+        {
+          "path": "skills/humanizer/NOTICE.md",
+          "sha256": "47dd0958e3ea9e5cd51ba40a23a3f710c7fed363095301176b4009694dcd3782"
+        },
+        {
+          "path": "skills/humanizer/SKILL.md",
+          "sha256": "62d66822a04c2c5de3a4d4e5e1a279e53e44543e70c85720ccd96e9c7360f0d6"
+        },
+        {
+          "path": "skills/humanizer/references/english.md",
+          "sha256": "eb4ffbddc18e601cfeb8e4df7f08a3ccceb2645783ddb6ca4d2c8177fdf0a0dd"
+        },
+        {
+          "path": "skills/humanizer/references/italian.md",
+          "sha256": "68466a00091feb66b0d54a94aa04acf1a88d550d89eeab90c18f00eefc92b2cc"
+        },
+        {
+          "path": "skills/humanizer/references/prose-craft.md",
+          "sha256": "2c42befb6bb211c5d94bf6cd76a9061463fbae329a684f7dab338b5efb373d1e"
+        },
+        {
+          "path": "skills/humanizer/references/text-hygiene.md",
+          "sha256": "48f76114b150b626fe6873379e8069cda31ec336072e374e02fb9776b0c748af"
+        },
+        {
+          "path": "skills/humanizer/scripts/text_hygiene.py",
+          "sha256": "30cf54572336fc13bab63a4e3b534af59adb0c7898363c4b23de9bbcfc1cb093"
+        }
+      ]
+    },
+    {
+      "name": "latex",
+      "entry": "skills/latex/SKILL.md",
+      "files": [
+        {
+          "path": "skills/latex/LICENSE.awesome-latex",
+          "sha256": "15705fde6df9111aebe3607f807aa28187f145abff76bdf8b4fbf270e125cdd1"
+        },
+        {
+          "path": "skills/latex/LICENSE.math-paper",
+          "sha256": "1ca539dfc1699d14194f0e05ff06fb3cc09fc6a9051d71694cf3eadf3632df39"
+        },
+        {
+          "path": "skills/latex/NOTICE.md",
+          "sha256": "c8fd5e3e6a2ecab6191d1745c8c6bc1c3a45515fa09af389a666dbc491dd8222"
+        },
+        {
+          "path": "skills/latex/SKILL.md",
+          "sha256": "15714c2604e7428aba7334a4379a94cc136c33dd7b5b3a6626b0b28aee0c926d"
+        },
+        {
+          "path": "skills/latex/references/build-and-repair.md",
+          "sha256": "801d2f53b99ee99c580177b378b053b080636b8ab470bdfb3b0350bcaaf53d51"
+        },
+        {
+          "path": "skills/latex/references/mathematics.md",
+          "sha256": "40ae76d36cc435a86441dcd5916602d61d5cdc69d529e495518c6e0fbf119a80"
+        },
+        {
+          "path": "skills/latex/references/pdf-reconstruction.md",
+          "sha256": "1f4854f102e1a262414f54c72c46569a061ee72c55f3031628332a86adac44d2"
+        },
+        {
+          "path": "skills/latex/references/typesetting.md",
+          "sha256": "14bd3ff7b6abc414e5ca297ccb333fe2563f29e36f394c490ac674c95433cc1b"
+        },
+        {
+          "path": "skills/latex/scripts/check_build.py",
+          "sha256": "dbf341b66c351e99e21e13fd027d7b87a02fde34e820db7f2dba39527b34df17"
         }
       ]
     },
