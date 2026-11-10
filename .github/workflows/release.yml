@@ -1,0 +1,108 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Detect release baseline
+        id: baseline
+        run: |
+          set -Eeuo pipefail
+          latest_tag=$(git tag --list --sort=-version:refname |
+            grep -E '^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$' |
+            head -n 1 || true)
+          if [[ -n "$latest_tag" ]]; then
+            echo "has_tag=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_tag=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Calculate semantic version
+        if: steps.baseline.outputs.has_tag == 'true'
+        id: semver
+        uses: ietf-tools/semver-action@v1
+        with:
+          token: ${{ github.token }}
+          branch: main
+          tagFilter: '^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$'
+          skipInvalidTags: true
+          noNewCommitBehavior: current
+          noVersionBumpBehavior: current
+
+      - name: Select release version
+        id: release
+        env:
+          HAS_TAG: ${{ steps.baseline.outputs.has_tag }}
+          BUMP: ${{ steps.semver.outputs.bump }}
+          NEXT_TAG: ${{ steps.semver.outputs.next }}
+          NEXT_VERSION: ${{ steps.semver.outputs.nextStrict }}
+        run: |
+          set -Eeuo pipefail
+          if [[ "$HAS_TAG" == false ]]; then
+            version=$(python3 -c 'import json; print(json.load(open("manifest.json"))["version"])')
+            tag=v$version
+            should_release=true
+          else
+            version=$NEXT_VERSION
+            tag=$NEXT_TAG
+            case "$BUMP" in
+              major|minor|patch) should_release=true ;;
+              none) should_release=false ;;
+              *) echo "Unexpected semver bump: $BUMP" >&2; exit 1 ;;
+            esac
+          fi
+          [[ "$version" =~ ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]
+          [[ "$tag" == "v$version" ]]
+          {
+            printf 'version=%s\n' "$version"
+            printf 'tag=%s\n' "$tag"
+            printf 'should_release=%s\n' "$should_release"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Validate and version package
+        env:
+          RELEASE_VERSION: ${{ steps.release.outputs.version }}
+        run: |
+          set -Eeuo pipefail
+          python3 scripts/package.py check
+          python3 scripts/package.py generate --version "$RELEASE_VERSION"
+          python3 scripts/package.py check
+          python3 -m unittest discover -s tests -v
+
+      - name: Build standalone skill ZIPs
+        if: steps.release.outputs.should_release == 'true'
+        run: |
+          set -Eeuo pipefail
+          python3 scripts/build_release.py --output dist
+          (cd dist && sha256sum -c SHA256SUMS)
+
+      - name: Publish GitHub release
+        if: steps.release.outputs.should_release == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          set -Eeuo pipefail
+          gh release create "$RELEASE_TAG" dist/*.zip dist/SHA256SUMS \
+            --target "$GITHUB_SHA" --generate-notes --title "$RELEASE_TAG"
