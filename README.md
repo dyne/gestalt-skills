@@ -28,6 +28,28 @@ assets. No runtime downloads or Python dependencies are required.
 
 ## Installation and activation
 
+### Standalone ZIPs for ChatGPT and Codex
+
+Download `<skill>-v<version>.zip` from
+[GitHub releases](https://github.com/dyne/gestalt-skills/releases). Each of the
+six skills is published separately, using the same collection version. Each ZIP
+contains one unversioned `<skill>/` directory with `SKILL.md`, all its resources
+and upstream notices, and the root license as `LICENSE.collection`.
+
+Use the ZIP with ChatGPT's standalone skill import where available. For local
+Codex installation, extract it into `~/.agents/skills` or a project's
+`.agents/skills`, producing `<skills-directory>/<skill>/SKILL.md`. See the
+[OpenAI skill documentation](https://learn.chatgpt.com/docs/build-skills) for
+supported clients and discovery. Review an existing skill directory before
+replacing it. If Gestalt already manages the same skill, use that installation
+instead of adding a duplicate.
+
+Release assets include `SHA256SUMS`; download it beside the ZIPs to verify their
+digests. With all ZIPs present, run `sha256sum -c SHA256SUMS`. Tools and libraries
+used by a skill remain external prerequisites.
+
+### Gestalt-managed collection
+
 The planned Gestalt integration installs this collection during `gestalt install`
 and `gestalt update`; targeted maintenance uses `gestalt skills install`,
 `gestalt skills update`, and `gestalt skills status` once that integration ships.
@@ -83,7 +105,14 @@ Python 3.10+ suffices for local package checks:
 ```sh
 python3 scripts/package.py check
 python3 -m unittest discover -s tests -v
+python3 scripts/build_release.py --output dist
 ```
+
+The builder requires a new output directory and a valid manifest. It includes
+exactly the manifest files for each skill plus `LICENSE.collection`, preserves
+executable modes, and fixes timestamps and file order for reproducible ZIPs.
+Archive tests verify delivered bytes, paths, checksums, licenses, and extraction
+of each skill independently of the collection.
 
 After editing skill files, update the release version intentionally and generate
 the deterministic manifest (same inputs produce identical bytes):
@@ -103,3 +132,19 @@ manifest skill is discovered exactly once, with no extra names. Inspect all
 local links and release changes before committing.
 Publish only after an immutable upstream revision is retrievable. Preserve any
 separate upstream license if imported material is introduced later.
+
+## Releases
+
+Push conventional commits to `main`, or dispatch the release workflow on `main`.
+With no semantic release tag yet, the first release uses the committed manifest
+version (`0.7.0`). Later releases use `ietf-tools/semver-action`: `feat` bumps the
+minor version; `fix`, `perf`, `refactor`, and `test` bump the patch version;
+`BREAKING CHANGE` bumps the major version. Commits without a version bump run
+validation without publishing a new release.
+
+The workflow validates the source manifest, generates the release-version
+manifest in its checkout, runs the full Python suite, builds all standalone
+ZIPs, checks their digests, and publishes them with `SHA256SUMS` under `v<version>`.
+The tag points to the source commit; generated manifest version changes are
+packaging-only and are not committed back to `main`. No skill source is rewritten
+for standalone packaging.
