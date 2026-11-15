@@ -1,0 +1,180 @@
+{
+  "reviewed_on": "2026-11-01",
+  "scope": "All nine public wiki pages and all four repository docs files, plus the license, current API comments and minimal integration example. Not every issue, third-party binding or renderer implementation.",
+  "engine_repository": "https://github.com/ocornut/imgui_test_engine",
+  "engine_commit": "7c808483d6f0a69b9d0843d5f4a141f0a9f74a58",
+  "wiki_repository": "https://github.com/ocornut/imgui_test_engine.wiki.git",
+  "wiki_commit": "99193c163b8fdf1f9b13e57c4981866ef3dab5e5",
+  "wiki_pages": [
+    {
+      "path": "Home.md",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki/Home",
+      "sha256": "c7899520c3b6d7f61e5f5ea7addce7dfdb0e84be5ad42289c1576b9421ea2119",
+      "review_scope": "full page",
+      "relevance": "Documentation inventory and routing"
+    },
+    {
+      "path": "Overview.md",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki/Overview",
+      "sha256": "5db787f8affa72b866acc4ff67f6e84ab7d618416a96ced062e504e5db5fe92e",
+      "review_scope": "full page",
+      "relevance": "Test layers, application integration, scope and license"
+    },
+    {
+      "path": "Setting-Up.md",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki/Setting-Up",
+      "sha256": "b8bc24c9de6746b282cbefcff5d86a8c2c120a8e1439a6e897a7f63b9468a6e2",
+      "review_scope": "full page",
+      "relevance": "Build hooks, uniform configuration, coroutine and lifecycle"
+    },
+    {
+      "path": "Automation-API.md",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki/Automation-API",
+      "sha256": "c6c754241df89b980767c370ccfdd1bc6486d4a995fbe11a85c0ea7bf0dd5e8a",
+      "review_scope": "full page",
+      "relevance": "Actions, assertions, state and synchronization"
+    },
+    {
+      "path": "Named-References.md",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki/Named-References",
+      "sha256": "452cdaf506d4706608183944810f887d302f72f4afd22f67e08a55d11c012570",
+      "review_scope": "full page",
+      "relevance": "Stable paths, integer IDs, focused windows and wildcard limits"
+    },
+    {
+      "path": "Exporting-Results.md",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki/Exporting-Results",
+      "sha256": "701a634ca2da2e84c4e778067e252f321867cfe80857ea40526a906f19246bab",
+      "review_scope": "full page",
+      "relevance": "JUnit, explicit exports and crash handlers"
+    },
+    {
+      "path": "Screen-and-Video-Captures.md",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki/Screen-and-Video-Captures",
+      "sha256": "cf19f91811b4a691fc62c3dd6c5d64e4e5de62ac228a68d22ec14a92989bb616",
+      "review_scope": "full page",
+      "relevance": "Renderer callbacks, screenshot/video requirements and API drift"
+    },
+    {
+      "path": "Testing-Dear-ImGui.md",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki/Testing-Dear-ImGui",
+      "sha256": "5b1e6ff9746bac08dec119849a8a406a2088471bf79f47a3b784b58c81557b81",
+      "review_scope": "full page",
+      "relevance": "Upstream core suite versus application tests; debugger requirements"
+    },
+    {
+      "path": "Bindings.md",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki/Bindings",
+      "sha256": "d028caf0e134d5701f8916be52b37e25e596fd60d41b05bca83b49613b92c556",
+      "review_scope": "full page",
+      "relevance": "Documented Julia binding versus unverified language support"
+    }
+  ],
+  "engine_files": [
+    {
+      "path": "docs/README.md",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58/docs/README.md",
+      "sha256": "6b6f6920e161d972105ccbbb9753e66be0afb1ea595cf2369234ad719f9581a0",
+      "review_scope": "full document",
+      "relevance": "Project layout, setup, dependency and license boundaries"
+    },
+    {
+      "path": "docs/CONTRIBUTING.md",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58/docs/CONTRIBUTING.md",
+      "sha256": "c21778e11c855b40decea6b449a08da5f347491e82c85e893edd06d6686d4d8f",
+      "review_scope": "full document",
+      "relevance": "Upstream contribution scope and CLA"
+    },
+    {
+      "path": "docs/CHANGELOG.txt",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58/docs/CHANGELOG.txt",
+      "sha256": "dce6990e2d6d8fed1f0e0b168d1022f8960f375d6dd4fc50670a6dad82b835fb",
+      "review_scope": "full changelog; relevant API/version changes",
+      "relevance": "Prefer current headers over outdated examples"
+    },
+    {
+      "path": "docs/TODO.txt",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58/docs/TODO.txt",
+      "sha256": "f63a8d6e718cc26c2c5c07a60ebbdc071e649f36b1944216e15841a45b7abd7e",
+      "review_scope": "full document",
+      "relevance": "Nested-child wildcard scrolling and table-column clipping limitations"
+    },
+    {
+      "path": "imgui_test_engine/LICENSE.txt",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58/imgui_test_engine/LICENSE.txt",
+      "sha256": "8d01df5085b3d7c055999188bfc743354b00658be309819eb0415239820b1835",
+      "review_scope": "full document",
+      "relevance": "Separate engine license v1.04; no implementation redistributed"
+    },
+    {
+      "path": "imgui_test_engine/imgui_te_engine.h",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58/imgui_test_engine/imgui_te_engine.h",
+      "sha256": "8a7cd47c4381aa69b02e763dfc888e9a85d3865b4eff3e1a14a98bec71d3d960",
+      "review_scope": "relevant declarations and comments",
+      "relevance": "Lifecycle, registration, queue, IO, summary and crash handling"
+    },
+    {
+      "path": "imgui_test_engine/imgui_te_context.h",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58/imgui_test_engine/imgui_te_context.h",
+      "sha256": "0015be86bce41b887c66923488a8d1ee745b19c7c52215de788e2fad296e9657",
+      "review_scope": "relevant declarations and comments",
+      "relevance": "Named actions, checks, yields, item/window info and capture signatures"
+    },
+    {
+      "path": "imgui_test_engine/imgui_te_imconfig.h",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58/imgui_test_engine/imgui_te_imconfig.h",
+      "sha256": "d8ebb750cabaeb544a6e2350bb2704b9c16a06f52f228e9d030b06466835ebba",
+      "review_scope": "configuration declarations and comments",
+      "relevance": "Hooks, coroutine, capture, ImPlot and uniform build config"
+    },
+    {
+      "path": "imgui_test_engine/imgui_te_exporters.h",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58/imgui_test_engine/imgui_te_exporters.h",
+      "sha256": "1deaec6a0c94808e73101219c32f7dc643613e959f918f09f7a73551652fac9a",
+      "review_scope": "declarations and comments",
+      "relevance": "Current JUnit format and explicit-export API"
+    },
+    {
+      "path": "imgui_test_engine/imgui_capture_tool.h",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58/imgui_test_engine/imgui_capture_tool.h",
+      "sha256": "580a824a816d983c9cf4bd830a5994e1d522ef3649bd548eee682a12379df589",
+      "review_scope": "declarations and comments",
+      "relevance": "Actual framebuffer callbacks and capture/video settings"
+    },
+    {
+      "path": "imgui_test_engine/imgui_te_coroutine.h",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58/imgui_test_engine/imgui_te_coroutine.h",
+      "sha256": "43db2cf9b3d39fdbce385c04ac49fc70a57e5c5ab4b682d5c71ae9654b784e82",
+      "review_scope": "declarations and comments",
+      "relevance": "Alternating coroutine abstraction and optional stdthread implementation"
+    },
+    {
+      "path": "app_minimal/app_minimal_main.cpp",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58/app_minimal/app_minimal_main.cpp",
+      "sha256": "a885935cd8a286b140c2f448ebf8069487ecd1d608d268d05db1ed5240851179",
+      "review_scope": "complete example",
+      "relevance": "Context setup, frame/swap hooks and shutdown order"
+    },
+    {
+      "path": "app_minimal/app_minimal_tests.cpp",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58/app_minimal/app_minimal_tests.cpp",
+      "sha256": "48855f9ee9dbe05b63d7720d21690d34e1097af7bbe6724959c417c00e93ae1b",
+      "review_scope": "complete example",
+      "relevance": "Registration, GuiFunc/TestFunc and per-test state"
+    },
+    {
+      "path": "app_minimal/app_minimal_imconfig.h",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58/app_minimal/app_minimal_imconfig.h",
+      "sha256": "23a2cc1db31cfabe4080f7b066ef7a7e69f2a58421f5db5197f02f0eb858f3b6",
+      "review_scope": "complete configuration",
+      "relevance": "Uniform test-engine build configuration"
+    }
+  ],
+  "observed_api_drift": [
+    "WindowInfo returns an ImGuiTestItemInfo value, not a pointer",
+    "Use GetResultSummary with obsolete functions disabled",
+    "CaptureAddWindow and no-argument CaptureBeginVideo/CaptureEndVideo are current signatures",
+    "Check macro spellings are _NO_RET and _RETV",
+    "JUnit includes registered unselected tests as skipped cases; observed in execution"
+  ]
+}

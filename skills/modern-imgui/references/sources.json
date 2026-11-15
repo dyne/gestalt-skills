@@ -1,0 +1,1338 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-10-31",
+  "baseline": {
+    "repo": "ocornut/imgui",
+    "tag": "v1.93.0",
+    "commit": "c1aaac65e896a45f81f47a4d68f9959e0f86c859",
+    "docking_tag": "v1.93.0-docking",
+    "docking_commit": "b916186e66aa3c02b72c6ca17455516512ed8049"
+  },
+  "scope": "Official source, homepage destinations, wiki feature guides, selected forum discussions, and focused extension primary sources. Coverage labels describe inclusion; they are not automatic proof that every URL was fully read or every configuration tested.",
+  "sources": [
+    {
+      "id": "S001",
+      "url": "https://api.github.com/repos/ocornut/imgui/releases/latest",
+      "role": "upstream_core",
+      "kind": "release_record",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S002",
+      "url": "https://github.com/BalazsJako/ImGuiColorTextEdit/commit/ca2f9f1462e3b60e56351bc466acda448c5ea50d",
+      "role": "extension_primary",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "ca2f9f1462e3b60e56351bc466acda448c5ea50d"
+    },
+    {
+      "id": "S003",
+      "url": "https://github.com/CedricGuillemet/ImGuizmo/blob/105e4fde45e4e74aae8973d98750820ef7aca7e2/README.md",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "105e4fde45e4e74aae8973d98750820ef7aca7e2"
+    },
+    {
+      "id": "S004",
+      "url": "https://github.com/CedricGuillemet/ImGuizmo/blob/105e4fde45e4e74aae8973d98750820ef7aca7e2/docs/documentation.md",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "105e4fde45e4e74aae8973d98750820ef7aca7e2"
+    },
+    {
+      "id": "S005",
+      "url": "https://github.com/CedricGuillemet/ImGuizmo/blob/105e4fde45e4e74aae8973d98750820ef7aca7e2/src/ImGuizmo.cpp",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "105e4fde45e4e74aae8973d98750820ef7aca7e2"
+    },
+    {
+      "id": "S006",
+      "url": "https://github.com/CedricGuillemet/ImGuizmo/blob/105e4fde45e4e74aae8973d98750820ef7aca7e2/src/ImGuizmo.h",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "105e4fde45e4e74aae8973d98750820ef7aca7e2"
+    },
+    {
+      "id": "S007",
+      "url": "https://github.com/Nelarius/imnodes/blob/2d0c280b07b2f62b120034811cc6e41251673961/README.md",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "2d0c280b07b2f62b120034811cc6e41251673961"
+    },
+    {
+      "id": "S008",
+      "url": "https://github.com/Nelarius/imnodes/blob/2d0c280b07b2f62b120034811cc6e41251673961/imnodes_internal.h",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "2d0c280b07b2f62b120034811cc6e41251673961"
+    },
+    {
+      "id": "S009",
+      "url": "https://github.com/Nelarius/imnodes/commit/2d0c280b07b2f62b120034811cc6e41251673961",
+      "role": "extension_primary",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "2d0c280b07b2f62b120034811cc6e41251673961"
+    },
+    {
+      "id": "S010",
+      "url": "https://github.com/Rezonality/zep",
+      "role": "extension_primary",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S011",
+      "url": "https://github.com/aiekick/ImGuiFileDialog/blob/d0e97b2adc3d3452d72c750c7305dc0291acd052/ImGuiFileDialog.cpp",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "d0e97b2adc3d3452d72c750c7305dc0291acd052"
+    },
+    {
+      "id": "S012",
+      "url": "https://github.com/aiekick/ImGuiFileDialog/blob/d0e97b2adc3d3452d72c750c7305dc0291acd052/README.md",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "d0e97b2adc3d3452d72c750c7305dc0291acd052"
+    },
+    {
+      "id": "S013",
+      "url": "https://github.com/aiekick/ImGuiFileDialog/releases/tag/v0.6.8",
+      "role": "extension_primary",
+      "kind": "release_record",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S014",
+      "url": "https://github.com/brenocq/implot3d/blob/c54525f8d46cece384cc2618761a2c55016b06db/README.md",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "c54525f8d46cece384cc2618761a2c55016b06db"
+    },
+    {
+      "id": "S015",
+      "url": "https://github.com/brenocq/implot3d/blob/c54525f8d46cece384cc2618761a2c55016b06db/implot3d.h",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "c54525f8d46cece384cc2618761a2c55016b06db"
+    },
+    {
+      "id": "S016",
+      "url": "https://github.com/brenocq/implot3d/blob/c54525f8d46cece384cc2618761a2c55016b06db/implot3d_internal.h",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "c54525f8d46cece384cc2618761a2c55016b06db"
+    },
+    {
+      "id": "S017",
+      "url": "https://github.com/brenocq/implot3d/releases/tag/v0.5",
+      "role": "extension_primary",
+      "kind": "release_record",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S018",
+      "url": "https://github.com/btzy/nativefiledialog-extended/blob/65b2f070a0fcfee0d453a64e770a217ab0b6ff4f/LICENSE",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "65b2f070a0fcfee0d453a64e770a217ab0b6ff4f"
+    },
+    {
+      "id": "S019",
+      "url": "https://github.com/btzy/nativefiledialog-extended/blob/65b2f070a0fcfee0d453a64e770a217ab0b6ff4f/README.md",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "65b2f070a0fcfee0d453a64e770a217ab0b6ff4f"
+    },
+    {
+      "id": "S020",
+      "url": "https://github.com/btzy/nativefiledialog-extended/releases/tag/v1.4.1",
+      "role": "extension_primary",
+      "kind": "release_record",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S021",
+      "url": "https://github.com/cimgui/cimgui/blob/2a6a93fccd10f275ee9206167dc9698f6f00fac1/README.md",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "2a6a93fccd10f275ee9206167dc9698f6f00fac1"
+    },
+    {
+      "id": "S022",
+      "url": "https://github.com/dearimgui/dear_bindings/blob/67ede4170679575167aee8c29a5c68931d112d3f/docs/Readme.md",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "67ede4170679575167aee8c29a5c68931d112d3f"
+    },
+    {
+      "id": "S023",
+      "url": "https://github.com/dearimgui/dear_bindings/blob/main/docs/MetadataFormat.md",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "continuation_reference"
+    },
+    {
+      "id": "S024",
+      "url": "https://github.com/epezent/implot/blob/72de27832d1e6299bcc930ce01073d899d420392/README.md",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "72de27832d1e6299bcc930ce01073d899d420392"
+    },
+    {
+      "id": "S025",
+      "url": "https://github.com/epezent/implot/blob/72de27832d1e6299bcc930ce01073d899d420392/implot.h",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "72de27832d1e6299bcc930ce01073d899d420392"
+    },
+    {
+      "id": "S026",
+      "url": "https://github.com/epezent/implot/blob/72de27832d1e6299bcc930ce01073d899d420392/implot_internal.h",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "72de27832d1e6299bcc930ce01073d899d420392"
+    },
+    {
+      "id": "S027",
+      "url": "https://github.com/epezent/implot/blob/v1.1/implot.h",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.1"
+    },
+    {
+      "id": "S028",
+      "url": "https://github.com/epezent/implot/releases/tag/v1.1",
+      "role": "extension_primary",
+      "kind": "release_record",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S029",
+      "url": "https://github.com/goossens/ImGuiColorTextEdit/blob/12a5a01d85e541d63ae92616d7a2d9c6dedc2e9a/README.md",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "12a5a01d85e541d63ae92616d7a2d9c6dedc2e9a"
+    },
+    {
+      "id": "S030",
+      "url": "https://github.com/goossens/ImGuiColorTextEdit/blob/12a5a01d85e541d63ae92616d7a2d9c6dedc2e9a/TextEditor.cpp",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "12a5a01d85e541d63ae92616d7a2d9c6dedc2e9a"
+    },
+    {
+      "id": "S031",
+      "url": "https://github.com/goossens/ImGuiColorTextEdit/blob/12a5a01d85e541d63ae92616d7a2d9c6dedc2e9a/TextEditor.h",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "12a5a01d85e541d63ae92616d7a2d9c6dedc2e9a"
+    },
+    {
+      "id": "S032",
+      "url": "https://github.com/ocornut/imgui",
+      "role": "upstream_core",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S033",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0-docking/backends/imgui_impl_glfw.cpp",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0-docking"
+    },
+    {
+      "id": "S034",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0-docking/examples/example_glfw_opengl3/main.cpp",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0-docking"
+    },
+    {
+      "id": "S035",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0-docking/imgui.h",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0-docking"
+    },
+    {
+      "id": "S036",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/backends/imgui_impl_dx12.cpp",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S037",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/backends/imgui_impl_dx12.h",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S038",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/backends/imgui_impl_glfw.cpp",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S039",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/backends/imgui_impl_null.cpp",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S040",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/backends/imgui_impl_opengl3.cpp",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S041",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/backends/imgui_impl_sdl3.cpp",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S042",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/backends/imgui_impl_vulkan.cpp",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S043",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/backends/imgui_impl_vulkan.h",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S044",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/backends/imgui_impl_win32.cpp",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S045",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/docs/BACKENDS.md",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S046",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/docs/BACKENDS.md#rendering-adding-support-for-imguibackendflags_rendererhastextures-192",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S047",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/docs/BACKENDS.md#rendering-implementing-your-renderdrawdata-function",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S048",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/docs/CHANGELOG.txt",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S049",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/docs/CONTRIBUTING.md",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S050",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/docs/FAQ.md",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S051",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/docs/FAQ.md#about-multi-threading",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S052",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/docs/FAQ.md#q-how-can-i-enable-keyboard-or-gamepad-controls",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S053",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/docs/FAQ.md#q-how-can-i-tell-whether-to-dispatch-mousekeyboard-to-dear-imgui-or-my-application",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S054",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/docs/FAQ.md#q-how-should-i-handle-dpi-in-my-application",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S055",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/docs/FAQ.md#q-what-are-imtextureidimtextureref",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S056",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/docs/FONTS.md",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S057",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/docs/FONTS.md#excluding-overlapping-ranges",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S058",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/docs/FONTS.md#loading-font-data-embedded-in-source-code",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S059",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/docs/FONTS.md#loading-font-data-from-memory",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S060",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/docs/README.md",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S061",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/examples/example_glfw_opengl3/main.cpp",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S062",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/examples/example_sdl3_opengl3/main.cpp",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S063",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/imgui.cpp",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S064",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/imgui.h",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S065",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/imgui_demo.cpp",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S066",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/imgui_tables.cpp",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S067",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/imgui_widgets.cpp",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S068",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/misc/cpp/imgui_stdlib.cpp",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S069",
+      "url": "https://github.com/ocornut/imgui/blob/v1.93.0/misc/freetype/README.md",
+      "role": "upstream_core",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "tag": "v1.93.0"
+    },
+    {
+      "id": "S070",
+      "url": "https://github.com/ocornut/imgui/commit/391f714c3736206b896b63d6d5dfbc6a5e7ed4aa",
+      "role": "upstream_core",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "391f714c3736206b896b63d6d5dfbc6a5e7ed4aa"
+    },
+    {
+      "id": "S071",
+      "url": "https://github.com/ocornut/imgui/commit/b916186e66aa3c02b72c6ca17455516512ed8049",
+      "role": "upstream_core",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "b916186e66aa3c02b72c6ca17455516512ed8049"
+    },
+    {
+      "id": "S072",
+      "url": "https://github.com/ocornut/imgui/commit/c1aaac65e896a45f81f47a4d68f9959e0f86c859",
+      "role": "upstream_core",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "c1aaac65e896a45f81f47a4d68f9959e0f86c859"
+    },
+    {
+      "id": "S073",
+      "url": "https://github.com/ocornut/imgui/commit/d682dc41f58b98c9343ffbaa7d94f07e9024b3ca",
+      "role": "upstream_core",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "d682dc41f58b98c9343ffbaa7d94f07e9024b3ca"
+    },
+    {
+      "id": "S074",
+      "url": "https://github.com/ocornut/imgui/discussions",
+      "role": "upstream_core",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S075",
+      "url": "https://github.com/ocornut/imgui/issues",
+      "role": "upstream_core",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S076",
+      "url": "https://github.com/ocornut/imgui/issues/1542",
+      "role": "upstream_core",
+      "kind": "maintainer_discussion",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S077",
+      "url": "https://github.com/ocornut/imgui/issues/2109",
+      "role": "upstream_core",
+      "kind": "maintainer_discussion",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S078",
+      "url": "https://github.com/ocornut/imgui/issues/2117",
+      "role": "upstream_core",
+      "kind": "maintainer_discussion",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S079",
+      "url": "https://github.com/ocornut/imgui/issues/2261",
+      "role": "upstream_core",
+      "kind": "maintainer_discussion",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S080",
+      "url": "https://github.com/ocornut/imgui/issues/2992",
+      "role": "upstream_core",
+      "kind": "maintainer_discussion",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S081",
+      "url": "https://github.com/ocornut/imgui/issues/2992#issuecomment-2495404104",
+      "role": "upstream_core",
+      "kind": "maintainer_discussion",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S082",
+      "url": "https://github.com/ocornut/imgui/issues/2992#issuecomment-576160676",
+      "role": "upstream_core",
+      "kind": "maintainer_discussion",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S083",
+      "url": "https://github.com/ocornut/imgui/issues/3740",
+      "role": "upstream_core",
+      "kind": "maintainer_discussion",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S084",
+      "url": "https://github.com/ocornut/imgui/issues/435",
+      "role": "upstream_core",
+      "kind": "maintainer_discussion",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S085",
+      "url": "https://github.com/ocornut/imgui/issues/4921",
+      "role": "upstream_core",
+      "kind": "maintainer_discussion",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S086",
+      "url": "https://github.com/ocornut/imgui/issues/7065",
+      "role": "upstream_core",
+      "kind": "maintainer_discussion",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S087",
+      "url": "https://github.com/ocornut/imgui/issues/7081",
+      "role": "upstream_core",
+      "kind": "maintainer_discussion",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S088",
+      "url": "https://github.com/ocornut/imgui/issues/7892",
+      "role": "upstream_core",
+      "kind": "maintainer_discussion",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S089",
+      "url": "https://github.com/ocornut/imgui/issues/8022",
+      "role": "upstream_core",
+      "kind": "maintainer_discussion",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S090",
+      "url": "https://github.com/ocornut/imgui/issues/8465",
+      "role": "upstream_core",
+      "kind": "maintainer_discussion",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S091",
+      "url": "https://github.com/ocornut/imgui/issues/8597",
+      "role": "upstream_core",
+      "kind": "maintainer_discussion",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S092",
+      "url": "https://github.com/ocornut/imgui/issues/9504",
+      "role": "upstream_core",
+      "kind": "maintainer_discussion",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S093",
+      "url": "https://github.com/ocornut/imgui/wiki",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S094",
+      "url": "https://github.com/ocornut/imgui/wiki/About-the-IMGUI-paradigm",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S095",
+      "url": "https://github.com/ocornut/imgui/wiki/Bindings",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S096",
+      "url": "https://github.com/ocornut/imgui/wiki/Debug-Tools",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S097",
+      "url": "https://github.com/ocornut/imgui/wiki/Developer-Tips",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S098",
+      "url": "https://github.com/ocornut/imgui/wiki/Docking",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S099",
+      "url": "https://github.com/ocornut/imgui/wiki/Draw-List",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S100",
+      "url": "https://github.com/ocornut/imgui/wiki/Error-Handling",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S101",
+      "url": "https://github.com/ocornut/imgui/wiki/Funding",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S102",
+      "url": "https://github.com/ocornut/imgui/wiki/Getting-Started",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S103",
+      "url": "https://github.com/ocornut/imgui/wiki/Glossary",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S104",
+      "url": "https://github.com/ocornut/imgui/wiki/Help-Wanted",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S105",
+      "url": "https://github.com/ocornut/imgui/wiki/Image-Loading-and-Displaying-Examples",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S106",
+      "url": "https://github.com/ocornut/imgui/wiki/Implementing-Power-Save,-aka-Idling-outside-of-ImGui",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S107",
+      "url": "https://github.com/ocornut/imgui/wiki/Multi-Select",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S108",
+      "url": "https://github.com/ocornut/imgui/wiki/Multi-Viewports",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S109",
+      "url": "https://github.com/ocornut/imgui/wiki/Pixel-Perfect-Rendering",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S110",
+      "url": "https://github.com/ocornut/imgui/wiki/Polyline-Rendering",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S111",
+      "url": "https://github.com/ocornut/imgui/wiki/Quotes",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S112",
+      "url": "https://github.com/ocornut/imgui/wiki/Software-using-Dear-ImGui",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S113",
+      "url": "https://github.com/ocornut/imgui/wiki/Sponsors",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S114",
+      "url": "https://github.com/ocornut/imgui/wiki/Tips",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S115",
+      "url": "https://github.com/ocornut/imgui/wiki/Upcoming-Changes",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S116",
+      "url": "https://github.com/ocornut/imgui/wiki/Useful-Extensions",
+      "role": "upstream_core",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S117",
+      "url": "https://github.com/ocornut/imgui_club/blob/b083116866e05e0d4bccb2c7f28d94a76ee4965e/README.md",
+      "role": "official_auxiliary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "b083116866e05e0d4bccb2c7f28d94a76ee4965e"
+    },
+    {
+      "id": "S118",
+      "url": "https://github.com/ocornut/imgui_club/blob/main/imgui_multicontext_compositor/imgui_multicontext_compositor.h",
+      "role": "official_auxiliary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S119",
+      "url": "https://github.com/ocornut/imgui_club/blob/main/imgui_threaded_rendering/imgui_threaded_rendering.h",
+      "role": "official_auxiliary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S120",
+      "url": "https://github.com/ocornut/imgui_test_engine",
+      "role": "official_test_engine",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S121",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58/app_minimal/app_minimal_main.cpp",
+      "role": "official_test_engine",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "7c808483d6f0a69b9d0843d5f4a141f0a9f74a58"
+    },
+    {
+      "id": "S122",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58/imgui_test_engine/LICENSE.txt",
+      "role": "official_test_engine",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "7c808483d6f0a69b9d0843d5f4a141f0a9f74a58"
+    },
+    {
+      "id": "S123",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58/imgui_test_engine/imgui_te_engine.h",
+      "role": "official_test_engine",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "7c808483d6f0a69b9d0843d5f4a141f0a9f74a58"
+    },
+    {
+      "id": "S124",
+      "url": "https://github.com/ocornut/imgui_test_engine/blob/main/docs/README.md",
+      "role": "official_test_engine",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S125",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki",
+      "role": "official_test_engine",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S126",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki/Automation-API",
+      "role": "official_test_engine",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S127",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki/Bindings",
+      "role": "official_test_engine",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S128",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki/Exporting-Results",
+      "role": "official_test_engine",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S129",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki/Named-References",
+      "role": "official_test_engine",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S130",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki/Overview",
+      "role": "official_test_engine",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S131",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki/Screen-and-Video-Captures",
+      "role": "official_test_engine",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S132",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki/Setting-Up",
+      "role": "official_test_engine",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S133",
+      "url": "https://github.com/ocornut/imgui_test_engine/wiki/Testing-Dear-ImGui",
+      "role": "official_test_engine",
+      "kind": "living_wiki",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S134",
+      "url": "https://github.com/pthom/ImGuiColorTextEdit",
+      "role": "extension_primary",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S135",
+      "url": "https://github.com/pthom/hello_imgui/blob/306027fa08df8c45bc796c401270c38aeb256e89/README.md",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "306027fa08df8c45bc796c401270c38aeb256e89"
+    },
+    {
+      "id": "S136",
+      "url": "https://github.com/pthom/hello_imgui/releases/tag/v1.92.901",
+      "role": "extension_primary",
+      "kind": "release_record",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S137",
+      "url": "https://github.com/pthom/imgui_bundle/blob/4bb9658fec848b9f0ddb07596a992662219ae0a1/.gitmodules",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "4bb9658fec848b9f0ddb07596a992662219ae0a1"
+    },
+    {
+      "id": "S138",
+      "url": "https://github.com/pthom/imgui_bundle/blob/4bb9658fec848b9f0ddb07596a992662219ae0a1/Readme.md",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "4bb9658fec848b9f0ddb07596a992662219ae0a1"
+    },
+    {
+      "id": "S139",
+      "url": "https://github.com/pthom/imgui_bundle/blob/main/.claude/skills/interact-and-screenshot/SKILL.md",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S140",
+      "url": "https://github.com/pthom/imgui_bundle/blob/main/.claude/skills/screenshot-imgui-bundle/SKILL.md",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S141",
+      "url": "https://github.com/pthom/imgui_bundle/releases/tag/v1.93.0",
+      "role": "extension_primary",
+      "kind": "release_record",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S142",
+      "url": "https://github.com/sammyfreg/netImgui",
+      "role": "extension_primary",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S143",
+      "url": "https://github.com/sammyfreg/netImgui/blob/264e5f4ad1230384adbdec44d9604c9ad673f823/README.md",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "264e5f4ad1230384adbdec44d9604c9ad673f823"
+    },
+    {
+      "id": "S144",
+      "url": "https://github.com/sammyfreg/netImgui/releases/tag/v1.13",
+      "role": "extension_primary",
+      "kind": "release_record",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S145",
+      "url": "https://github.com/thedmd/imgui-node-editor/blob/1e0e494f1a86885eb332ca518543108ccd88d13e/.github/workflows/build.yml",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "1e0e494f1a86885eb332ca518543108ccd88d13e"
+    },
+    {
+      "id": "S146",
+      "url": "https://github.com/thedmd/imgui-node-editor/blob/1e0e494f1a86885eb332ca518543108ccd88d13e/docs/README.md",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "1e0e494f1a86885eb332ca518543108ccd88d13e"
+    },
+    {
+      "id": "S147",
+      "url": "https://github.com/thedmd/imgui-node-editor/blob/1e0e494f1a86885eb332ca518543108ccd88d13e/imgui_node_editor_internal.h",
+      "role": "extension_primary",
+      "kind": "source_file",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook",
+      "commit": "1e0e494f1a86885eb332ca518543108ccd88d13e"
+    },
+    {
+      "id": "S148",
+      "url": "https://github.com/thedmd/imgui-node-editor/releases/tag/v0.9.4",
+      "role": "extension_primary",
+      "kind": "release_record",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S149",
+      "url": "https://imgui-bundle.pages.dev/llms.txt",
+      "role": "extension_primary",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S150",
+      "url": "https://pthom.github.io/hello_imgui/",
+      "role": "extension_primary",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "continuation_reference"
+    },
+    {
+      "id": "S151",
+      "url": "https://www.dearimgui.com/",
+      "role": "official_website",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S152",
+      "url": "https://www.dearimgui.com/controls_sheets/",
+      "role": "official_website",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S153",
+      "url": "https://www.dearimgui.com/docs/drawlist_v193/",
+      "role": "official_website",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S154",
+      "url": "https://www.dearimgui.com/faq/",
+      "role": "official_website",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S155",
+      "url": "https://www.dearimgui.com/licenses/",
+      "role": "official_website",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    },
+    {
+      "id": "S156",
+      "url": "https://www.discohello.com/",
+      "role": "official_website",
+      "kind": "project_or_documentation",
+      "snapshot_date": "2026-10-31",
+      "coverage": "cited_or_routed_in_handbook"
+    }
+  ]
+}

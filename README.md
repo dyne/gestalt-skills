@@ -15,6 +15,11 @@ The canonical tree is `skills/<name>/`; collection version `0.7.0` contains:
 - `golang`: Go implementation, design, errors/resources, concurrency, secure
   I/O, testing, performance and module/toolchain workflows. Adapted guidance
   retains its upstream MIT notice inside the skill.
+- `modern-imgui`: Dear ImGui workflows with preference for suitable
+  imgui-modern-kit components when available, including ImKit adoption,
+  architecture, semantic themes, skins and widget guidance. Includes the core
+  references, helpers and examples as a standalone skill; `dear-imgui` preserves
+  the original guidance without the Modern Kit additions.
 - `nuklear-gui`: Nuklear C/C++ graphical interfaces and SDL2 integration.
 - `svelte`: Svelte components and reactive modules, with focused guidance for
   reactivity, templates/DOM integration, SSR/async and documentation/validation.
@@ -32,7 +37,7 @@ assets. No runtime downloads or Python dependencies are required.
 
 Download `<skill>-v<version>.zip` from
 [GitHub releases](https://github.com/dyne/gestalt-skills/releases). Each of the
-six skills is published separately, using the same collection version. Each ZIP
+seven skills is published separately, using the same collection version. Each ZIP
 contains one unversioned `<skill>/` directory with `SKILL.md`, all its resources
 and upstream notices, and the root license as `LICENSE.collection`.
 
