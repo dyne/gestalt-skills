@@ -207,6 +207,180 @@
       ]
     },
     {
+      "name": "modern-imgui",
+      "entry": "skills/modern-imgui/SKILL.md",
+      "files": [
+        {
+          "path": "skills/modern-imgui/SKILL.md",
+          "sha256": "3cdb4ba44922f03bd2b3e633c97c45c867f7aa45b53d15216db49b9eed68fe44"
+        },
+        {
+          "path": "skills/modern-imgui/evals/acceptance_cases.json",
+          "sha256": "b439a79a715550d55f1302ee3cad3fca2994d4358dd14cde646cb966da8e2864"
+        },
+        {
+          "path": "skills/modern-imgui/evals/author-review.md",
+          "sha256": "705a7e84ce49b10840c3880c20864dde64aa20f077e3eee2a9822f237bd23ae6"
+        },
+        {
+          "path": "skills/modern-imgui/evals/headless-validation.md",
+          "sha256": "7fc89b311867488f9be8b1c123194e0696683c6814ca80f1d08540f0f09fa89c"
+        },
+        {
+          "path": "skills/modern-imgui/evals/modern-kit-review.md",
+          "sha256": "79beb6dcdf3dcead0be23fb0bb0ad4a886a780a6f06eb54515bd4cd65efe86f8"
+        },
+        {
+          "path": "skills/modern-imgui/evals/validation.json",
+          "sha256": "7f5842cbe8f2d4c789c5625132fc28a5ae84b95a08c7917e05c4605d64893c4b"
+        },
+        {
+          "path": "skills/modern-imgui/examples/README.md",
+          "sha256": "ae0837fbe6ec8bcb58ced91f5abb032abec33491efc45c6c57a95eb6e4826ab1"
+        },
+        {
+          "path": "skills/modern-imgui/examples/automation_config.h",
+          "sha256": "3fe2c99e7ff367f7f163a2efcebd55c7477f81c4d25c3f85a93c8483c4ba6ba3"
+        },
+        {
+          "path": "skills/modern-imgui/examples/automation_main.cpp",
+          "sha256": "4ea9bc8e67c0ed3a59dd3f7ba20bf14ec0dfdcafd6399566785cbe3f56736835"
+        },
+        {
+          "path": "skills/modern-imgui/examples/core_patterns.cpp",
+          "sha256": "2d557742bbadab520cc3257abe273bfd65deeb13c6733e3237ddb42d0626cd3f"
+        },
+        {
+          "path": "skills/modern-imgui/examples/core_patterns.h",
+          "sha256": "dbca3a6abffe9424cfef0e4ec534822b3ecebf34b2f885956187163724cdf015"
+        },
+        {
+          "path": "skills/modern-imgui/examples/headless/CMakeLists.txt",
+          "sha256": "ff41a3ee0946b794f6550bf236ed1dfcf1db58a85e8ed05ec2795f16fae94c78"
+        },
+        {
+          "path": "skills/modern-imgui/examples/headless/check_rejection.cmake",
+          "sha256": "a4614cfd3cc61dda6bfc46965169479735df8ce495dfa2563299adc1f284a4b8"
+        },
+        {
+          "path": "skills/modern-imgui/examples/headless/config.h",
+          "sha256": "ef7da6434d5a7bb8a043355a1fb24597c7dcab7dd520daedb11bcbc1c0501766"
+        },
+        {
+          "path": "skills/modern-imgui/examples/headless/imkit_panel.cpp",
+          "sha256": "7a2e779388c60661b27a3ccdb2c0daedfc0efbc5c17628843f17f4066e95d65d"
+        },
+        {
+          "path": "skills/modern-imgui/examples/headless/imkit_panel.h",
+          "sha256": "39ff2400d0c3b925bb61255ba426e4de8c7f07831cf580b853368fb9306f0b27"
+        },
+        {
+          "path": "skills/modern-imgui/examples/headless/runner.cpp",
+          "sha256": "a533e3ec9ea04dba3d7fb7a7cd0f90f6c328911872067475b38d92a5b928b7d7"
+        },
+        {
+          "path": "skills/modern-imgui/examples/headless/tests.cpp",
+          "sha256": "3bc65cdd65180d3bad429325563a676b930835ad709eb71220ea1491239b6ffa"
+        },
+        {
+          "path": "skills/modern-imgui/examples/semantic_main.cpp",
+          "sha256": "f4256cdf9cf4406051274e2d13bab1e4a75b9a1b8e49d93568dcc80c4b3a7162"
+        },
+        {
+          "path": "skills/modern-imgui/examples/settings_model_main.cpp",
+          "sha256": "68e905325e296b767b146fbb1090e8ea5e45763d74959ac9553fad5cd6573b7c"
+        },
+        {
+          "path": "skills/modern-imgui/examples/settings_panel.cpp",
+          "sha256": "e78f1fbab4810beb4780d0d1a4d65793801cfd1e69a8e0d0a4044e9c6f49cc8b"
+        },
+        {
+          "path": "skills/modern-imgui/examples/settings_panel.h",
+          "sha256": "9aa3d7de234e23bb8953eb98607fa2135f5faea896b31e1710b222e9ee8c20c5"
+        },
+        {
+          "path": "skills/modern-imgui/examples/smoke_main.cpp",
+          "sha256": "d577e12cdab2bd994a9b48e8c9e98cb6b51addd6a3932d0e71a66f03c96253b2"
+        },
+        {
+          "path": "skills/modern-imgui/references/automation-sources.json",
+          "sha256": "aba2f696f938f0ead4e7ce9894ccd1acf5303ba54e84234fb8caaf2f67a692ee"
+        },
+        {
+          "path": "skills/modern-imgui/references/automation.md",
+          "sha256": "669f77d4c92de8f55f96fc0881c2c98b09defe5b32e9ae7bc354ab56989c9909"
+        },
+        {
+          "path": "skills/modern-imgui/references/core-interaction.md",
+          "sha256": "458c76771a8421d992c2462e25e7be419fda34faaab6bc5c777fbaf163fad322"
+        },
+        {
+          "path": "skills/modern-imgui/references/data-selection.md",
+          "sha256": "91c6b3df56d64d19c6eeb768ad0ef8bc96407d3a3f50aac4678843b0349300db"
+        },
+        {
+          "path": "skills/modern-imgui/references/extensions-automation.md",
+          "sha256": "17a4f3e3cbfe50e49a1ea792232aa46bc0a49e06e8aaa4bcf972b6c8ab9e9262"
+        },
+        {
+          "path": "skills/modern-imgui/references/extensions.json",
+          "sha256": "db5a6e793eff57b53f94023587b0f6e84354e6c7030186e5983eeb453c159062"
+        },
+        {
+          "path": "skills/modern-imgui/references/fonts-textures.md",
+          "sha256": "aeb8b1504ab5b501d025ca29b7a3a7deb57dced8cf5638404d399df6eed75d25"
+        },
+        {
+          "path": "skills/modern-imgui/references/gui-workflow.md",
+          "sha256": "c00fc9ae700011ee531b2e0199a6f051c5124fb590676ee44e512de18bcdb8d1"
+        },
+        {
+          "path": "skills/modern-imgui/references/headless-testing.md",
+          "sha256": "945d8a6d4416027a7f7739a492da060e44f9d4e254db883afb1a16f452b97dbe"
+        },
+        {
+          "path": "skills/modern-imgui/references/integration.md",
+          "sha256": "77f2aae4347a9a2a70714cab1c6eb23e7c9192cba24c483b6fb6f33da2b1d674"
+        },
+        {
+          "path": "skills/modern-imgui/references/modern-kit-components.md",
+          "sha256": "54cc487bf73ba6e931caa3d1a0ce8b0e97efbef548f066a18b60ed6263d606a1"
+        },
+        {
+          "path": "skills/modern-imgui/references/modern-kit-themes.md",
+          "sha256": "b44692053da46da129b936377b46281bf9d2d8b400e06f9c19283fcd1b0406e4"
+        },
+        {
+          "path": "skills/modern-imgui/references/modern-kit.md",
+          "sha256": "0c97c2bbb18e4af7979c6fce1613c334b1df06818a79728154dc870f3af9033b"
+        },
+        {
+          "path": "skills/modern-imgui/references/profile.md",
+          "sha256": "7528894f56e430b3a5245003da1fd66c88a9140c454860ba7c535997aaf61741"
+        },
+        {
+          "path": "skills/modern-imgui/references/sources.json",
+          "sha256": "517616d6e820b7ddeaeae362ae449a2f083f6feb620d2bd2c4967f14abe2486a"
+        },
+        {
+          "path": "skills/modern-imgui/references/styling.md",
+          "sha256": "c6a931f09235c64822f0d09fda2e7fb8b054b3f57c6adddf8be27a78796a0b30"
+        },
+        {
+          "path": "skills/modern-imgui/references/testing-debugging.md",
+          "sha256": "4c8a80659efb923e17bd75359bf2d12d4722cd026c7ac9cb4b1d6076dbc51760"
+        },
+        {
+          "path": "skills/modern-imgui/scripts/inspect_imgui.py",
+          "sha256": "647226aeb377bde4b6743e4e0360deb9e507f970787ba1e29be87870135be10b"
+        },
+        {
+          "path": "skills/modern-imgui/scripts/lookup_imgui.py",
+          "sha256": "55b191500ce39e0e03e519f92251a29dcf7fd11ac17d8438e1849d63d82f13f5"
+        }
+      ]
+    },
+    {
       "name": "nuklear-gui",
       "entry": "skills/nuklear-gui/SKILL.md",
       "files": [

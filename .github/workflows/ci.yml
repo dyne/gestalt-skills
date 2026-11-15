@@ -1,0 +1,102 @@
+name: CI
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  package:
+    name: Package and discovery
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Validate package and tests
+        run: |
+          python3 scripts/package.py check
+          python3 -m unittest discover -s tests -v
+          python3 scripts/discovery.py
+      - name: Build standalone archives
+        run: |
+          python3 scripts/build_release.py --output "$RUNNER_TEMP/skill-zips"
+          cd "$RUNNER_TEMP/skill-zips"
+          sha256sum -c SHA256SUMS
+
+  headless:
+    name: Headless (${{ matrix.flavor }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - flavor: core
+            imgui: c1aaac65e896a45f81f47a4d68f9959e0f86c859
+          - flavor: imkit
+            imgui: 367b2c24f399988ddafc0bb4628da0106bcc09be
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Check out pinned Dear ImGui
+        uses: actions/checkout@v6
+        with:
+          repository: ocornut/imgui
+          ref: ${{ matrix.imgui }}
+          path: _deps/imgui
+          persist-credentials: false
+      - name: Check out pinned Test Engine
+        uses: actions/checkout@v6
+        with:
+          repository: ocornut/imgui_test_engine
+          ref: 7c808483d6f0a69b9d0843d5f4a141f0a9f74a58
+          path: _deps/engine
+          persist-credentials: false
+      - name: Check out pinned ImKit
+        if: matrix.flavor == 'imkit'
+        uses: actions/checkout@v6
+        with:
+          repository: AokiMotohide/imgui-modern-kit
+          ref: 986d8d286a74fb7b2f724b9ef5d008af139aa887
+          path: _deps/imkit
+          persist-credentials: false
+      - name: Configure headless consumer
+        shell: bash
+        env:
+          FLAVOR: ${{ matrix.flavor }}
+        run: |
+          set -Eeuo pipefail
+          imkit_args=()
+          if [[ "$FLAVOR" == imkit ]]; then
+            imkit_args+=("-DIMKIT_DIR=$GITHUB_WORKSPACE/_deps/imkit")
+          fi
+          cmake -S skills/modern-imgui/examples/headless -B build/ui-tests \
+            -DCMAKE_BUILD_TYPE=Debug \
+            "-DIMGUI_DIR=$GITHUB_WORKSPACE/_deps/imgui" \
+            "-DIMGUI_TEST_ENGINE_DIR=$GITHUB_WORKSPACE/_deps/engine" \
+            "${imkit_args[@]}"
+      - name: Build test targets
+        run: cmake --build build/ui-tests --target ui_tests model_tests --parallel 2
+      - name: Run behavior and rejection checks
+        run: ctest --test-dir build/ui-tests -C Debug -R '^headless\.' --output-on-failure --no-tests=error
+      - name: Retain test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: headless-${{ matrix.flavor }}-evidence
+          path: |
+            build/ui-tests/*.xml
+            build/ui-tests/*.xml.log
+            build/ui-tests/Testing/Temporary/*.log
+          if-no-files-found: ignore

@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "IMGUI-01",
+      "fixture_or_prompt": "`if (Begin(...)) { ... End(); }` with a collapsible window",
+      "expected_behavior": "Move `End` outside the conditional"
+    },
+    {
+      "id": "IMGUI-02",
+      "fixture_or_prompt": "Early return after false `BeginChild`",
+      "expected_behavior": "Preserve `EndChild` on every path"
+    },
+    {
+      "id": "IMGUI-03",
+      "fixture_or_prompt": "Unconditional `EndTable` after failed `BeginTable`",
+      "expected_behavior": "Make the end conditional"
+    },
+    {
+      "id": "IMGUI-04",
+      "fixture_or_prompt": "`BeginDisabled(false)` without an end",
+      "expected_behavior": "Explain that false still creates a scope"
+    },
+    {
+      "id": "IMGUI-05",
+      "fixture_or_prompt": "Leaf tree node followed by inconsistent `TreePop`",
+      "expected_behavior": "Inspect `NoTreePushOnOpen`; do not assume Leaf suppresses the scope"
+    },
+    {
+      "id": "IMGUI-06",
+      "fixture_or_prompt": "Sorted object table uses the current row number for all controls",
+      "expected_behavior": "Introduce stable model identity and retain view indices separately"
+    },
+    {
+      "id": "IMGUI-07",
+      "fixture_or_prompt": "Dynamic title resets window placement",
+      "expected_behavior": "Use a stable `###` suffix or another stable window identity"
+    },
+    {
+      "id": "IMGUI-08",
+      "fixture_or_prompt": "Log viewer calls `Text(log_line)`",
+      "expected_behavior": "Use unformatted/bounded text or a fixed format"
+    },
+    {
+      "id": "IMGUI-09",
+      "fixture_or_prompt": "`InputText` writes through a cast from `c_str()`",
+      "expected_behavior": "Use the stdlib adapter or a correctly owned mutable buffer"
+    },
+    {
+      "id": "IMGUI-10",
+      "fixture_or_prompt": "Caller filters events before forwarding to ImGui",
+      "expected_behavior": "Forward events; gate application reaction with capture state"
+    },
+    {
+      "id": "IMGUI-11",
+      "fixture_or_prompt": "Return key release leaks to the game after a text field loses focus",
+      "expected_behavior": "Track event ownership appropriately across the press/release pair"
+    },
+    {
+      "id": "IMGUI-12",
+      "fixture_or_prompt": "A menu item displays Ctrl+S but does nothing from the keyboard",
+      "expected_behavior": "Add an actual routed shortcut in the appropriate scope"
+    },
+    {
+      "id": "IMGUI-13",
+      "fixture_or_prompt": "Popup opens under one ID scope and submits under another",
+      "expected_behavior": "Match effective ID scopes"
+    },
+    {
+      "id": "IMGUI-14",
+      "fixture_or_prompt": "Repeated `OpenPopup` prevents dismissal",
+      "expected_behavior": "Trigger once from an action"
+    },
+    {
+      "id": "IMGUI-15",
+      "fixture_or_prompt": "A new project asks for docking on master",
+      "expected_behavior": "Inspect branch; use a matching maintained docking revision"
+    },
+    {
+      "id": "IMGUI-16",
+      "fixture_or_prompt": "Dock layout is rebuilt each frame",
+      "expected_behavior": "Build defaults conditionally and preserve user settings"
+    },
+    {
+      "id": "IMGUI-17",
+      "fixture_or_prompt": "GNU/Linux Wayland application asks for detachable OS windows",
+      "expected_behavior": "State the actual viewport limitation; retain supported single-window docking"
+    },
+    {
+      "id": "IMGUI-18",
+      "fixture_or_prompt": "Font bytes are freed immediately after adding with ownership disabled",
+      "expected_behavior": "Preserve memory for dynamic font use"
+    },
+    {
+      "id": "IMGUI-19",
+      "fixture_or_prompt": "Custom renderer advertises `RendererHasTextures` but ignores requests",
+      "expected_behavior": "Implement lifecycle or stop claiming the capability"
+    },
+    {
+      "id": "IMGUI-20",
+      "fixture_or_prompt": "A legacy atlas-upload recipe is used while claiming modern texture support",
+      "expected_behavior": "Implement the advertised dynamic texture contract; distinguish an intentional legacy backend without that capability"
+    },
+    {
+      "id": "IMGUI-21",
+      "fixture_or_prompt": "`ImTextureID` is cast using an unrelated renderer's recipe",
+      "expected_behavior": "Resolve the selected backend representation"
+    },
+    {
+      "id": "IMGUI-22",
+      "fixture_or_prompt": "Current Vulkan integration passes an old sampler argument",
+      "expected_behavior": "Inspect the actual two-argument registration API and separate descriptors"
+    },
+    {
+      "id": "IMGUI-23",
+      "fixture_or_prompt": "Current DX12 integration uses removed positional init",
+      "expected_behavior": "Use the current InitInfo/callback contract"
+    },
+    {
+      "id": "IMGUI-24",
+      "fixture_or_prompt": "Scissor code assumes `DisplayPos` is zero and framebuffer scale is one",
+      "expected_behavior": "Transform and clamp using draw-data fields"
+    },
+    {
+      "id": "IMGUI-25",
+      "fixture_or_prompt": "Many primitives overflow 16-bit index assumptions",
+      "expected_behavior": "Check VtxOffset support or the chosen index configuration"
+    },
+    {
+      "id": "IMGUI-26",
+      "fixture_or_prompt": "UI thread gives another thread raw `GetDrawData()` and starts next frame",
+      "expected_behavior": "Require snapshot and texture request ownership/synchronization"
+    },
+    {
+      "id": "IMGUI-27",
+      "fixture_or_prompt": "Filtering occurs after clipper indices are generated from full data",
+      "expected_behavior": "Clip a dense filtered view"
+    },
+    {
+      "id": "IMGUI-28",
+      "fixture_or_prompt": "Variable wrapped rows use a guessed uniform clipper height",
+      "expected_behavior": "Choose a correct height/index strategy"
+    },
+    {
+      "id": "IMGUI-29",
+      "fixture_or_prompt": "Data changes but sort specs are not dirty",
+      "expected_behavior": "Re-sort on application data/view changes too"
+    },
+    {
+      "id": "IMGUI-30",
+      "fixture_or_prompt": "Shift-selection breaks when the anchor scrolls away",
+      "expected_behavior": "Include the range source and process both request phases"
+    },
+    {
+      "id": "IMGUI-31",
+      "fixture_or_prompt": "Fancy custom button has no keyboard activation",
+      "expected_behavior": "Use an interactive item with deliberate navigation and focus indication"
+    },
+    {
+      "id": "IMGUI-32",
+      "fixture_or_prompt": "Old half-pixel offsets distort 1.93 custom shapes",
+      "expected_behavior": "Inspect stroke semantics and perform rendering comparison"
+    },
+    {
+      "id": "IMGUI-33",
+      "fixture_or_prompt": "Script assumes scalar keyboard input writes every character",
+      "expected_behavior": "Apply the 1.92.9 live-edit policy accurately"
+    },
+    {
+      "id": "IMGUI-34",
+      "fixture_or_prompt": "ImPlot code uses old styling against released v1.1",
+      "expected_behavior": "Resolve the extension's current ImPlotSpec API"
+    },
+    {
+      "id": "IMGUI-35",
+      "fixture_or_prompt": "Bundle example uses `BeginHorizontal` in upstream-only project",
+      "expected_behavior": "Identify fork-only StackLayout; use compatible composition or explicit fork choice"
+    },
+    {
+      "id": "IMGUI-36",
+      "fixture_or_prompt": "Node editor chosen solely by stars or wiki year label",
+      "expected_behavior": "Check actual revisions, API coupling and required features"
+    },
+    {
+      "id": "IMGUI-37",
+      "fixture_or_prompt": "Headless smoke success is reported as screenshot validation",
+      "expected_behavior": "Limit the claim and request/run a real rendered check when needed"
+    },
+    {
+      "id": "IMGUI-38",
+      "fixture_or_prompt": "Test Engine described as MIT because the main library is MIT",
+      "expected_behavior": "Distinguish engine terms from suite/helpers/core licenses"
+    },
+    {
+      "id": "IMGUI-39",
+      "fixture_or_prompt": "A source includes an unmerged attractive API",
+      "expected_behavior": "Mark it as proposed/branch-only; do not invent public availability"
+    },
+    {
+      "id": "IMGUI-40",
+      "fixture_or_prompt": "A new custom widget includes internals merely to place a rectangle",
+      "expected_behavior": "Prefer public item and draw-list composition"
+    }
+  ]
+}

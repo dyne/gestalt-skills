@@ -1,0 +1,358 @@
+{
+  "checked_at": "2026-10-31",
+  "verification_scope": "Primary metadata, release documentation, selected headers/source/includes; no builds or runtime tests performed",
+  "projects": [
+    {
+      "repo": "ocornut/imgui_test_engine",
+      "url": "https://github.com/ocornut/imgui_test_engine",
+      "branch": "main",
+      "archived": false,
+      "pushed_at": "2026-10-29T17:27:13Z",
+      "description": "Dear ImGui Automation Engine & Test Suite",
+      "head": {
+        "repo": "ocornut/imgui_test_engine",
+        "sha": "7c808483d6f0a69b9d0843d5f4a141f0a9f74a58",
+        "date": "2026-10-29T17:27:05Z",
+        "message": "TestEngine: fixed potential crash in ItemMakeVisible() when aborting e.g. during nested operation.",
+        "url": "https://github.com/ocornut/imgui_test_engine/commit/7c808483d6f0a69b9d0843d5f4a141f0a9f74a58"
+      },
+      "release": null,
+      "license_status": "Custom Test Engine license v1.04 for engine; MIT for suite and other folders"
+    },
+    {
+      "repo": "epezent/implot",
+      "url": "https://github.com/epezent/implot",
+      "branch": "master",
+      "archived": false,
+      "pushed_at": "2026-10-25T16:41:18Z",
+      "license": "MIT",
+      "description": "Immediate Mode Plotting",
+      "head": {
+        "repo": "epezent/implot",
+        "sha": "72de27832d1e6299bcc930ce01073d899d420392",
+        "date": "2026-10-25T16:39:24Z",
+        "message": "chore: bump version to v1.2 WIP",
+        "url": "https://github.com/epezent/implot/commit/72de27832d1e6299bcc930ce01073d899d420392"
+      },
+      "release": {
+        "tag": "v1.1",
+        "date": "2026-10-25T16:34:22Z",
+        "prerelease": false,
+        "url": "https://github.com/epezent/implot/releases/tag/v1.1"
+      }
+    },
+    {
+      "repo": "brenocq/implot3d",
+      "url": "https://github.com/brenocq/implot3d",
+      "branch": "main",
+      "archived": false,
+      "pushed_at": "2026-10-25T16:46:36Z",
+      "license": "MIT",
+      "description": "Immediate Mode 3D Plotting",
+      "head": {
+        "repo": "brenocq/implot3d",
+        "sha": "c54525f8d46cece384cc2618761a2c55016b06db",
+        "date": "2026-10-25T16:39:24Z",
+        "message": "chore: bump version to v0.6 WIP",
+        "url": "https://github.com/brenocq/implot3d/commit/c54525f8d46cece384cc2618761a2c55016b06db"
+      },
+      "release": {
+        "tag": "v0.5",
+        "date": "2026-10-25T16:32:09Z",
+        "prerelease": true,
+        "url": "https://github.com/brenocq/implot3d/releases/tag/v0.5"
+      }
+    },
+    {
+      "repo": "CedricGuillemet/ImGuizmo",
+      "url": "https://github.com/CedricGuillemet/ImGuizmo",
+      "branch": "master",
+      "archived": false,
+      "pushed_at": "2026-10-10T14:41:31Z",
+      "license": "MIT",
+      "description": "Immediate mode 3D gizmo for scene editing and other controls based on Dear Imgui",
+      "head": {
+        "repo": "CedricGuillemet/ImGuizmo",
+        "sha": "105e4fde45e4e74aae8973d98750820ef7aca7e2",
+        "date": "2026-10-10T14:41:28Z",
+        "message": "Use upstream OpenGL3 renderer in the examples (#435)",
+        "url": "https://github.com/CedricGuillemet/ImGuizmo/commit/105e4fde45e4e74aae8973d98750820ef7aca7e2"
+      },
+      "release": null
+    },
+    {
+      "repo": "thedmd/imgui-node-editor",
+      "url": "https://github.com/thedmd/imgui-node-editor",
+      "branch": "master",
+      "archived": false,
+      "pushed_at": "2026-10-26T11:02:31Z",
+      "license": "MIT",
+      "description": "Node Editor built using Dear ImGui",
+      "head": {
+        "repo": "thedmd/imgui-node-editor",
+        "sha": "1e0e494f1a86885eb332ca518543108ccd88d13e",
+        "date": "2026-10-14T04:28:45Z",
+        "message": "Examples: Dim the Houdini pins that can't take a new link in the blueprints example",
+        "url": "https://github.com/thedmd/imgui-node-editor/commit/1e0e494f1a86885eb332ca518543108ccd88d13e"
+      },
+      "release": {
+        "tag": "v0.9.4",
+        "date": "2026-10-14T08:57:49Z",
+        "prerelease": false,
+        "url": "https://github.com/thedmd/imgui-node-editor/releases/tag/v0.9.4"
+      }
+    },
+    {
+      "repo": "Nelarius/imnodes",
+      "url": "https://github.com/Nelarius/imnodes",
+      "branch": "master",
+      "archived": false,
+      "pushed_at": "2026-10-17T23:21:32Z",
+      "license": "MIT",
+      "description": "A small, dependency-free node editor for dear imgui",
+      "head": {
+        "repo": "Nelarius/imnodes",
+        "sha": "2d0c280b07b2f62b120034811cc6e41251673961",
+        "date": "2026-10-17T23:21:32Z",
+        "message": "Fix CI: port examples to SDL3, add latest-ImGui compile check (#218)",
+        "url": "https://github.com/Nelarius/imnodes/commit/2d0c280b07b2f62b120034811cc6e41251673961"
+      },
+      "release": {
+        "tag": "v0.5",
+        "date": "2022-03-09T07:52:39Z",
+        "prerelease": false,
+        "url": "https://github.com/Nelarius/imnodes/releases/tag/v0.5"
+      }
+    },
+    {
+      "repo": "pthom/hello_imgui",
+      "url": "https://github.com/pthom/hello_imgui",
+      "branch": "master",
+      "archived": false,
+      "pushed_at": "2026-10-25T19:29:26Z",
+      "license": "MIT",
+      "description": "Dear ImGui apps made simple: desktop, mobile, and web from one codebase. Minimal code. Maximally readable.",
+      "head": {
+        "repo": "pthom/hello_imgui",
+        "sha": "306027fa08df8c45bc796c401270c38aeb256e89",
+        "date": "2026-10-25T19:28:24Z",
+        "message": "plutosvg: no libm with MSVC",
+        "url": "https://github.com/pthom/hello_imgui/commit/306027fa08df8c45bc796c401270c38aeb256e89"
+      },
+      "release": {
+        "tag": "v1.92.901",
+        "date": "2026-10-02T09:26:47Z",
+        "prerelease": false,
+        "url": "https://github.com/pthom/hello_imgui/releases/tag/v1.92.901"
+      }
+    },
+    {
+      "repo": "pthom/imgui_bundle",
+      "url": "https://github.com/pthom/imgui_bundle",
+      "branch": "main",
+      "archived": false,
+      "pushed_at": "2026-10-30T23:05:45Z",
+      "license": "MIT",
+      "description": "Interactive Python & C++ apps for desktop, mobile, and web - powered by Dear ImGui. Stop fighting GUI frameworks. Start building.",
+      "head": {
+        "repo": "pthom/imgui_bundle",
+        "sha": "4bb9658fec848b9f0ddb07596a992662219ae0a1",
+        "date": "2026-10-30T23:05:44Z",
+        "message": "Merge pull request #507 from pthom/dependabot/github_actions/pypa/cibuildwheel-4.3.5",
+        "url": "https://github.com/pthom/imgui_bundle/commit/4bb9658fec848b9f0ddb07596a992662219ae0a1"
+      },
+      "release": {
+        "tag": "v1.93.0",
+        "date": "2026-10-21T17:56:49Z",
+        "prerelease": false,
+        "url": "https://github.com/pthom/imgui_bundle/releases/tag/v1.93.0"
+      }
+    },
+    {
+      "repo": "aiekick/ImGuiFileDialog",
+      "url": "https://github.com/aiekick/ImGuiFileDialog",
+      "branch": "master",
+      "archived": false,
+      "pushed_at": "2026-04-18T23:01:41Z",
+      "license": "MIT",
+      "description": "Full featured file Dialog for Dear ImGui",
+      "head": {
+        "repo": "aiekick/ImGuiFileDialog",
+        "sha": "d0e97b2adc3d3452d72c750c7305dc0291acd052",
+        "date": "2026-03-11T20:52:37Z",
+        "message": "Merge pull request #229 from nfx-opensource/fix/nullptr-protection",
+        "url": "https://github.com/aiekick/ImGuiFileDialog/commit/d0e97b2adc3d3452d72c750c7305dc0291acd052"
+      },
+      "release": {
+        "tag": "v0.6.8",
+        "date": "2025-10-03T23:09:17Z",
+        "prerelease": false,
+        "url": "https://github.com/aiekick/ImGuiFileDialog/releases/tag/v0.6.8"
+      }
+    },
+    {
+      "repo": "btzy/nativefiledialog-extended",
+      "url": "https://github.com/btzy/nativefiledialog-extended",
+      "branch": "master",
+      "archived": false,
+      "pushed_at": "2026-10-02T05:06:54Z",
+      "license": "Zlib",
+      "description": "Cross platform (Windows, Mac, Linux) native file dialog library with C and C++ bindings, based on mlabbe/nativefiledialog.",
+      "head": {
+        "repo": "btzy/nativefiledialog-extended",
+        "sha": "65b2f070a0fcfee0d453a64e770a217ab0b6ff4f",
+        "date": "2026-10-02T05:04:30Z",
+        "message": "Release: v1.4.1",
+        "url": "https://github.com/btzy/nativefiledialog-extended/commit/65b2f070a0fcfee0d453a64e770a217ab0b6ff4f"
+      },
+      "release": {
+        "tag": "v1.4.1",
+        "date": "2026-10-02T05:10:29Z",
+        "prerelease": false,
+        "url": "https://github.com/btzy/nativefiledialog-extended/releases/tag/v1.4.1"
+      }
+    },
+    {
+      "repo": "goossens/ImGuiColorTextEdit",
+      "url": "https://github.com/goossens/ImGuiColorTextEdit",
+      "branch": "master",
+      "archived": false,
+      "pushed_at": "2026-10-23T20:49:01Z",
+      "license": "MIT",
+      "description": "Colorizing text editor for Dear ImGui",
+      "head": {
+        "repo": "goossens/ImGuiColorTextEdit",
+        "sha": "12a5a01d85e541d63ae92616d7a2d9c6dedc2e9a",
+        "date": "2026-10-23T20:49:00Z",
+        "message": "Merge pull request #99 from Jenrikku/master",
+        "url": "https://github.com/goossens/ImGuiColorTextEdit/commit/12a5a01d85e541d63ae92616d7a2d9c6dedc2e9a"
+      },
+      "release": null
+    },
+    {
+      "repo": "pthom/ImGuiColorTextEdit",
+      "url": "https://github.com/pthom/ImGuiColorTextEdit",
+      "branch": "master",
+      "archived": false,
+      "pushed_at": "2026-10-15T08:02:23Z",
+      "license": "MIT",
+      "description": "Colorizing text editor for ImGui",
+      "head": {
+        "repo": "pthom/ImGuiColorTextEdit",
+        "sha": "19cedecacf8d0632abf545d9cfa25b2a26baf55b",
+        "date": "2026-03-20T16:42:12Z",
+        "message": "acknowledge https://github.com/goossens/ImGuiColorTextEdit",
+        "url": "https://github.com/pthom/ImGuiColorTextEdit/commit/19cedecacf8d0632abf545d9cfa25b2a26baf55b"
+      },
+      "release": null
+    },
+    {
+      "repo": "BalazsJako/ImGuiColorTextEdit",
+      "url": "https://github.com/BalazsJako/ImGuiColorTextEdit",
+      "branch": "master",
+      "archived": false,
+      "pushed_at": "2025-11-24T18:58:11Z",
+      "license": "MIT",
+      "description": "Colorizing text editor for ImGui",
+      "head": {
+        "repo": "BalazsJako/ImGuiColorTextEdit",
+        "sha": "ca2f9f1462e3b60e56351bc466acda448c5ea50d",
+        "date": "2025-11-24T18:58:11Z",
+        "message": "Merge pull request #166 from ocornut/fix_for_192",
+        "url": "https://github.com/BalazsJako/ImGuiColorTextEdit/commit/ca2f9f1462e3b60e56351bc466acda448c5ea50d"
+      },
+      "release": null
+    },
+    {
+      "repo": "sammyfreg/netImgui",
+      "url": "https://github.com/sammyfreg/netImgui",
+      "branch": "master",
+      "archived": false,
+      "pushed_at": "2026-10-17T22:41:35Z",
+      "license": "MIT",
+      "description": "'Dear Imgui' remote access library and application",
+      "head": {
+        "repo": "sammyfreg/netImgui",
+        "sha": "264e5f4ad1230384adbdec44d9604c9ad673f823",
+        "date": "2026-10-12T18:04:03Z",
+        "message": "remove hooks on disconnects (#76)",
+        "url": "https://github.com/sammyfreg/netImgui/commit/264e5f4ad1230384adbdec44d9604c9ad673f823"
+      },
+      "release": {
+        "tag": "v1.13",
+        "date": "2026-01-05T16:17:32Z",
+        "prerelease": false,
+        "url": "https://github.com/sammyfreg/netImgui/releases/tag/v1.13"
+      }
+    },
+    {
+      "repo": "cimgui/cimgui",
+      "url": "https://github.com/cimgui/cimgui",
+      "branch": "docking_inter",
+      "archived": false,
+      "pushed_at": "2026-10-18T12:51:22Z",
+      "license": "MIT",
+      "description": "c-api for imgui (https://github.com/ocornut/imgui)    Look at: https://github.com/cimgui for other widgets",
+      "head": {
+        "repo": "cimgui/cimgui",
+        "sha": "2a6a93fccd10f275ee9206167dc9698f6f00fac1",
+        "date": "2026-10-18T10:28:06Z",
+        "message": "pull imgui dock 1.93 and generate (did an error in last commit with 1.93.1WIP)",
+        "url": "https://github.com/cimgui/cimgui/commit/2a6a93fccd10f275ee9206167dc9698f6f00fac1"
+      },
+      "release": null
+    },
+    {
+      "repo": "dearimgui/dear_bindings",
+      "url": "https://github.com/dearimgui/dear_bindings",
+      "branch": "main",
+      "archived": false,
+      "pushed_at": "2026-10-31T02:51:28Z",
+      "license": "MIT",
+      "description": "Pretty C header (+ metadata for language binding) generator for Dear ImGui",
+      "head": {
+        "repo": "dearimgui/dear_bindings",
+        "sha": "67ede4170679575167aee8c29a5c68931d112d3f",
+        "date": "2026-10-31T02:46:33Z",
+        "message": "Renamed \"ImGui_RenderArrowEx\" to \"ImGui_RenderArrowWithMoreParams\" to avoid a name clash",
+        "url": "https://github.com/dearimgui/dear_bindings/commit/67ede4170679575167aee8c29a5c68931d112d3f"
+      },
+      "release": null
+    },
+    {
+      "repo": "ocornut/imgui_club",
+      "url": "https://github.com/ocornut/imgui_club",
+      "branch": "main",
+      "archived": false,
+      "pushed_at": "2026-08-23T10:34:10Z",
+      "license": "MIT",
+      "description": "Small extensions for Dear ImGui",
+      "head": {
+        "repo": "ocornut/imgui_club",
+        "sha": "b083116866e05e0d4bccb2c7f28d94a76ee4965e",
+        "date": "2026-08-23T10:33:38Z",
+        "message": "imgui_threaded_rendering: fixed support for copying AddCallback() user data when > sizeof(void*) (#62)",
+        "url": "https://github.com/ocornut/imgui_club/commit/b083116866e05e0d4bccb2c7f28d94a76ee4965e"
+      },
+      "release": null
+    },
+    {
+      "repo": "Rezonality/zep",
+      "url": "https://github.com/Rezonality/zep",
+      "branch": "master",
+      "archived": false,
+      "pushed_at": "2026-05-23T09:33:40Z",
+      "license": "NOASSERTION",
+      "description": "Zep - An embeddable editor, with optional support for using vim keystrokes. ",
+      "head": {
+        "repo": "Rezonality/zep",
+        "sha": "7aa7ed940d5c889dc6b27a2529a740c0bb2ad6af",
+        "date": "2026-05-22T12:06:36Z",
+        "message": "feat: add Metal syntax highlighting",
+        "url": "https://github.com/Rezonality/zep/commit/7aa7ed940d5c889dc6b27a2529a740c0bb2ad6af"
+      },
+      "release": null,
+      "license_status": "NOASSERTION metadata; inspect actual licenses before adoption"
+    }
+  ]
+}
