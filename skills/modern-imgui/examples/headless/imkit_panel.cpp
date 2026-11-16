@@ -2,10 +2,10 @@
 #include <imkit/imkit.h>
 
 namespace modern_imgui_examples {
-void DrawSettingsPanel(dear_imgui_examples::SettingsModel& model, PanelState& panel)
+void DrawSettingsPanel(dear_imgui_examples::SettingsModel& model, PanelState& panel, float scale)
 {
-    imkit::ThemeScope theme_scope(panel.theme, 1.0f);
-    ImGui::SetNextWindowSize(ImVec2(480, 320), ImGuiCond_Always);
+    imkit::ThemeScope theme_scope(panel.theme, scale);
+    ImGui::SetNextWindowSize(ImVec2(480*scale, 320*scale), ImGuiCond_Always);
     if (ImGui::Begin("Settings###imkit-settings", nullptr, ImGuiWindowFlags_NoSavedSettings))
     {
         auto& draft = panel.editor.draft;

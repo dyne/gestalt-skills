@@ -46,6 +46,7 @@ description: "Build, style, debug, review, and test Dear ImGui interfaces and in
    | Font lifetime/sizing, dynamic textures, images and DPI | [Fonts and textures](references/fonts-textures.md) |
    | Extension/framework choice and compatibility | [Extensions](references/extensions-automation.md) |
    | Headless CMake/CTest setup, shared panel tests, concise results and failure checks | [Headless testing](references/headless-testing.md) |
+   | First Linux GLFW/OpenGL host, isolated display, relocation and framebuffer evidence | [Native starter and testing](references/native-testing.md) |
    | Simulated clicks/typing, Test Engine setup, named paths, CI and captures | [UI automation](references/automation.md) |
    | Diagnostics, test layers, evaluation and evidence | [Verification](references/testing-debugging.md) |
 
@@ -65,6 +66,11 @@ description: "Build, style, debug, review, and test Dear ImGui interfaces and in
    null-backend, synthetic-input, Test Engine, pixel and real-platform checks
    establish different facts. Never replace a required rendered/platform check
    with a claim based on headless frames.
+   When native infrastructure is missing, adapt the optional
+   [native starter](references/native-testing.md), probe prerequisites first,
+   and keep candidate capture separate from an explicitly inspected baseline.
+   Reuse an unchanged application-owned build; do not rebuild unrelated targets
+   or add the native matrix for an ordinary headless-only change.
 6. Report the exact tested revision/backend, commands, observed results and
    untested conditions. Preserve assertions and explain missing prerequisites;
    continue useful independent checks without inventing success.

@@ -30,7 +30,7 @@ endif()
 add_library(headless_imgui STATIC
     "${IMGUI_DIR}/imgui.cpp" "${IMGUI_DIR}/imgui_draw.cpp"
     "${IMGUI_DIR}/imgui_widgets.cpp" "${IMGUI_DIR}/imgui_tables.cpp"
-    "${IMGUI_DIR}/imgui_demo.cpp" "${IMGUI_DIR}/backends/imgui_impl_null.cpp")
+    "${IMGUI_DIR}/backends/imgui_impl_null.cpp")
 target_include_directories(headless_imgui PUBLIC "${IMGUI_DIR}" "${IMGUI_DIR}/backends")
 target_link_libraries(headless_imgui PUBLIC headless_config)
 
@@ -74,7 +74,7 @@ if(IMKIT_DIR)
 endif()
 
 # Check exit AND result counts. WILL_FAIL alone can conceal unrelated failures.
-foreach(probe IN ITEMS failure_probe no_such_case count_mismatch)
+foreach(probe IN ITEMS failure_probe no_such_case count_mismatch undrained timeout_probe)
     add_test(NAME "headless.runner.${probe}" COMMAND "${CMAKE_COMMAND}"
         "-DRUNNER=$<TARGET_FILE:ui_tests>" "-DCASE=${probe}"
         "-DREPORT=${CMAKE_CURRENT_BINARY_DIR}/${probe}.xml"

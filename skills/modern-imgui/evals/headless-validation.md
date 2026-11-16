@@ -59,3 +59,17 @@ transaction, background-worker, or Windows/macOS acceptance is established.
 Reduced motion was checked as configuration, not animated pixels. The frame
 budget and process timeout are configured; an actual hung callback was not
 injected. Revalidate after changing dependency pins or the harness contracts.
+
+## 2026-11-16 extension
+
+The earlier counts and limits above describe the original run. The current
+fixture adds undrained-queue and actual held-callback wall-timeout probes,
+preserves queue counts before abort and omits the unused demo compilation
+unit. The ImKit-enabled combination at the same core/engine/ImKit pins passed
+9/9 CTest wrappers with no wrapper skips. The timeout callback actually entered
+before the external process deadline terminated it. Unselected engine
+registrations remain excluded from executed counts. The ImKit panel now takes
+an optional scale parameter (default1 retains the original tests).
+See the separate [native validation record](native-validation.md) for these
+extensions' runtime context and native starter evidence; null-backend results
+still establish no framebuffer or OS input behavior.
