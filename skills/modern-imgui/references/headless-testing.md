@@ -105,14 +105,23 @@ process timeout cover different stalls. When invoking the binary directly,
 supply an outer process timeout too. JUnit includes unselected tests as skipped:
 count executed identities and outcomes, not every `testcase` element.
 
-Three CTest harness checks run a failing assertion, an unknown filter, and a
-successful selection with the wrong expected count. They pass only when the
-child returns exit 1 with the expected result counts and a report; these are
+Five CTest harness checks run a failing assertion, an unknown filter, a
+successful selection with the wrong expected count, an undrained queue and a
+held callback stopped by a real outer wall-clock timeout. The first four pass
+only when the child returns exit1 with the exact expected counts and a report;
+the timeout probe additionally requires its callback-entry marker and observed
+process timeout. These are
 failure-handling checks, not successful GUI
 journeys. Keep them when adapting the runner so CI cannot silently pass zero
-tests, accept incomplete selection or swallow a failure.
+tests, accept incomplete selection or swallow a failure. Queue counts are read
+before aborting the engine. The runner's optional final `undrained` argument is
+a negative-test seam, not a production execution mode. The example omits the
+unused `imgui_demo.cpp` compilation unit.
 
 Headless results establish simulated interaction and application contracts.
 Use rendered/platform tests separately for appearance, OS input, IME, screen
 readers, multi-monitor DPI, native windows and devices. These tests neither
 need nor claim a framebuffer.
+
+Use the separate [native starter](native-testing.md) for actual Linux window,
+renderer, teardown and capture evidence; it does not replace these model tests.

@@ -12,7 +12,7 @@ void RegisterHeadlessTests(ImGuiTestEngine* engine);
 int main(int argc, char** argv)
 {
     int expected = 0;
-    if (argc != 4)
+    if (argc != 4 && argc != 5)
     {
         std::fprintf(stderr, "usage: ui_tests FILTER REPORT.xml EXPECTED_COUNT\n");
         return 2;
@@ -20,7 +20,7 @@ int main(int argc, char** argv)
     const char* end = argv[3] + std::strlen(argv[3]);
     const auto parsed = std::from_chars(argv[3], end, expected);
     if (!argv[1][0] || !argv[2][0] || parsed.ec != std::errc{} ||
-        parsed.ptr != end || expected <= 0)
+        parsed.ptr != end || expected <= 0 || (argc == 5 && std::strcmp(argv[4], "undrained") != 0))
         return 2;
 
     // Check writability and truncate a previous report so stale results cannot pass.
@@ -57,7 +57,7 @@ int main(int argc, char** argv)
     RegisterHeadlessTests(engine);
     ImGuiTestEngine_Start(engine, ImGui::GetCurrentContext());
     ImGuiTestEngine_QueueTests(engine, ImGuiTestGroup_Unknown, argv[1]);
-    constexpr int frame_limit = 5000;
+    const int frame_limit = argc == 5 ? 0 : 5000; // Explicit negative harness probe only.
     int frames = 0;
     while (!ImGuiTestEngine_IsTestQueueEmpty(engine) && frames < frame_limit)
     {
@@ -70,10 +70,10 @@ int main(int argc, char** argv)
         ++frames;
     }
     const bool drained = ImGuiTestEngine_IsTestQueueEmpty(engine);
-    if (!drained)
-        ImGuiTestEngine_TryAbortEngine(engine);
     ImGuiTestEngineResultSummary result;
     ImGuiTestEngine_GetResultSummary(engine, &result);
+    if (!drained)
+        ImGuiTestEngine_TryAbortEngine(engine); // Preserve queue counts before abort mutates them.
     bool passed = drained && result.CountTested == expected &&
         result.CountSuccess == expected && result.CountInQueue == 0;
     ImGuiTestEngine_Stop(engine); // Exports JUnit and joins the test coroutine.

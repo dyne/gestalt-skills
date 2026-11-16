@@ -46,6 +46,11 @@ focus/disabled/selection states and the actual renderer. Renderer upgrades need
 texture create/update/destroy, clipping/offsets, resize/device-loss and in-flight
 resource-lifetime checks. Do not require this whole matrix for a tooltip edit.
 
+When an actual Linux host or capture runner is missing, use the optional
+[native starter](native-testing.md). Its owned display, relocation smoke and
+lossless capture helpers address that setup once. They retain failed evidence
+and distinguish a captured candidate from an explicitly inspected baseline.
+
 The skill's `examples/README.md` gives compile/run commands for 12
 original patterns, two direct-input/scope harnesses, a context-free command
 check and an optional Test Engine fixture using a shared settings panel.

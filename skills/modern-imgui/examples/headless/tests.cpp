@@ -2,6 +2,9 @@
 #include "imgui.h"
 #include "imgui_test_engine/imgui_te_engine.h"
 #include "imgui_test_engine/imgui_te_context.h"
+#include <chrono>
+#include <thread>
+#include <cstdio>
 #ifdef HEADLESS_WITH_IMKIT
 #include "imkit_panel.h"
 #include <cmath>
@@ -104,5 +107,11 @@ void RegisterHeadlessTests(ImGuiTestEngine* engine)
     test = IM_REGISTER_TEST(engine, "failure_probe", "intentional_failure");
     test->TestFunc = [](ImGuiTestContext* ctx) {
         IM_CHECK_EQ(1, 2); // Harness regression only; not part of a positive UI selection.
+    };
+    test = IM_REGISTER_TEST(engine, "timeout_probe", "held_callback");
+    test->GuiFunc = [](ImGuiTestContext*) {
+        std::puts("TIMEOUT_PRECONDITION_ENTERED");
+        std::fflush(stdout);
+        std::this_thread::sleep_for(std::chrono::seconds(60)); // Outer process timeout must stop this.
     };
 }

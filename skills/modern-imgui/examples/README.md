@@ -135,6 +135,18 @@ this fixture. Keep it opt-in and test-only when adapting to an application;
 reuse the actual UI instead of replacing it with a fixture merely to get green
 tests. Follow the existing C/C++ workflow for compilers, launchers and builds.
 
+## Optional native Linux starter
+
+[native-glfw-opengl/CMakeLists.txt](native-glfw-opengl/CMakeLists.txt) builds a
+real single-owner GLFW/OpenGL host from local dependencies, using this same
+settings panel or the compatible ImKit panel. Its two CTest cases exercise
+actual rendering/readback, hidden-window recovery, resizing/scaling, resource
+teardown and relocation followed by a real window-manager close gesture.
+Use `references/native-testing.md` from the skill root for
+the prerequisite probe, owned display, evidence paths and baseline workflow.
+These checks supplement the headless journeys; they do not establish native
+IME, screen-reader, physical GPU/mixed-monitor or non-Linux qualification.
+
 ## Primary references
 
 - [Public API and comments](https://github.com/ocornut/imgui/blob/v1.93.0/imgui.h)

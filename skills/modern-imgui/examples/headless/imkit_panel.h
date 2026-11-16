@@ -10,5 +10,5 @@ struct PanelState {
     bool apply_requests = true; // Host policy, also permits observing a rejected request.
     int toggle_requests = 0;
 };
-void DrawSettingsPanel(dear_imgui_examples::SettingsModel& model, PanelState& panel);
+void DrawSettingsPanel(dear_imgui_examples::SettingsModel& model, PanelState& panel, float scale=1.0f);
 }
