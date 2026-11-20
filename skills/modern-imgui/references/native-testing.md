@@ -77,10 +77,15 @@ execution uses Python's standard temporary-directory selection.
 
 Each invocation creates a unique `run-*` directory under `--output`. `{output}`
 in command arguments expands to that run directory, so reruns preserve prior
-logs/captures. `processes.json` records command/exit, timeout, owned PIDs and
-remaining live group members; logs never contain the cookie bytes. Failure,
-startup rejection and timeout must still settle owned processes. Native CTest
-cases run serially. Independent jobs can choose disjoint `--display-start`
+logs/captures. Give the outer test invocation a fresh directory too. Put CTest
+or Test Engine JUnit and the runner output under that directory. For CTest use
+`--output-junit <attempt-dir>/ctest.xml` and save console output there before
+the next invocation replaces `Testing/Temporary/LastTest.log`. Summarize the
+intended and executed cases, result, and first failure path. Keep the full
+attempt for follow-up inspection. `processes.json` records command/exit,
+timeout, owned PIDs and remaining live group members. Keep cookie bytes out of
+logs. Failure, startup rejection and timeout must still settle owned processes.
+Native CTest cases run serially. Independent jobs can choose disjoint `--display-start`
 ranges; a startup collision is failure, not evidence of another job's display.
 
 ```sh
