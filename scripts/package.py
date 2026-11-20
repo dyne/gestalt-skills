@@ -123,7 +123,7 @@ def build(root, version):
             "version": version, "skills": records}
 
 
-def check(root):
+def check(root, *, expected_version=None):
     manifest = root / "manifest.json"
     require(manifest.is_file() and not manifest.is_symlink(), "manifest must be a regular file")
     data = json.loads(manifest.read_text(encoding="utf-8"), object_pairs_hook=unique_object)
@@ -153,13 +153,18 @@ def check(root):
                     "invalid SHA-256")
     expected = build(root, data["version"])
     require(data == expected, "manifest differs from canonical tree (coverage, order, metadata or digest)")
+    if expected_version is not None:
+        require(VERSION.fullmatch(expected_version), "invalid expected release version")
+        require(data["version"] == expected_version,
+                f"committed manifest version {data['version']} does not match "
+                f"release version {expected_version}; regenerate and commit manifest.json")
     return data
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("command", choices=("generate", "check"))
-    parser.add_argument("--version", help="explicit release version for generation")
+    parser.add_argument("--version", help="version to generate or expected version to check")
     args = parser.parse_args()
     try:
         if args.command == "generate":
@@ -168,8 +173,7 @@ def main():
             require(not (ROOT / "manifest.json").is_symlink(), "symlink manifest prohibited")
             (ROOT / "manifest.json").write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
         else:
-            require(args.version is None, "--version applies only to generation")
-            data = check(ROOT)
+            data = check(ROOT, expected_version=args.version)
         print(f"{args.command}: {len(data['skills'])} skills, "
               f"{sum(len(s['files']) for s in data['skills'])} files, version {data['version']}")
         return 0

@@ -80,14 +80,17 @@ jobs:
             printf 'should_release=%s\n' "$should_release"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Validate and version package
+      - name: Validate committed package
         env:
           RELEASE_VERSION: ${{ steps.release.outputs.version }}
+          SHOULD_RELEASE: ${{ steps.release.outputs.should_release }}
         run: |
           set -Eeuo pipefail
-          python3 scripts/package.py check
-          python3 scripts/package.py generate --version "$RELEASE_VERSION"
-          python3 scripts/package.py check
+          if [[ "$SHOULD_RELEASE" == true ]]; then
+            python3 scripts/package.py check --version "$RELEASE_VERSION"
+          else
+            python3 scripts/package.py check
+          fi
           python3 -m unittest discover -s tests -v
 
       - name: Build standalone skill ZIPs
