@@ -1,6 +1,6 @@
 ---
 name: modern-imgui
-description: "Build, style, debug, review, and test Dear ImGui interfaces and integrations. Use for imgui-modern-kit (ImKit) adoption, components, themes and skins; testable panels, stable IDs, editing/undo, tables, input capture, fonts/DPI, backends, docking/viewports, extensions and UI automation."
+description: "Build, style, debug, review, and test Dear ImGui interfaces and integrations. Use for imgui-modern-kit (ImKit) adoption, components, themes and skins; testable panels, stable IDs, editing/undo, tables, input capture, fonts/DPI, live scaling, backends, Windows/macOS ports, docking/viewports, extensions, accessibility and UI automation."
 ---
 
 # Modern ImGui
@@ -43,7 +43,9 @@ description: "Build, style, debug, review, and test Dear ImGui interfaces and in
    | IDs, scopes, text, editing, popups, shortcuts, custom widgets | [Core interaction](references/core-interaction.md) |
    | Tables, filtering, clipping, sorting, multi-selection | [Large data and selection](references/data-selection.md) |
    | Frames, input, rendering, threads, docking and OS viewports | [Integration](references/integration.md) |
+   | Windows or macOS port, native CI and relocated package checks | [Desktop portability](references/desktop-portability.md) |
    | Font lifetime/sizing, dynamic textures, images and DPI | [Fonts and textures](references/fonts-textures.md) |
+   | Semantic snapshots, native accessibility adapters and screen readers | [Accessibility](references/accessibility.md) |
    | Extension/framework choice and compatibility | [Extensions](references/extensions-automation.md) |
    | Headless CMake/CTest setup, shared panel tests, concise results and failure checks | [Headless testing](references/headless-testing.md) |
    | First Linux GLFW/OpenGL host, isolated display, relocation and framebuffer evidence | [Native starter and testing](references/native-testing.md) |
@@ -55,9 +57,13 @@ description: "Build, style, debug, review, and test Dear ImGui interfaces and in
    safe text formatting. Forward platform input to ImGui regardless of capture;
    use capture to gate application reactions. Keep texture/draw-data lifetimes
    valid through consumption. Prefer public composition to incidental internals.
-5. Build against the selected revision and test the changed behavior at the
-   appropriate layer. Prefer stable named-widget actions in an existing Test
-   Engine integration; use direct input injection for focused regressions.
+5. Start with one representative journey in the existing test runner. Build
+   against the selected revision and assert the application outcome. Check one
+   native journey when the change depends on rendering, OS input or windowing.
+   Use a fresh evidence directory per attempt. Summarize the case results and
+   point to the first failure in the retained logs. Prefer stable named-widget
+   actions in an existing Test Engine integration. Use direct input injection
+   for focused regressions.
    If a runner is missing, adapt the [headless harness](references/headless-testing.md)
    to call the application's actual drawing code and assert model outcomes.
    Require actual intended test execution and assertions on application results.

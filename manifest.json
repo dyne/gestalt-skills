@@ -212,7 +212,7 @@
       "files": [
         {
           "path": "skills/modern-imgui/SKILL.md",
-          "sha256": "bded2a31118ef7e69fb20df43ccbc8bc8d384c2a39d17bb10225ec4bddbf22a5"
+          "sha256": "c99a702c37f92eca6d9fdf2ebe0957e20192298431060df3f66fd903f0a6857f"
         },
         {
           "path": "skills/modern-imgui/evals/acceptance_cases.json",
@@ -323,6 +323,10 @@
           "sha256": "d577e12cdab2bd994a9b48e8c9e98cb6b51addd6a3932d0e71a66f03c96253b2"
         },
         {
+          "path": "skills/modern-imgui/references/accessibility.md",
+          "sha256": "8f2eab842039746e3a9a095b51af3d6b747681f41ed76b0b77b93bf16db7233d"
+        },
+        {
           "path": "skills/modern-imgui/references/automation-sources.json",
           "sha256": "aba2f696f938f0ead4e7ce9894ccd1acf5303ba54e84234fb8caaf2f67a692ee"
         },
@@ -339,6 +343,10 @@
           "sha256": "91c6b3df56d64d19c6eeb768ad0ef8bc96407d3a3f50aac4678843b0349300db"
         },
         {
+          "path": "skills/modern-imgui/references/desktop-portability.md",
+          "sha256": "fe23d83c23204e34726341deb79f588f566cac6d5ebcf1bf8094beff7648cebd"
+        },
+        {
           "path": "skills/modern-imgui/references/extensions-automation.md",
           "sha256": "17a4f3e3cbfe50e49a1ea792232aa46bc0a49e06e8aaa4bcf972b6c8ab9e9262"
         },
@@ -352,7 +360,7 @@
         },
         {
           "path": "skills/modern-imgui/references/gui-workflow.md",
-          "sha256": "c00fc9ae700011ee531b2e0199a6f051c5124fb590676ee44e512de18bcdb8d1"
+          "sha256": "776ce2efcecba7788dcd7316e65dfece72d8e02a1f1d331755c16bd396271614"
         },
         {
           "path": "skills/modern-imgui/references/headless-testing.md",
@@ -368,7 +376,7 @@
         },
         {
           "path": "skills/modern-imgui/references/modern-kit-themes.md",
-          "sha256": "b44692053da46da129b936377b46281bf9d2d8b400e06f9c19283fcd1b0406e4"
+          "sha256": "c8e820c4ebc4e0fc360901bec6d8b310549c15299b1c0e15e5e5d3ac721eca42"
         },
         {
           "path": "skills/modern-imgui/references/modern-kit.md",
@@ -376,7 +384,7 @@
         },
         {
           "path": "skills/modern-imgui/references/native-testing.md",
-          "sha256": "2d5fa483ff808a1aa3603f92a75b99fb40093944d4a49d3c6454551a41888d87"
+          "sha256": "a42b8ea0378f702f496adfcdb8ad1f009c039ff5fa4da9b3a861d9519ff71fc6"
         },
         {
           "path": "skills/modern-imgui/references/profile.md",

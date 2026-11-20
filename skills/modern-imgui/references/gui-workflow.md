@@ -83,10 +83,10 @@ multi-editor conflicts remain application responsibilities. Initializing the
 draft from a changed record, and resolving external edits while it is dirty,
 also require an explicit host policy.
 
-Keyboard support does not establish screen-reader accessibility. Core lacks
-full accessibility and complex text shaping/RTL support; assess these product
-requirements before committing to the stack. A compile or headless interaction
-test cannot establish usability or visual quality.
+If screen-reader support is required, validate the
+[accessibility path](accessibility.md) on one production panel before building
+out the rest. Assess complex text shaping and RTL requirements when choosing
+the stack. Inspect rendered output for visual quality and layout.
 
 Sources: [core model/identity contracts](https://github.com/ocornut/imgui/blob/v1.93.0/docs/FAQ.md),
 [current toolkit scope](https://github.com/ocornut/imgui#the-pitch),

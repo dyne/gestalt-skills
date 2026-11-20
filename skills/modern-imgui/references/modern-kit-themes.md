@@ -40,6 +40,22 @@ The documented scale range is 0.50–2.50, default 1.25; pass the host's chosen 
 scale explicitly. Monitor DPI and renderer framebuffer scaling remain host
 responsibilities. Do not also scale the same metrics/fonts elsewhere.
 
+For a live interface-size preference, keep the user setting separate from OS
+content scale and renderer framebuffer scale. Commit the requested setting
+through the existing preference path. At the next frame boundary, rebuild the
+theme from the same base tokens, apply the effective scale once and pass the
+updated theme to the components. Keep layout flexible so the scale controls
+remain reachable in the minimum supported window.
+
+Test one native Preferences journey. Increase the size with the panel open and
+assert that the font grows. At the largest supported scale, use the controls in
+the minimum-size window and verify that the decrease control is reachable.
+Relaunch with the same isolated settings to check persistence, then reset and
+verify that the default scale and sizing apply on the next frame. Exercise
+invalid stored values in a context-free test.
+
+See the [Roots GUI native Preferences test](https://github.com/LuganoPlanB/bitcoin-roots-gui/blob/d5bad7318b31bbc305461b65085f8c9989d2cff7/tests/theme/native_preferences.cpp).
+
 For temporary appearance during UI submission, use `ThemeScope` before Begin
 or around a widget group. It restores style, font and component metrics, nests
 on the same live context, and must be destroyed before that context. Keep all
