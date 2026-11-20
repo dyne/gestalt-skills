@@ -4,7 +4,7 @@ Optional, maintained agent skills from Dyne.org. Original content is MIT license
 This is an independent collection, separate from the `gestalt-agents`
 infrastructure plugin and its third-party `--extra-skills` bundle.
 
-The canonical tree is `skills/<name>/`; collection version `0.7.0` contains:
+The canonical tree is `skills/<name>/`. The collection contains:
 
 - `c-cpp`: C/C++ implementation, CMake/Meson/Make builds, GDB debugging,
   static analysis, sanitizers and LLVM tooling. A short shared workflow loads
@@ -123,7 +123,7 @@ After editing skill files, update the release version intentionally and generate
 the deterministic manifest (same inputs produce identical bytes):
 
 ```sh
-python3 scripts/package.py generate --version 0.7.0
+python3 scripts/package.py generate --version VERSION
 python3 scripts/package.py check
 ```
 
@@ -142,14 +142,12 @@ separate upstream license if imported material is introduced later.
 
 Push conventional commits to `main`, or dispatch the release workflow on `main`.
 With no semantic release tag yet, the first release uses the committed manifest
-version (`0.7.0`). Later releases use `ietf-tools/semver-action`: `feat` bumps the
+version. Later releases use `ietf-tools/semver-action`: `feat` bumps the
 minor version; `fix`, `perf`, `refactor`, and `test` bump the patch version;
 `BREAKING CHANGE` bumps the major version. Commits without a version bump run
 validation without publishing a new release.
 
-The workflow validates the source manifest, generates the release-version
-manifest in its checkout, runs the full Python suite, builds all standalone
-ZIPs, checks their digests, and publishes them with `SHA256SUMS` under `v<version>`.
-The tag points to the source commit; generated manifest version changes are
-packaging-only and are not committed back to `main`. No skill source is rewritten
-for standalone packaging.
+Before merging a release-worthy change, regenerate and commit the manifest
+with the version selected by the bump. The workflow checks that this committed
+version matches the planned tag, runs the Python suite, and publishes the
+standalone ZIPs and `SHA256SUMS` from that same commit.

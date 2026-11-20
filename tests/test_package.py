@@ -37,6 +37,17 @@ class PackageContract(unittest.TestCase):
         self.assertEqual(package.build(self.root, version), self.original)
         self.assertEqual(package.build(self.root, version), package.build(self.root, version))
 
+    def test_release_check_requires_the_committed_manifest_version(self):
+        version = self.original["version"]
+        manifest = self.root / "manifest.json"
+        original = manifest.read_bytes()
+        self.assertEqual(package.check(self.root, expected_version=version), self.original)
+        with self.assertRaisesRegex(
+            ValueError, "committed manifest version .* does not match release version"
+        ):
+            package.check(self.root, expected_version="999.0.0")
+        self.assertEqual(manifest.read_bytes(), original)
+
     def test_drift(self):
         with (self.root / "skills/nuklear-gui/SKILL.md").open("a") as file:
             file.write("\nChanged instructions.\n")
