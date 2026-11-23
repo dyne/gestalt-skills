@@ -25,10 +25,10 @@ win-installer: out/windows-x64/dial.exe
 
 ### CMake with a staged GUI, CLI and data
 
-Reuse the actual install rules for the chosen configuration. This example installs both targets at the root of the stage to match the template's GUI path. Preserve a project's existing `bin/` layout by adapting the shortcut, launch and uninstall-icon paths together. Include the existing `install(FILES ...)` rules for runtime dependencies, data, license and the versioned installed manifest.
+Reuse the actual install rules for the chosen configuration. This example installs both targets in `bin/`. Set `binaryDirectory` to `bin` in the product record so the GUI launch, shortcut and uninstall icon resolve there; omit it for a flat stage. Include the existing `install(FILES ...)` rules for runtime dependencies, data, license and the versioned installed manifest.
 
 ```cmake
-install(TARGETS dial dial-cli RUNTIME DESTINATION .)
+install(TARGETS dial dial-cli RUNTIME DESTINATION bin)
 set(INSTALLER_PROFILE Classic CACHE STRING "Classic or Silent")
 add_custom_target(win-installer
   COMMAND "${CMAKE_COMMAND}" "-Dbinary=${CMAKE_BINARY_DIR}" "-Dconfig=$<CONFIG>"

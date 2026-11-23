@@ -2,6 +2,20 @@
 
 The shipped template enables this layout when the product record supplies `welcomeCredit`, `wizardImage` and `guiExecutable`. Set `silentShortcut` to `create` or `omit` according to the maker's choice. The example credit for Bitcoin Viz was **Brought to you by Lugano's Plan ₿.** and its homepage was `https://plan-b.foundation/bitcoin-viz`. Ask before reusing a sponsor's wording or substituting a repository URL.
 
+Example additions to the adopted product record for a GUI and CLI staged together:
+
+```json
+{
+  "guiExecutable": "viewer.exe",
+  "binaryDirectory": "bin",
+  "welcomeCredit": "Brought to you by Example Studio.",
+  "wizardImage": "art/installer-branding.bmp",
+  "silentShortcut": "create"
+}
+```
+
+Keep `executable` set to the primary CLI if that is the package's existing identity. Set `guiExecutable` to the desktop launcher and include both binaries in the stage. In Bitcoin Viz the released AppId is `{c6869cca-c9e9-43cd-8756-020bf8916539}`. Preserve it for that product's upgrades. The fixture generates a different GUID for every test run.
+
 | Page | Interaction to verify |
 | --- | --- |
 | Welcome | The exact credit and logos render. A `TNewLinkLabel` has a tab stop and opens the confirmed HTTPS homepage. Test Tab and Enter in the real wizard. |

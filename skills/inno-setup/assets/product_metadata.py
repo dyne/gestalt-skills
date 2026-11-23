@@ -87,11 +87,16 @@ END
 
 
 def render_include(config, data, numbers, exe, icon):
+    directory = data.get("binaryDirectory") or ""
+    parts = directory.replace("\\", "/").split("/") if directory else []
+    if any(part in ("", ".", "..") or re.search(r'[<>:"|?*{}]', part) for part in parts):
+        raise ValueError("binaryDirectory must be a relative installation subdirectory")
     fields = {
         "ProductName": data["name"], "ProductPublisher": data["publisher"],
         "ProductHomepage": data["homepage"], "ProductExe": exe,
         "ProductFixedVersion": ".".join(map(str, numbers)),
         "ProductLicenseFile": asset_path(config, data["licenseFile"]),
+        "ProductBinSuffix": "".join("\\" + part for part in parts),
     }
     if icon:
         fields["ProductIcon"] = icon

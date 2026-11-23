@@ -4,6 +4,8 @@ Bitcoin Viz v0.8.1 illustrates the handoff. The version job computed a semantic 
 
 For the target project, inspect version files, tag selection, install rules, resource/link inputs, `.iss` and `AppId`, `sign-exe` or signing service, workflow outputs, receipt generation and published assets. Use `gh release view TAG --json assets,tagName,url` to identify the real URL and compare it to WinGet. Trace the candidate SHA through every dependent job. Preserve an existing identifier even when filenames or branding change.
 
+For this case, the receipt identified commit `10a244c5c5588c6936ca20194f5492335589e51d`. The Windows CI EXE, receipt digest, public EXE and public checksum agreed on `7821e2859846d7d35cbba206915dc85b18eef477ab05391ecb17902dc18f38d9`. The public PE's certificate table was empty. The upstream Windows job built and smoke-tested the installed application. This is evidence for v0.8.1; ask the maker what signature policy applies to the next release. [Upstream release run](https://github.com/LuganoPlanB/bitcoin-viz/actions/runs/45222713317)
+
 ## Transfer and publication
 
 1. Once the fixture passes, build the release configuration from its actual dependencies. Install to a clean stage. Check the installed manifest, GUI and CLI paths, DLL load, real data and license inventory. Sign as required, generate Setup, verify its signature and write a receipt recording version, candidate commit, architecture, exact filename, signing state and SHA-256. Run the **actual Setup** from a clean user profile, exercise installed commands and the project's normal runtime smoke test outside the checkout, then uninstall. For Bitcoin Viz that includes the desktop graphics smoke with the Windows software GL setup and any supported redirected diagnostic paths.
