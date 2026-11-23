@@ -15,6 +15,10 @@ The canonical tree is `skills/<name>/`. The collection contains:
 - `golang`: Go implementation, design, errors/resources, concurrency, secure
   I/O, testing, performance and module/toolchain workflows. Adapted guidance
   retains its upstream MIT notice inside the skill.
+- `inno-setup` stamps Windows executables with product metadata and an optional
+  icon, builds a normal wizard or silent WinGet installer, and wires a
+  `win-installer` target into CI. Executable, setup and manifest generation
+  share one product record.
 - `modern-imgui`: Dear ImGui workflows with preference for suitable
   imgui-modern-kit components when available, including ImKit adoption,
   architecture, semantic themes, skins and widget guidance. Includes the core
@@ -37,7 +41,7 @@ assets. No runtime downloads or Python dependencies are required.
 
 Download `<skill>-v<version>.zip` from
 [GitHub releases](https://github.com/dyne/gestalt-skills/releases). Each of the
-seven skills is published separately, using the same collection version. Each ZIP
+eight skills is published separately, using the same collection version. Each ZIP
 contains one unversioned `<skill>/` directory with `SKILL.md`, all its resources
 and upstream notices, and the root license as `LICENSE.collection`.
 

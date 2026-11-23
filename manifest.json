@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "repository": "dyne/gestalt-skills",
   "source": "https://github.com/dyne/gestalt-skills",
-  "version": "0.10.1",
+  "version": "0.11.0",
   "skills": [
     {
       "name": "c-cpp",
@@ -203,6 +203,60 @@
         {
           "path": "skills/golang/references/tooling.md",
           "sha256": "6b49be8b4703589852ffb8e8de0248b858d1fa8903fb59fb24e8d17c6946c6be"
+        }
+      ]
+    },
+    {
+      "name": "inno-setup",
+      "entry": "skills/inno-setup/SKILL.md",
+      "files": [
+        {
+          "path": "skills/inno-setup/SKILL.md",
+          "sha256": "1470518e51b40f455336b6301af25f8128a2d5363b725371caf0576e12ee16f1"
+        },
+        {
+          "path": "skills/inno-setup/assets/build-installer.ps1",
+          "sha256": "5e928aa1b889d3ebee0b21bad287b0ebb368977ee2fa12068545c5c5b2f277ff"
+        },
+        {
+          "path": "skills/inno-setup/assets/installer.iss.in",
+          "sha256": "a2320fd33d5d8f4450dfcb7cbd74c99cf0162a088fdf355f3005c7e18ea9fc91"
+        },
+        {
+          "path": "skills/inno-setup/assets/product.json",
+          "sha256": "84c1e25540316955e847a4b4a6b4e2528ffd533954cb28fcb5acac0bf057a93b"
+        },
+        {
+          "path": "skills/inno-setup/assets/product_metadata.py",
+          "sha256": "c4de82d807185dd5dd86e8e930f61fca77ad74be7ca9286edc4359a7c498a5be"
+        },
+        {
+          "path": "skills/inno-setup/assets/render-winget.py",
+          "sha256": "20a8b81dd0262162eba2e8c26a55cde237fd248dccc2b15a938a81038ddf98fb"
+        },
+        {
+          "path": "skills/inno-setup/assets/winget/Example.Dial.installer.yaml.in",
+          "sha256": "e4f500eb44137669e83b91a822ba712c8d256b84508f6f266259b3da2ec877c7"
+        },
+        {
+          "path": "skills/inno-setup/assets/winget/Example.Dial.locale.en-US.yaml.in",
+          "sha256": "75a6c0c5a5397a64ebdb9fd80ff14e3909d6d779fa62996ac8d0c3d0c01ee28c"
+        },
+        {
+          "path": "skills/inno-setup/assets/winget/Example.Dial.yaml.in",
+          "sha256": "44a1cd145bf662e9f9a9e4e2297dc80823816abd0feafd63f12835d11379683f"
+        },
+        {
+          "path": "skills/inno-setup/references/build.md",
+          "sha256": "cf2a4baee7733be1c9e5378f954b8b3a590670a12f42eb3d71b738d11af6dcb6"
+        },
+        {
+          "path": "skills/inno-setup/references/stamping.md",
+          "sha256": "b37e90001bd1a5f29f858cc705bfad759b97eeff5200a4ab919ea3a92c4589d9"
+        },
+        {
+          "path": "skills/inno-setup/references/winget.md",
+          "sha256": "ff398053329e1a3527459e521264bd5b9ea278d48831be2c9341c7e35771c6e8"
         }
       ]
     },

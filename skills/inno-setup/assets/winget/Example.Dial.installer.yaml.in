@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.28.0.schema.json
+PackageIdentifier: Example.Dial
+PackageVersion: @VERSION@
+InstallerType: inno
+Installers:
+  - Architecture: x64
+    Scope: user
+    InstallerUrl: @URL@
+    InstallerSha256: @SHA256@
+    InstallerSwitches:
+      Silent: /SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
+      SilentWithProgress: /SP- /SILENT /SUPPRESSMSGBOXES /NORESTART
+      Custom: /CURRENTUSER
+  - Architecture: x64
+    Scope: machine
+    InstallerUrl: @URL@
+    InstallerSha256: @SHA256@
+    InstallerSwitches:
+      Silent: /SP- /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
+      SilentWithProgress: /SP- /SILENT /SUPPRESSMSGBOXES /NORESTART
+      Custom: /ALLUSERS
+ManifestType: installer
+ManifestVersion: 1.28.0

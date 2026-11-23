@@ -1,0 +1,13 @@
+---
+name: inno-setup
+description: "Create a normal Inno Setup wizard or a silent installer for WinGet. Stamp Windows executables with product metadata and an optional icon, integrate a win-installer build target and Windows CI, and prepare WinGet submissions."
+---
+
+# Inno Setup releases
+
+1. Inspect the package's Windows build and release job. Trace one release from its version source through the actual PE executables, runtime files, licenses, installer, artifact name and public URL. Check for an existing `.iss`, uninstall identity, and WinGet entry before creating any of them.
+2. Collect the release identity once. Ask for the exact **app name, publisher, homepage, license identifier/name and license file**, and whether the maker has a logo or Windows icon to use. Offer candidates from the checkout and reuse answers already given. Confirm the description and any supplied copyright notice. Capture the answers in the package's existing metadata source or adapt the [product record](assets/product.json). Use the same release version in every output.
+3. Resolve the choices that affect the files. Ask together about any unclear wizard preference (classic or streamlined), install scope (user, machine or both), and optional integration (CLI on PATH, shortcuts, associations). Derive the executable, architecture, build system and CI provider from the checkout where possible. Confirm payload additions that would change what users receive.
+4. Stamp each project-owned Windows executable during its actual release build. Copy the [metadata helper](assets/product_metadata.py) and follow the [resource compiler, linker and inspection recipe](references/stamping.md). Preserve resources already present. Verify the linked executable before signing or packaging.
+5. Adapt the [Inno script](assets/installer.iss.in), [compiler wrapper](assets/build-installer.ps1) and [build and CI recipe](references/build.md) into the package. Wire the stamped binary prerequisites into a public `win-installer` target, and call that target from Windows CI. For WinGet, confirm the package identifier and default locale and generate the three manifest files from the same product record using the [submission workflow](references/winget.md).
+6. Build and exercise the requested profile on a clean Windows runner. Follow the install, upgrade and uninstall checks in the build recipe. Return the changed files, exact build and unattended install commands, artifact path, and the checks actually run. Identify outstanding Windows or catalog checks. Prepare submission files locally and submit a public PR only when requested.
