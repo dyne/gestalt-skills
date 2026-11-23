@@ -1,0 +1,35 @@
+name: Inno Setup fixture
+on:
+  pull_request:
+    paths:
+      - 'skills/inno-setup/**'
+      - '.github/workflows/inno-fixture.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-2022
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Run installer fixture with Inno Setup 6.4.3
+        shell: pwsh
+        run: |
+          $setup = Join-Path $env:RUNNER_TEMP 'innosetup-6.4.3.exe'
+          Invoke-WebRequest 'https://github.com/jrsoftware/issrc/releases/download/is-6_4_3/innosetup-6.4.3.exe' -OutFile $setup
+          if ((Get-FileHash $setup).Hash -ne 'f3c42116542c4cc57263c5ba6c4feabfc49fe771f2f98a79d2f7628b8762723b') { throw 'Compiler installer digest mismatch' }
+          $dir = Join-Path $env:RUNNER_TEMP 'Inno643'
+          $p = Start-Process $setup -ArgumentList "/VERYSILENT /SP- /NORESTART /SUPPRESSMSGBOXES /CURRENTUSER /DIR=`"$dir`"" -PassThru -Wait
+          if ($p.ExitCode) { throw "Compiler install exited $($p.ExitCode)" }
+          python -B skills/inno-setup/fixture/run.py "$dir/ISCC.exe" "$env:RUNNER_TEMP/inno-evidence"
+          exit $LASTEXITCODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: installer-fixture-evidence
+          path: |
+            ${{ runner.temp }}/inno-evidence/*.log
+            ${{ runner.temp }}/inno-evidence/*.png

@@ -3,7 +3,9 @@ param(
     [Parameter(Mandatory)][ValidatePattern('^[0-9A-Za-z][0-9A-Za-z.+_-]*$')][string]$Version,
     [ValidateSet('Classic', 'Silent')][string]$InstallerProfile = 'Classic',
     [string]$Compiler = $env:ISCC,
-    [string]$Python = $env:PYTHON
+    [string]$Python = $env:PYTHON,
+    [string]$Stage,
+    [string]$ExpectedCompilerVersion
 )
 
 $ErrorActionPreference = 'Stop'
@@ -24,9 +26,19 @@ if (-not $Compiler -or -not (Get-Command $Compiler -CommandType Application -Err
 }
 $include = New-TemporaryFile
 try {
+    if ($ExpectedCompilerVersion) {
+        $info = (Get-Item (Get-Command $Compiler -CommandType Application).Source).VersionInfo
+        $actual = "$($info.FileMajorPart).$($info.FileMinorPart).$($info.FileBuildPart)"
+        if ($actual -ne $ExpectedCompilerVersion) { throw "Expected ISCC $ExpectedCompilerVersion, found $actual" }
+    }
     & $Python -B (Join-Path $PSScriptRoot 'product_metadata.py') inno --product (Join-Path $PSScriptRoot 'product.json') --version $Version --output $include.FullName
     if ($LASTEXITCODE) { exit $LASTEXITCODE }
     $defines = @("/DMyAppVersion=$Version", "/DProductInclude=$($include.FullName)")
+    if ($Stage) {
+        $folder = Get-Item -LiteralPath $Stage
+        if (-not $folder.PSIsContainer) { throw "Expected stage directory at $Stage" }
+        $defines += "/DStageDir=$($folder.FullName)"
+    }
     if ($InstallerProfile -eq 'Silent') { $defines += '/DStreamlined' }
     & $Compiler @defines (Join-Path $PSScriptRoot 'installer.iss')
     exit $LASTEXITCODE
