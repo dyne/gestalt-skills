@@ -1,0 +1,10 @@
+{
+  "name": "Dial",
+  "publisher": "Example Studio",
+  "homepage": "https://example.org/dial",
+  "description": "A command-line timer.",
+  "executable": "dial.exe",
+  "license": "MIT",
+  "licenseFile": "../LICENSE",
+  "iconFile": null
+}

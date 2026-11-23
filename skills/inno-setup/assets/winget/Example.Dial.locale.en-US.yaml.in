@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.defaultLocale.1.28.0.schema.json
+PackageIdentifier: Example.Dial
+PackageVersion: @VERSION@
+PackageLocale: en-US
+Publisher: @PUBLISHER@
+PackageName: @NAME@
+PackageUrl: @HOMEPAGE@
+License: @LICENSE@
+ShortDescription: @DESCRIPTION@
+ManifestType: defaultLocale
+ManifestVersion: 1.28.0

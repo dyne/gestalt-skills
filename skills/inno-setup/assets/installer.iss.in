@@ -1,0 +1,56 @@
+; Save as build/installer.iss. Replace @...@ values once when adopting it.
+; build-installer.ps1 selects the normal wizard or the silent WinGet profile.
+#ifndef MyAppVersion
+  #error Supply MyAppVersion from the release build
+#endif
+#include ProductInclude
+
+[Setup]
+AppId={{@APP_GUID@}
+AppName={#StringChange(ProductName, "{", "{{")}
+AppVersion={#MyAppVersion}
+AppPublisher={#StringChange(ProductPublisher, "{", "{{")}
+AppPublisherURL={#ProductHomepage}
+VersionInfoCompany={#ProductPublisher}
+VersionInfoProductName={#ProductName}
+VersionInfoDescription={#ProductName} Setup
+VersionInfoVersion={#ProductFixedVersion}
+VersionInfoProductVersion={#ProductFixedVersion}
+VersionInfoTextVersion={#MyAppVersion}
+VersionInfoProductTextVersion={#MyAppVersion}
+#ifdef ProductCopyright
+VersionInfoCopyright={#ProductCopyright}
+#endif
+#ifdef ProductIcon
+SetupIconFile={#ProductIcon}
+#endif
+DefaultDirName={autopf}\@INSTALL_FOLDER@
+DefaultGroupName={#StringChange(ProductName, "{", "{{")}
+UninstallDisplayIcon={app}\{#ProductExe}
+PrivilegesRequired=lowest
+; Dual-scope starter. Remove the override for a fixed-scope product.
+PrivilegesRequiredOverridesAllowed=commandline
+ArchitecturesAllowed=x64compatible
+ArchitecturesInstallIn64BitMode=x64compatible
+OutputDir=..\dist
+WizardStyle=modern
+SolidCompression=yes
+#ifdef Streamlined
+OutputBaseFilename=@SLUG@-{#MyAppVersion}-windows-x64-winget-setup
+DisableStartupPrompt=yes
+DisableWelcomePage=yes
+DisableDirPage=yes
+DisableProgramGroupPage=yes
+DisableReadyPage=yes
+DisableFinishedPage=yes
+#else
+OutputBaseFilename=@SLUG@-{#MyAppVersion}-windows-x64-setup
+DisableWelcomePage=no
+DisableDirPage=no
+DisableReadyPage=no
+DisableFinishedPage=no
+#endif
+
+[Files]
+Source: "..\out\windows-x64\{#ProductExe}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#ProductLicenseFile}"; DestDir: "{app}\licenses"; Flags: ignoreversion
