@@ -26,7 +26,11 @@ SetupIconFile={#ProductIcon}
 #endif
 DefaultDirName={autopf}\@INSTALL_FOLDER@
 DefaultGroupName={#StringChange(ProductName, "{", "{{")}
+#ifdef ProductGuiExe
+UninstallDisplayIcon={app}\{#ProductGuiExe}
+#else
 UninstallDisplayIcon={app}\{#ProductExe}
+#endif
 PrivilegesRequired=lowest
 ; Dual-scope starter. Remove the override for a fixed-scope product.
 PrivilegesRequiredOverridesAllowed=commandline
@@ -34,6 +38,9 @@ ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 OutputDir=..\dist
 WizardStyle=modern
+#ifdef ProductWizardImage
+WizardImageFile={#ProductWizardImage}
+#endif
 SolidCompression=yes
 #ifdef Streamlined
 OutputBaseFilename=@SLUG@-{#MyAppVersion}-windows-x64-winget-setup
@@ -47,10 +54,123 @@ DisableFinishedPage=yes
 OutputBaseFilename=@SLUG@-{#MyAppVersion}-windows-x64-setup
 DisableWelcomePage=no
 DisableDirPage=no
+#ifdef ProductWelcomeCredit
+LicenseFile={#ProductLicenseFile}
+DisableProgramGroupPage=yes
+DisableReadyPage=yes
+#else
 DisableReadyPage=no
+#endif
 DisableFinishedPage=no
 #endif
 
 [Files]
+#ifdef StageDir
+Source: "{#StageDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+#else
 Source: "..\out\windows-x64\{#ProductExe}"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#ProductLicenseFile}"; DestDir: "{app}\licenses"; Flags: ignoreversion
+#endif
+
+#ifdef ProductWelcomeCredit
+[Messages]
+WelcomeLabel2={#ProductWelcomeCredit}
+#endif
+
+#ifdef ProductGuiExe
+#ifdef CreateSilentShortcut
+[Icons]
+Name: "{group}\@INSTALL_FOLDER@"; Filename: "{app}\{#ProductGuiExe}"; WorkingDir: "{app}"; Check: WizardSilent
+#endif
+[UninstallDelete]
+Type: files; Name: "{group}\@INSTALL_FOLDER@.lnk"
+Type: dirifempty; Name: "{group}"
+#endif
+
+[Code]
+#ifdef ProductGuiExe
+var
+  LaunchBox, ShortcutBox: TNewCheckBox;
+function FinishOption(const Caption: String; Top: Integer): TNewCheckBox;
+begin
+  Result := TNewCheckBox.Create(WizardForm);
+  Result.Parent := WizardForm.FinishedPage;
+  Result.SetBounds(WizardForm.FinishedLabel.Left, Top, WizardForm.FinishedLabel.Width, ScaleY(22));
+  Result.Caption := Caption;
+end;
+#endif
+
+#ifdef ProductWelcomeCredit
+procedure OpenHomepage(Sender: TObject; const Link: String; LinkType: TSysLinkType);
+var ErrorCode: Integer;
+begin
+  if not ShellExecAsOriginalUser('open', '{#StringChange(ProductHomepage, "'", "''")}', '', '',
+    SW_SHOWNORMAL, ewNoWait, ErrorCode) then MsgBox(SysErrorMessage(ErrorCode), mbError, MB_OK);
+end;
+#endif
+
+procedure InitializeWizard;
+#ifdef ProductWelcomeCredit
+var ProjectLink: TNewLinkLabel;
+#endif
+begin
+#ifdef ProductWelcomeCredit
+  ProjectLink := TNewLinkLabel.Create(WizardForm);
+  ProjectLink.Parent := WizardForm.WelcomePage;
+  WizardForm.AdjustLabelHeight(WizardForm.WelcomeLabel2);
+  ProjectLink.SetBounds(WizardForm.WelcomeLabel2.Left,
+    WizardForm.WelcomeLabel2.Top + WizardForm.WelcomeLabel2.Height + ScaleY(12),
+    WizardForm.WelcomeLabel2.Width, ScaleY(22));
+  ProjectLink.Caption := '<a href="project">Project homepage</a>';
+  ProjectLink.OnLinkClick := @OpenHomepage;
+  ProjectLink.TabStop := True;
+#endif
+#ifdef ProductGuiExe
+  LaunchBox := FinishOption('Launch the application', WizardForm.RunList.Top);
+  ShortcutBox := FinishOption('Add a Start menu shortcut', LaunchBox.Top + LaunchBox.Height);
+#endif
+end;
+
+procedure CurPageChanged(CurPageID: Integer);
+begin
+#ifdef FixtureTrace
+  case CurPageID of
+    wpWelcome: Log('fixture page welcome');
+    wpLicense: Log('fixture page license');
+    wpSelectDir: Log('fixture page destination');
+    wpReady: Log('fixture page ready');
+    wpInstalling: Log('fixture page installing');
+    wpFinished: Log('fixture page finish');
+  end;
+#endif
+#ifdef ProductWelcomeCredit
+  if CurPageID = wpSelectDir then WizardForm.NextButton.Caption := SetupMessage(msgButtonInstall);
+#endif
+#ifdef ProductGuiExe
+  if CurPageID = wpFinished then
+    ShortcutBox.Checked := FileExists(ExpandConstant('{group}\@INSTALL_FOLDER@.lnk'));
+#endif
+end;
+
+#ifdef ProductGuiExe
+function NextButtonClick(CurPageID: Integer): Boolean;
+var Folder, Link, Target: String; ErrorCode: Integer;
+begin
+  Result := True;
+  if (CurPageID <> wpFinished) or WizardSilent then exit;
+  Folder := ExpandConstant('{group}');
+  Link := Folder + '\@INSTALL_FOLDER@.lnk';
+  Target := ExpandConstant('{app}\{#StringChange(ProductGuiExe, "'", "''")}');
+  try
+    if ShortcutBox.Checked then begin
+      if not ForceDirectories(Folder) then RaiseException('Cannot create the Start menu folder.');
+      CreateShellLink(Link, '', Target, '', ExpandConstant('{app}'), '', 0, SW_SHOWNORMAL);
+    end else if FileExists(Link) and not DeleteFile(Link) then RaiseException('Cannot remove shortcut.');
+    if LaunchBox.Checked and not ExecAsOriginalUser(Target, '', ExpandConstant('{app}'),
+      SW_SHOWNORMAL, ewNoWait, ErrorCode) then RaiseException(SysErrorMessage(ErrorCode));
+  except
+    MsgBox(GetExceptionMessage, mbError, MB_OK);
+    Result := False;
+  end;
+end;
+#endif

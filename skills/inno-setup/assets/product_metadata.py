@@ -95,6 +95,17 @@ def render_include(config, data, numbers, exe, icon):
     }
     if icon:
         fields["ProductIcon"] = icon
+    if data.get("wizardImage"):
+        fields["ProductWizardImage"] = asset_path(config, data["wizardImage"])
+    if data.get("welcomeCredit"):
+        fields["ProductWelcomeCredit"] = data["welcomeCredit"]
+    if data.get("guiExecutable"):
+        fields["ProductGuiExe"] = exe_name(data["guiExecutable"])
+        choice = data.get("silentShortcut")
+        if choice not in ("create", "omit"):
+            raise ValueError("set silentShortcut to create or omit for the GUI launcher")
+        if choice == "create":
+            fields["CreateSilentShortcut"] = "yes"
     if data.get("copyright"):
         fields["ProductCopyright"] = data["copyright"]
     lines = ["#pragma parseroption -p+"]

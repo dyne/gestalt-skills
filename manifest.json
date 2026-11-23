@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "repository": "dyne/gestalt-skills",
   "source": "https://github.com/dyne/gestalt-skills",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "skills": [
     {
       "name": "c-cpp",
@@ -216,11 +216,11 @@
         },
         {
           "path": "skills/inno-setup/assets/build-installer.ps1",
-          "sha256": "5e928aa1b889d3ebee0b21bad287b0ebb368977ee2fa12068545c5c5b2f277ff"
+          "sha256": "01076f271371967e039601b1463cb6cfcbd13550b012fe1a1fd827547af7bc56"
         },
         {
           "path": "skills/inno-setup/assets/installer.iss.in",
-          "sha256": "a2320fd33d5d8f4450dfcb7cbd74c99cf0162a088fdf355f3005c7e18ea9fc91"
+          "sha256": "10873ef698e2edf0ae8dbd120f7e8b63387d84dd08f9e27eca36388464805107"
         },
         {
           "path": "skills/inno-setup/assets/product.json",
@@ -228,7 +228,7 @@
         },
         {
           "path": "skills/inno-setup/assets/product_metadata.py",
-          "sha256": "c4de82d807185dd5dd86e8e930f61fca77ad74be7ca9286edc4359a7c498a5be"
+          "sha256": "c5b7ceb6819ac6ab8372659927f8d87ca7631dff3f92b1457fdc97a5e516d3d5"
         },
         {
           "path": "skills/inno-setup/assets/render-winget.py",
@@ -245,6 +245,18 @@
         {
           "path": "skills/inno-setup/assets/winget/Example.Dial.yaml.in",
           "sha256": "44a1cd145bf662e9f9a9e4e2297dc80823816abd0feafd63f12835d11379683f"
+        },
+        {
+          "path": "skills/inno-setup/fixture/probe.go",
+          "sha256": "fe9f9b732415ccee893381eed9a3468a9c2d520e0889d4480557933c91bdc286"
+        },
+        {
+          "path": "skills/inno-setup/fixture/run.py",
+          "sha256": "dbcbadeb47aa33255fbabdcb089fff854a3211c164a6f1b218bf6a09fac26b5b"
+        },
+        {
+          "path": "skills/inno-setup/fixture/wizard.py",
+          "sha256": "3ade209162787f0640031b745aa54c0dcbeffc5cf8d108aa1e7d4ce5391648e9"
         },
         {
           "path": "skills/inno-setup/references/build.md",
