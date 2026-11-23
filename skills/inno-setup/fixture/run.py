@@ -112,13 +112,17 @@ def run(compiler, root):
     exercise(classic, dest, root / "fresh.log", title, False, False, capture=True)
     verify_install(dest, v1)
     check(not link.exists() and not (dest / "launch.txt").exists(), "Unchecked options took effect")
-    exercise(classic, dest, root / "select.log", title, True, True)
+    exercise(classic, dest, root / "launch-only.log", title, True, False)
     until(lambda: (dest / "launch.txt").is_file(), "GUI launch")
     check((dest / "launch.txt").read_text() == "probe-gui.exe", "Launched wrong executable")
-    command("powershell", "-NoProfile", "-Command",
-            "if ((New-Object -ComObject WScript.Shell).CreateShortcut($env:FIXTURE_LNK).TargetPath "
-            "-ne $env:FIXTURE_GUI) { exit 1 }",
-            env=dict(os.environ, FIXTURE_LNK=str(link), FIXTURE_GUI=str(dest / "probe-gui.exe")))
+    check(not link.exists(), "Launch-only choice created a shortcut")
+    (dest / "launch.txt").unlink()
+    exercise(classic, dest, root / "shortcut-only.log", title, False, True)
+    check(not (dest / "launch.txt").exists(), "Selecting only the shortcut launched the GUI")
+    check(link.is_file(), f"Missing shortcut: {link}")
+    os.startfile(link)
+    until(lambda: (dest / "launch.txt").is_file(), "Start menu shortcut launched installed application")
+    check((dest / "launch.txt").read_text() == "probe-gui.exe", "Start menu shortcut launched wrong EXE")
     (dest / "launch.txt").unlink()
     exercise(classic, dest, root / "remove.log", title, False, False, previously_linked=True)
     check(not link.exists(), "Clearing shortcut left the link installed")

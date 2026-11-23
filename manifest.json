@@ -220,7 +220,7 @@
         },
         {
           "path": "skills/inno-setup/assets/installer.iss.in",
-          "sha256": "10873ef698e2edf0ae8dbd120f7e8b63387d84dd08f9e27eca36388464805107"
+          "sha256": "61816e8702abf94721f19c716ffcb3706dd96cd3dc405b1d1deca9201a653b81"
         },
         {
           "path": "skills/inno-setup/assets/product.json",
@@ -252,7 +252,7 @@
         },
         {
           "path": "skills/inno-setup/fixture/run.py",
-          "sha256": "df8b815266aa57efc1ae0b2c0ad135f1b4928202a3fb2599243cae5ddd7ee40a"
+          "sha256": "54fd13fe456464f6408eafb4442a25680b727e113d74f79cb78a46ec462ac1a8"
         },
         {
           "path": "skills/inno-setup/fixture/wizard.py",
