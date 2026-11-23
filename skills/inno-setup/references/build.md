@@ -23,7 +23,44 @@ win-installer: out/windows-x64/dial.exe
 	pwsh -NoProfile -File build/build-installer.ps1 -Version "$(VERSION)" -InstallerProfile "$(INSTALLER_PROFILE)"
 ```
 
-For CMake use `add_custom_target(win-installer ... DEPENDS <actual-target> VERBATIM)` and resolve configuration-specific paths such as `$<TARGET_FILE:...>` when staging. For Meson use a custom target with the executable as an input and the installer as an output. Preserve the same public target name and call it via the project's ordinary build tool. An installer target can run on Windows even if the rest of the project cross-compiles elsewhere.
+### CMake with a staged GUI, CLI and data
+
+Reuse the actual install rules for the chosen configuration. This example installs both targets at the root of the stage to match the template's GUI path. Preserve a project's existing `bin/` layout by adapting the shortcut, launch and uninstall-icon paths together. Include the existing `install(FILES ...)` rules for runtime dependencies, data, license and the versioned installed manifest.
+
+```cmake
+install(TARGETS dial dial-cli RUNTIME DESTINATION .)
+set(INSTALLER_PROFILE Classic CACHE STRING "Classic or Silent")
+add_custom_target(win-installer
+  COMMAND "${CMAKE_COMMAND}" "-Dbinary=${CMAKE_BINARY_DIR}" "-Dconfig=$<CONFIG>"
+          "-Dbuild_scripts=${PROJECT_SOURCE_DIR}/build" "-Dversion=${PROJECT_VERSION}"
+          "-Dprofile=${INSTALLER_PROFILE}" -P "${PROJECT_SOURCE_DIR}/build/stage-installer.cmake"
+  DEPENDS dial dial-cli VERBATIM)
+```
+
+In `build/stage-installer.cmake`, stage a fresh snapshot each time and fail the build if install or packaging fails. Use a configured Release build or select `--config Release` on a multi-config generator.
+
+```cmake
+string(RANDOM LENGTH 16 ALPHABET 0123456789abcdef nonce)
+set(stage "${binary}/installer-stage-${nonce}")
+execute_process(COMMAND "${CMAKE_COMMAND}" --install "${binary}" --config "${config}" --prefix "${stage}"
+                COMMAND_ERROR_IS_FATAL ANY)
+execute_process(COMMAND pwsh -NoProfile -File "${build_scripts}/build-installer.ps1"
+                -Version "${version}" -InstallerProfile "${profile}" -Stage "${stage}"
+                COMMAND_ERROR_IS_FATAL ANY)
+file(REMOVE_RECURSE "${stage}")
+```
+
+Run `cmake --build out --config Release --target win-installer`. For GNU Make with a multi-file package, depend on its actual staged-install target instead of copying build-tree globs. For example, with an existing GNU-style `install` rule on a Windows MSYS build host:
+
+```make
+win-installer: windows-release
+	@set -eu; stage=$$(mktemp -d); trap 'rm -rf "$$stage"' EXIT; \
+	  $(MAKE) install DESTDIR="$$stage" prefix=/; \
+	  pwsh -NoProfile -File build/build-installer.ps1 -Version "$(VERSION)" \
+	    -InstallerProfile "$(INSTALLER_PROFILE)" -Stage "$$(cygpath -aw "$$stage")"
+```
+
+Choose the staging contract the project actually implements. Write its installed manifest before invoking the wrapper and verify that the reported GUI path exists in the stage. Use the Windows developer's normal build command in CI, including the configuration and release version. After the fixture passes, always rebuild with the real install rules and exercise the final released payload.
 
 ## CI
 

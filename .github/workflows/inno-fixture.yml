@@ -26,6 +26,30 @@ jobs:
           if ($p.ExitCode) { throw "Compiler install exited $($p.ExitCode)" }
           python -B skills/inno-setup/fixture/run.py "$dir/ISCC.exe" "$env:RUNNER_TEMP/inno-evidence"
           exit $LASTEXITCODE
+      - name: Smoke the exact public case-study installer after the fixture
+        shell: pwsh
+        run: |
+          $exe = Join-Path $env:RUNNER_TEMP 'bitcoin-viz-v0.8.1-windows-x86_64-setup.exe'
+          Invoke-WebRequest "https://github.com/LuganoPlanB/bitcoin-viz/releases/download/v0.8.1/bitcoin-viz-v0.8.1-windows-x86_64-setup.exe" -OutFile $exe
+          if ((Get-FileHash $exe).Hash -ne '7821e2859846d7d35cbba206915dc85b18eef477ab05391ecb17902dc18f38d9') { throw 'Unexpected public installer bytes' }
+          $dest = Join-Path $env:RUNNER_TEMP 'Bitcoin Viz Ω'
+          $log = Join-Path $env:RUNNER_TEMP 'inno-evidence/public-install.log'
+          $flags = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART'
+          $p = Start-Process $exe -ArgumentList "/SP- $flags /DIR=`"$dest`" /LOG=`"$log`"" -Wait -PassThru
+          if ($p.ExitCode) { throw "Public installer exited $($p.ExitCode)" }
+          try {
+            $m = Get-Content -LiteralPath "$dest/MANIFEST.json" -Raw | ConvertFrom-Json
+            if ($m.version -ne '0.8.1' -or $m.commit -ne '10a244c5c5588c6936ca20194f5492335589e51d') { throw 'Installed release identity mismatch' }
+            foreach ($file in $m.cli_executable, $m.executable) {
+              $out = & "$dest/$file" --version | Out-String
+              if ($LASTEXITCODE -ne 0 -or $out -notmatch '0\.8\.1') { throw "Installed version probe failed for $file" }
+            }
+          } finally {
+            $uninstaller = @(Get-ChildItem -LiteralPath $dest -Filter 'unins*.exe')
+            if ($uninstaller.Count -ne 1) { throw 'Expected case-study uninstaller' }
+            $p = Start-Process $uninstaller[0].FullName -ArgumentList $flags -Wait -PassThru
+            if ($p.ExitCode -or (Test-Path "$dest/bin/bitcoin-viz.exe")) { throw 'Public uninstall failed' }
+          }
       - uses: actions/upload-artifact@v4
         if: always()
         with:

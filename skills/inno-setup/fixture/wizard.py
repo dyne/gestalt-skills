@@ -75,10 +75,10 @@ def exercise(exe, dest, log, title, launch, shortcut, previously_linked=False, c
         raise RuntimeError("Project link is outside the tab order")
     if capture:
         screenshot(wizard, Path(log).with_suffix(".png"))
-    click(control(wizard, "Next >"))
+    click(control(wizard, "Next"))
     accept = control(wizard, "I accept the agreement")
     click(accept)
-    forward = control(wizard, "Next >")
+    forward = control(wizard, "Next")
     until(lambda: ui.IsWindowEnabled(forward), "accepted license")
     click(forward)
     control(wizard, str(dest))
