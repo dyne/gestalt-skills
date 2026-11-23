@@ -43,6 +43,28 @@ Keep the package's default goal ahead of these rules. The helper leaves an ident
 
 With MSVC, generate the same UTF-8 `.rc`, run `rc.exe /c 65001 /fo dial.res dial.rc`, and add `dial.res` to the actual EXE link inputs. In CMake with RC enabled, the generated `.rc` can be a source of the executable target. A Go build can consume a correctly targeted COFF `.syso` in the Windows main package. For an SDK-style .NET build use its native Company, Product, FileVersion, InformationalVersion and ApplicationIcon properties from the shared metadata. Merge with an existing version resource or icon when present so each EXE carries one effective version record. Avoid modifying signed bytes. [Windows VERSIONINFO](https://learn.microsoft.com/en-us/windows/win32/menurc/versioninfo-resource) · [GNU windres formats](https://sourceware.org/binutils/docs/binutils/windres.html)
 
+For CMake, make the generated resource a linker input on each Windows executable. For example, with an existing `dial` target:
+
+```cmake
+if(WIN32)
+  enable_language(RC)
+  find_package(Python3 3.10 REQUIRED COMPONENTS Interpreter)
+  set(meta "${PROJECT_SOURCE_DIR}/build")
+  set(rc "${CMAKE_CURRENT_BINARY_DIR}/dial-version.rc")
+  file(GENERATE OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/win-version.txt" CONTENT "${PROJECT_VERSION}")
+  add_custom_command(OUTPUT "${rc}"
+    COMMAND Python3::Interpreter "${meta}/product_metadata.py" rc --product "${meta}/product.json"
+            --version "${PROJECT_VERSION}" --exe dial.exe --output "${rc}"
+    DEPENDS "${meta}/product_metadata.py" "${meta}/product.json"
+            "${CMAKE_CURRENT_BINARY_DIR}/win-version.txt" VERBATIM)
+  target_sources(dial PRIVATE "${rc}")
+  # With Ninja/Makefiles, when iconFile is supplied:
+  # set_property(SOURCE "${rc}" APPEND PROPERTY OBJECT_DEPENDS "${meta}/app.ico")
+endif()
+```
+
+Use a distinct output for each binary. For a Visual Studio generator use its native resource dependencies and verify an icon-only rebuild. If the display version has a prerelease suffix, pass the pipeline's full version string in place of CMake's numeric project version.
+
 ## Inspect the linked EXE
 
 On Windows, run the following immediately after linking and repeat on the installed copy. Adapt the path for each binary. Also inspect the setup EXE's CompanyName, ProductName and version after ISCC.

@@ -40,6 +40,7 @@ def command(*args, **kwargs):
 def payload(root, title):
     stage = root / "stage"
     stage.mkdir()
+    (stage / "bin").mkdir()
     (stage / "LICENSE.txt").write_text("Fixture payload for installer verification.\n")
     (stage / "data").mkdir()
     (stage / "data" / "palette.json").write_text('{"color":"gold"}')
@@ -50,14 +51,14 @@ def payload(root, title):
         check(sha(root / name) == digest, f"Unexpected artwork {name}")
     config = dict(name=title, publisher="Installer Fixture", homepage="https://example.org/fixture",
                   description="Disposable installer fixture", license="MIT", licenseFile="stage/LICENSE.txt",
-                  executable="probe-cli.exe", guiExecutable="probe-gui.exe", iconFile="bitcoin-roots.ico",
+                  executable="probe-cli.exe", guiExecutable="probe-gui.exe", binaryDirectory="bin", iconFile="bitcoin-roots.ico",
                   wizardImage="installer-branding.bmp", welcomeCredit="Built for the installer fixture.",
                   silentShortcut="create")
     (root / "product.json").write_text(json.dumps(config))
     for name, subsystem in (("probe-cli.exe", 3), ("probe-gui.exe", 2)):
         flags = ["-ldflags=-H windowsgui"] if subsystem == 2 else []
-        command("go", "build", *flags, "-o", stage / name, HERE / "probe.go")
-        data = (stage / name).read_bytes()
+        command("go", "build", *flags, "-o", stage / "bin" / name, HERE / "probe.go")
+        data = (stage / "bin" / name).read_bytes()
         pe = struct.unpack_from("<I", data, 60)[0]
         check(struct.unpack_from("<H", data, pe + 24 + 68)[0] == subsystem, f"{name} subsystem")
     return stage
@@ -86,7 +87,7 @@ def verify_install(dest, expected):
     for name, digest in expected["files"].items():
         check(sha(dest / name) == digest, f"Installed payload differs: {name}")
     for name in ("probe-cli.exe", "probe-gui.exe"):
-        exe = dest / name
+        exe = dest / "bin" / name
         check(command(exe, "--version", capture_output=True).stdout.strip() == b"fixture diagnostic", name)
         check(command(exe, "--echo", input=b"piped input", capture_output=True).stdout == b"piped input", name)
 
@@ -94,8 +95,8 @@ def verify_install(dest, expected):
 def uninstall(root, label, dest, link):
     uninstaller, = dest.glob("unins*.exe")
     command(uninstaller, *FLAGS, f"/LOG={root / (label + '-uninstall.log')}")
-    until(lambda: not (dest / "probe-cli.exe").exists() and not link.exists(), "uninstall cleanup")
-    for name in ("probe-gui.exe", "MANIFEST.json", "LICENSE.txt", "data/palette.json"):
+    until(lambda: not (dest / "bin/probe-cli.exe").exists() and not link.exists(), "uninstall cleanup")
+    for name in ("bin/probe-gui.exe", "MANIFEST.json", "LICENSE.txt", "data/palette.json"):
         check(not (dest / name).exists(), f"Leftover owned file {name}")
 
 
@@ -107,35 +108,36 @@ def run(compiler, root):
     (root / "installer.iss").write_text(script, encoding="utf-8-sig")
     stage = payload(root, title)
     dest = root / "Installed app Ω"
+    marker = dest / "bin/launch.txt"
     link = Path(os.environ["APPDATA"]) / "Microsoft/Windows/Start Menu/Programs" / title / (title + ".lnk")
     classic, v1 = compile_setup(root, compiler, stage, "1.0.0")
     exercise(classic, dest, root / "fresh.log", title, False, False, capture=True)
     verify_install(dest, v1)
-    check(not link.exists() and not (dest / "launch.txt").exists(), "Unchecked options took effect")
+    check(not link.exists() and not marker.exists(), "Unchecked finish option was applied")
     exercise(classic, dest, root / "launch-only.log", title, True, False)
-    until(lambda: (dest / "launch.txt").is_file(), "GUI launch")
-    check((dest / "launch.txt").read_text() == "probe-gui.exe", "Launched wrong executable")
+    until(lambda: marker.is_file(), "GUI launch")
+    check(marker.read_text() == "probe-gui.exe", "Launched wrong executable")
     check(not link.exists(), "Launch-only choice created a shortcut")
-    (dest / "launch.txt").unlink()
+    marker.unlink()
     exercise(classic, dest, root / "shortcut-only.log", title, False, True)
-    check(not (dest / "launch.txt").exists(), "Selecting only the shortcut launched the GUI")
+    check(not marker.exists(), "Selecting only the shortcut launched the GUI")
     check(link.is_file(), f"Missing shortcut: {link}")
     os.startfile(link)
-    until(lambda: (dest / "launch.txt").is_file(), "Start menu shortcut launched installed application")
-    check((dest / "launch.txt").read_text() == "probe-gui.exe", "Start menu shortcut launched wrong EXE")
-    (dest / "launch.txt").unlink()
+    until(lambda: marker.is_file(), "Start menu shortcut launched installed application")
+    check(marker.read_text() == "probe-gui.exe", "Start menu shortcut launched wrong EXE")
+    marker.unlink()
     exercise(classic, dest, root / "remove.log", title, False, False, previously_linked=True)
     check(not link.exists(), "Clearing shortcut left the link installed")
     uninstall(root, "interactive", dest, link)
     command(classic, *FLAGS, "/CURRENTUSER", f"/DIR={dest}", f"/LOG={root / 'silent.log'}")
     verify_install(dest, v1)
-    check(link.is_file() and not (dest / "launch.txt").exists(), "Silent defaults")
+    check(link.is_file() and not marker.exists(), "Silent defaults")
     (dest / "user.txt").write_text("Keep my settings")
     winget, v2 = compile_setup(root, compiler, stage, "2.0.0", winget=True)
     command(winget, *FLAGS, "/CURRENTUSER", f"/DIR={dest}", f"/LOG={root / 'upgrade.log'}")
     verify_install(dest, v2)
     check((dest / "user.txt").read_text() == "Keep my settings", "Upgrade lost user data")
-    check(link.exists() and not (dest / "launch.txt").exists(), "WinGet defaults")
+    check(link.exists() and not marker.exists(), "WinGet defaults")
     uninstall(root, "upgrade", dest, link)
     check((dest / "user.txt").read_text() == "Keep my settings", "Uninstall removed user data")
     print("ISCC 6.4.3: interactive, silent, WinGet, upgrade, uninstall and GUI/CLI checks passed")

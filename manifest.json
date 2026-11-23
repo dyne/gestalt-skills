@@ -220,7 +220,7 @@
         },
         {
           "path": "skills/inno-setup/assets/installer.iss.in",
-          "sha256": "61816e8702abf94721f19c716ffcb3706dd96cd3dc405b1d1deca9201a653b81"
+          "sha256": "59968c843b8397897fe46ab3b2177cd5ad495ee660cabc7389e296587ebbdb4e"
         },
         {
           "path": "skills/inno-setup/assets/product.json",
@@ -228,7 +228,7 @@
         },
         {
           "path": "skills/inno-setup/assets/product_metadata.py",
-          "sha256": "c5b7ceb6819ac6ab8372659927f8d87ca7631dff3f92b1457fdc97a5e516d3d5"
+          "sha256": "0c560a95d53fb6cc8f62e8b109b02dad324cd9450664dc7f62787d8135f432b3"
         },
         {
           "path": "skills/inno-setup/assets/render-winget.py",
@@ -252,7 +252,7 @@
         },
         {
           "path": "skills/inno-setup/fixture/run.py",
-          "sha256": "54fd13fe456464f6408eafb4442a25680b727e113d74f79cb78a46ec462ac1a8"
+          "sha256": "fe26d88483dffcef3f7d087796890bf138cb410d02c1b7b3c70dffb0d00de694"
         },
         {
           "path": "skills/inno-setup/fixture/wizard.py",
@@ -260,7 +260,7 @@
         },
         {
           "path": "skills/inno-setup/references/build.md",
-          "sha256": "16b8a44682ef7286b354a81ed47ae34bb33dc70077de58254fb16caec7db2283"
+          "sha256": "1162963e3450cf7f79867de9a1af6b482cc4be30cc5929ec77dd7ba633bdd333"
         },
         {
           "path": "skills/inno-setup/references/fixture.md",
@@ -268,7 +268,7 @@
         },
         {
           "path": "skills/inno-setup/references/release.md",
-          "sha256": "301dd75543071615682003b9ac83b17d2f33fe5fa4b2999d8c6ce227fe4c949c"
+          "sha256": "3f339898b61d6776ba76a5b05ced5cb9fd1f2866938b88b3884ba48562e7f64a"
         },
         {
           "path": "skills/inno-setup/references/signing.md",
@@ -276,7 +276,7 @@
         },
         {
           "path": "skills/inno-setup/references/stamping.md",
-          "sha256": "b37e90001bd1a5f29f858cc705bfad759b97eeff5200a4ab919ea3a92c4589d9"
+          "sha256": "b760d0ea20c082e5ed9e6039191989cb586ae2095d2e74aa58f4e1ad6de3fed2"
         },
         {
           "path": "skills/inno-setup/references/subsystems.md",
@@ -288,7 +288,7 @@
         },
         {
           "path": "skills/inno-setup/references/wizard.md",
-          "sha256": "7a8412c2786e8e6cb58ea053562a12574250dc6b01cfa52bd34607541feb676b"
+          "sha256": "9803c38725a1d0d22ec69b0dc4cba06197b4fc3ae1fff56b3421c4eb303ff149"
         }
       ]
     },

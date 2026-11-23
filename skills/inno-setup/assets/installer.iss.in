@@ -4,6 +4,7 @@
   #error Supply MyAppVersion from the release build
 #endif
 #include ProductInclude
+#define InstallFolder "@INSTALL_FOLDER@"
 
 [Setup]
 AppId={{@APP_GUID@}
@@ -27,9 +28,9 @@ SetupIconFile={#ProductIcon}
 DefaultDirName={autopf}\@INSTALL_FOLDER@
 DefaultGroupName={#StringChange(ProductName, "{", "{{")}
 #ifdef ProductGuiExe
-UninstallDisplayIcon={app}\{#ProductGuiExe}
+UninstallDisplayIcon={app}{#ProductBinSuffix}\{#ProductGuiExe}
 #else
-UninstallDisplayIcon={app}\{#ProductExe}
+UninstallDisplayIcon={app}{#ProductBinSuffix}\{#ProductExe}
 #endif
 PrivilegesRequired=lowest
 ; Dual-scope starter. Remove the override for a fixed-scope product.
@@ -68,7 +69,12 @@ DisableFinishedPage=no
 #ifdef StageDir
 Source: "{#StageDir}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 #else
-Source: "..\out\windows-x64\{#ProductExe}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\out\windows-x64\{#ProductExe}"; DestDir: "{app}{#ProductBinSuffix}"; Flags: ignoreversion
+#ifdef ProductGuiExe
+#if ProductGuiExe != ProductExe
+Source: "..\out\windows-x64\{#ProductGuiExe}"; DestDir: "{app}{#ProductBinSuffix}"; Flags: ignoreversion
+#endif
+#endif
 Source: "{#ProductLicenseFile}"; DestDir: "{app}\licenses"; Flags: ignoreversion
 #endif
 
@@ -80,7 +86,7 @@ WelcomeLabel2={#ProductWelcomeCredit}
 #ifdef ProductGuiExe
 #ifdef CreateSilentShortcut
 [Icons]
-Name: "{group}\@INSTALL_FOLDER@"; Filename: "{app}\{#ProductGuiExe}"; WorkingDir: "{app}"; Check: WizardSilent
+Name: "{group}\@INSTALL_FOLDER@"; Filename: "{app}{#ProductBinSuffix}\{#ProductGuiExe}"; WorkingDir: "{app}"; Check: WizardSilent
 #endif
 [UninstallDelete]
 Type: files; Name: "{group}\@INSTALL_FOLDER@.lnk"
@@ -148,7 +154,7 @@ begin
 #endif
 #ifdef ProductGuiExe
   if CurPageID = wpFinished then
-    ShortcutBox.Checked := FileExists(ExpandConstant('{group}\@INSTALL_FOLDER@.lnk'));
+    ShortcutBox.Checked := FileExists(ExpandConstant('{group}\{#StringChange(InstallFolder, "'", "''")}.lnk'));
 #endif
 end;
 
@@ -159,8 +165,8 @@ begin
   Result := True;
   if (CurPageID <> wpFinished) or WizardSilent then exit;
   Folder := ExpandConstant('{group}');
-  Link := Folder + '\@INSTALL_FOLDER@.lnk';
-  Target := ExpandConstant('{app}\{#StringChange(ProductGuiExe, "'", "''")}');
+  Link := Folder + '\{#StringChange(InstallFolder, "'", "''")}.lnk';
+  Target := ExpandConstant('{app}{#StringChange(ProductBinSuffix, "'", "''")}\{#StringChange(ProductGuiExe, "'", "''")}');
   try
     if ShortcutBox.Checked then begin
       if not ForceDirectories(Folder) then RaiseException('Cannot create the Start menu folder.');
