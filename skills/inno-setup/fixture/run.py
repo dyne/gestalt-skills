@@ -5,6 +5,7 @@ from ctypes import wintypes as W
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import struct
 import subprocess
@@ -70,10 +71,13 @@ def compile_setup(root, compiler, stage, version, winget=False):
     command(sys.executable, "-B", ASSETS / "product_metadata.py", "inno", "--product",
             root / "product.json", "--version", version, "--output", inc)
     label = "winget" if winget else "classic"
-    with (root / f"compile-{version}-{label}.log").open("wb") as log:
+    build_log = root / f"compile-{version}-{label}.log"
+    with build_log.open("wb") as log:
         command(compiler, f"/DMyAppVersion={version}", f"/DProductInclude={inc}", f"/DStageDir={stage}",
                 "/DFixtureTrace", *(["/DStreamlined"] if winget else []), f"/O{root}", f"/F{version}-{label}",
                 root / "installer.iss", stdout=log, stderr=subprocess.STDOUT)
+    check(re.search(rb"Compiler engine version:[^\r\n]*\b6\.4\.3\b", build_log.read_bytes()),
+          f"Unexpected compiler engine; inspect {build_log}")
     return root / f"{version}-{label}.exe", manifest
 
 
@@ -96,11 +100,6 @@ def uninstall(root, label, dest, link):
 
 
 def run(compiler, root):
-    ver = command("powershell", "-NoProfile", "-Command",
-                  "$v=(Get-Item -LiteralPath $env:FIXTURE_ISCC).VersionInfo; "
-                  '"$($v.FileMajorPart).$($v.FileMinorPart).$($v.FileBuildPart)"',
-                  env=dict(os.environ, FIXTURE_ISCC=str(compiler)), capture_output=True)
-    check(ver.stdout.strip() == b"6.4.3", f"Unexpected ISCC version {ver.stdout!r}")
     identity = uuid.uuid4()
     title = "Inno Fixture " + identity.hex[:8]
     script = (ASSETS / "installer.iss.in").read_text(encoding="utf-8").replace(

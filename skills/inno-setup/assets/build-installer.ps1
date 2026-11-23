@@ -4,8 +4,7 @@ param(
     [ValidateSet('Classic', 'Silent')][string]$InstallerProfile = 'Classic',
     [string]$Compiler = $env:ISCC,
     [string]$Python = $env:PYTHON,
-    [string]$Stage,
-    [string]$ExpectedCompilerVersion
+    [string]$Stage
 )
 
 $ErrorActionPreference = 'Stop'
@@ -26,11 +25,6 @@ if (-not $Compiler -or -not (Get-Command $Compiler -CommandType Application -Err
 }
 $include = New-TemporaryFile
 try {
-    if ($ExpectedCompilerVersion) {
-        $info = (Get-Item (Get-Command $Compiler -CommandType Application).Source).VersionInfo
-        $actual = "$($info.FileMajorPart).$($info.FileMinorPart).$($info.FileBuildPart)"
-        if ($actual -ne $ExpectedCompilerVersion) { throw "Expected ISCC $ExpectedCompilerVersion, found $actual" }
-    }
     & $Python -B (Join-Path $PSScriptRoot 'product_metadata.py') inno --product (Join-Path $PSScriptRoot 'product.json') --version $Version --output $include.FullName
     if ($LASTEXITCODE) { exit $LASTEXITCODE }
     $defines = @("/DMyAppVersion=$Version", "/DProductInclude=$($include.FullName)")
