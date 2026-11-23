@@ -256,11 +256,11 @@
         },
         {
           "path": "skills/inno-setup/fixture/wizard.py",
-          "sha256": "3ade209162787f0640031b745aa54c0dcbeffc5cf8d108aa1e7d4ce5391648e9"
+          "sha256": "df2a5a656097980942714d569e52443b9668c61906015231e07f1b246ce130fd"
         },
         {
           "path": "skills/inno-setup/references/build.md",
-          "sha256": "cf2a4baee7733be1c9e5378f954b8b3a590670a12f42eb3d71b738d11af6dcb6"
+          "sha256": "16b8a44682ef7286b354a81ed47ae34bb33dc70077de58254fb16caec7db2283"
         },
         {
           "path": "skills/inno-setup/references/fixture.md",
