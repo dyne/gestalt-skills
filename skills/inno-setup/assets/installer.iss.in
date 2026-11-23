@@ -164,6 +164,7 @@ begin
   try
     if ShortcutBox.Checked then begin
       if not ForceDirectories(Folder) then RaiseException('Cannot create the Start menu folder.');
+      Log('Creating Start menu shortcut ' + Link + ' for ' + Target);
       CreateShellLink(Link, '', Target, '', ExpandConstant('{app}'), '', 0, SW_SHOWNORMAL);
     end else if FileExists(Link) and not DeleteFile(Link) then RaiseException('Cannot remove shortcut.');
     if LaunchBox.Checked and not ExecAsOriginalUser(Target, '', ExpandConstant('{app}'),
