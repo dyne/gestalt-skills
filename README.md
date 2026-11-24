@@ -27,6 +27,8 @@ The canonical tree is `skills/<name>/`. The collection contains:
 - `nuklear-gui`: Nuklear C/C++ graphical interfaces and SDL2 integration.
 - `svelte`: Svelte components and reactive modules, with focused guidance for
   reactivity, templates/DOM integration, SSR/async and documentation/validation.
+- `twenty-crm` covers Twenty SDK apps, workspace integrations, live previews,
+  isolated tests, core development and self-hosting with Docker Compose.
 - `vite`: Vite configuration, assets/env, plugins, builds, SSR and migrations,
   with optional VitePress guidance for content, themes and custom front pages
   sharing a VitePress build or deployed alongside a separate Vite app. Adapted
@@ -41,7 +43,7 @@ assets. No runtime downloads or Python dependencies are required.
 
 Download `<skill>-v<version>.zip` from
 [GitHub releases](https://github.com/dyne/gestalt-skills/releases). Each of the
-eight skills is published separately, using the same collection version. Each ZIP
+nine skills is published separately, using the same collection version. Each ZIP
 contains one unversioned `<skill>/` directory with `SKILL.md`, all its resources
 and upstream notices, and the root license as `LICENSE.collection`.
 
