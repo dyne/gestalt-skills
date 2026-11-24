@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "repository": "dyne/gestalt-skills",
   "source": "https://github.com/dyne/gestalt-skills",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "skills": [
     {
       "name": "c-cpp",
@@ -212,7 +212,7 @@
       "files": [
         {
           "path": "skills/inno-setup/SKILL.md",
-          "sha256": "f34a9eb9d9e296bac18834b7c9afce8970de04cb594f91a541eadd56b960b093"
+          "sha256": "3471d74f5ea9ef4586f11a79ef39253452fca4f19cb2593309b77a63428be259"
         },
         {
           "path": "skills/inno-setup/assets/build-installer.ps1",
@@ -281,6 +281,10 @@
         {
           "path": "skills/inno-setup/references/subsystems.md",
           "sha256": "51081b099944ee758ec325aedc5255f661f61acac9673df2614c898dd2f3339b"
+        },
+        {
+          "path": "skills/inno-setup/references/vcpkg.md",
+          "sha256": "b3c1a4e659d4b8e1397a848316c1136ef1b65e648b9fbd30c7a0d1e9662506c4"
         },
         {
           "path": "skills/inno-setup/references/winget.md",
