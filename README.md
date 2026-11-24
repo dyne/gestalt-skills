@@ -28,7 +28,7 @@ The canonical tree is `skills/<name>/`. The collection contains:
 - `svelte`: Svelte components and reactive modules, with focused guidance for
   reactivity, templates/DOM integration, SSR/async and documentation/validation.
 - `twenty-crm` covers Twenty SDK apps, workspace integrations, live previews,
-  isolated tests, core development and self-hosting with Docker Compose.
+  isolated tests, core development, Docker Compose and bare-metal Linux hosting.
 - `vite`: Vite configuration, assets/env, plugins, builds, SSR and migrations,
   with optional VitePress guidance for content, themes and custom front pages
   sharing a VitePress build or deployed alongside a separate Vite app. Adapted

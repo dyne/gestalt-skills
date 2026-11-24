@@ -564,7 +564,7 @@
       "files": [
         {
           "path": "skills/twenty-crm/SKILL.md",
-          "sha256": "210847d2faf3d6e5564a2601ea6515fa9a9e8048dd92a56bb58d71b0f3e58fec"
+          "sha256": "6c9c32f07bb6987824a3ed48d2007825e7e18b483e68e6dbf285fc299ae3b0d4"
         },
         {
           "path": "skills/twenty-crm/references/app-lifecycle.md",
@@ -573,6 +573,10 @@
         {
           "path": "skills/twenty-crm/references/apps.md",
           "sha256": "311a4ebfbe0294f115c60193fe4c5650a3fe2f2a2e55a24a6e6c4025944318cd"
+        },
+        {
+          "path": "skills/twenty-crm/references/bare-metal.md",
+          "sha256": "0ff8f9207d80176b76217aaa70a697b1f814fe98cc8939cdf86f74c41641a426"
         },
         {
           "path": "skills/twenty-crm/references/core.md",
