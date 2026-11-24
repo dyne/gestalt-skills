@@ -559,6 +559,36 @@
       ]
     },
     {
+      "name": "twenty-crm",
+      "entry": "skills/twenty-crm/SKILL.md",
+      "files": [
+        {
+          "path": "skills/twenty-crm/SKILL.md",
+          "sha256": "210847d2faf3d6e5564a2601ea6515fa9a9e8048dd92a56bb58d71b0f3e58fec"
+        },
+        {
+          "path": "skills/twenty-crm/references/app-lifecycle.md",
+          "sha256": "85012a435de4adfc12782abe47f40ed7378a168d1a7cfb1358fa9d59b25b866a"
+        },
+        {
+          "path": "skills/twenty-crm/references/apps.md",
+          "sha256": "311a4ebfbe0294f115c60193fe4c5650a3fe2f2a2e55a24a6e6c4025944318cd"
+        },
+        {
+          "path": "skills/twenty-crm/references/core.md",
+          "sha256": "5752564f82558e3e097d12cb31c734ab1dcbdd7121439b8a8ba2db86dfb5aad2"
+        },
+        {
+          "path": "skills/twenty-crm/references/integrations.md",
+          "sha256": "5cae9011a460c8a8a8f223ecb35ffcc230f0bd168e73b985299ba99c9a6f7e7c"
+        },
+        {
+          "path": "skills/twenty-crm/references/self-host.md",
+          "sha256": "610875d91cd35d4bb52ff4b85e343bd3294879f904e890da40b124d07239cd4b"
+        }
+      ]
+    },
+    {
       "name": "vite",
       "entry": "skills/vite/SKILL.md",
       "files": [
