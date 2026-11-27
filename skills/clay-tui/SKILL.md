@@ -5,7 +5,7 @@ description: "Design and build terminal UIs using Clay layout with libterm or te
 
 # Clay terminal interfaces
 
-Start with a user action: “find two files in different folders, mark them, then review the batch.” Decide what the cursor points to, what Space changes, how to reach the review pane, and what survives a resize. Sketch the wide and narrow screens in terminal cells. Use [interaction and layout patterns](references/design.md) for focus, ranges, tree behavior and viewports.
+Shape the screen around a task such as “mark two files in different folders and review them together.” Sketch the visual hierarchy in terminal cells. Make the focused pane, current row and marked set legible in monochrome, then adapt the layout for narrow terminals. For requests such as “quieter” or “distill,” use the [terminal design patterns](references/design.md).
 
 **For a new libterm browser**, adapt the [working C11 starter](examples/browser.c). Clay divides the terminal into integer-cell panes. The application draws a tree and a detail view into those rectangles with native `lt_*` calls. It includes click-to-focus, keyboard navigation, fold/unfold, individual and range marking, scrolling and narrow-screen pane switching. Its small fixed ASCII dataset makes the interaction easy to change. [Build and exercise it](references/build.md).
 

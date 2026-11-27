@@ -48,7 +48,7 @@
       "files": [
         {
           "path": "skills/clay-tui/SKILL.md",
-          "sha256": "98741541850f05c1b02ec71c05bd092a093f1e22e28b3e1b6e4f80a911535165"
+          "sha256": "7cef94554c405f42bcc97b245a1de6482bb37f7fe0df640fcd84aa3babedd411"
         },
         {
           "path": "skills/clay-tui/examples/browser.c",
@@ -64,7 +64,7 @@
         },
         {
           "path": "skills/clay-tui/references/design.md",
-          "sha256": "02078cf4194e0f3a9a940db5e45b8be1b0abc7a345f2d9ccb185472cd96a1d99"
+          "sha256": "e2415c17745a7fb8b77e7442597f1ba9273d272c34fca2f7d6139dbde3665ba9"
         },
         {
           "path": "skills/clay-tui/references/renderer.md",
