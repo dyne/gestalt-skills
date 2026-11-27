@@ -9,6 +9,10 @@ The canonical tree is `skills/<name>/`. The collection contains:
 - `c-cpp`: C/C++ implementation, CMake/Meson/Make builds, GDB debugging,
   static analysis, sanitizers and LLVM tooling. A short shared workflow loads
   focused references only for the task at hand.
+- `clay-tui` designs terminal layouts with Clay and libterm. It includes a
+  runnable split-pane tree browser, selection and viewport patterns, a PTY
+  interaction check, and a tested port of Clay's termbox2 demo documented
+  against specific upstream revisions.
 - `cpp-xtd` covers modern C++ projects using Gammasoft xtd, from CMake and
   xtd.core to desktop forms, drawing and tunit. Its local source lookup finds
   headers, implementation status, examples and tests for the project's revision.
