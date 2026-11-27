@@ -332,7 +332,7 @@
       "files": [
         {
           "path": "skills/modern-imgui/SKILL.md",
-          "sha256": "1f4d53398364c27383a8fc543d06a9e89538f707c99d8ffca75c953faf32b843"
+          "sha256": "74779727f27e5d59a18ca8f95d666aa31307858748cb853965018dd015495acc"
         },
         {
           "path": "skills/modern-imgui/evals/acceptance_cases.json",

@@ -22,12 +22,9 @@ The canonical tree is `skills/<name>/`. The collection contains:
   icon, builds a normal wizard or silent WinGet installer, and wires a
   `win-installer` target into CI. Executable, setup and manifest generation
   share one product record.
-- `modern-imgui`: Dear ImGui workflows with preference for suitable
-  imgui-modern-kit components when available, including ImKit adoption,
-  architecture, semantic themes, skins and widget guidance. An optional Clay
-  example reflows a sidebar around a native editor. Includes the core
-  references, helpers and examples as a standalone skill; `dear-imgui` preserves
-  the original guidance without the Modern Kit additions.
+- `modern-imgui` uses Clay for responsive pane layouts and ImKit for widgets
+  and themes on Dear ImGui. Includes a working sidebar/editor example and
+  headless interaction tests.
 - `nuklear-gui`: Nuklear C/C++ graphical interfaces and SDL2 integration.
 - `svelte`: Svelte components and reactive modules, with focused guidance for
   reactivity, templates/DOM integration, SSR/async and documentation/validation.
