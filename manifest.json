@@ -332,7 +332,7 @@
       "files": [
         {
           "path": "skills/modern-imgui/SKILL.md",
-          "sha256": "74779727f27e5d59a18ca8f95d666aa31307858748cb853965018dd015495acc"
+          "sha256": "736d41f2d447112845b490213a8e29a9d2024212db181c2a03428c1044ad8e69"
         },
         {
           "path": "skills/modern-imgui/evals/acceptance_cases.json",
@@ -528,7 +528,7 @@
         },
         {
           "path": "skills/modern-imgui/references/styling.md",
-          "sha256": "c6a931f09235c64822f0d09fda2e7fb8b054b3f57c6adddf8be27a78796a0b30"
+          "sha256": "c5cea815183f15ef8eae424cdbfbb2134500665b854f54ffc2c3e8a1f32f2bfe"
         },
         {
           "path": "skills/modern-imgui/references/testing-debugging.md",
