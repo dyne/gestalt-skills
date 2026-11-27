@@ -1,5 +1,15 @@
 # Design the screen in cells
 
+## Apply design feedback to a terminal screen
+
+| Design direction | Example in a file browser |
+| --- | --- |
+| **Critique** the visual hierarchy | With the mouse idle, can someone tell which pane receives keys, which file Space will mark, and how many files are already marked? Check the same screen in monochrome. |
+| Make the tree **quieter** or the cursor **bolder** | Drop repeated guide lines or dim decorative separators. Give the current row a leading marker or reverse video. Keep a separate mark such as `[x]` on every file in the batch. |
+| **Distill** the footer or **clarify** an action | During range selection, trade general navigation hints for the two binding labels the user needs now, such as “v apply” and “Esc cancel.” |
+| **Adapt** the split | When labels no longer fit beside Details, show the focused pane at full width. Tab should reveal the same marked set, including files inside collapsed branches. |
+| **Polish** or **harden** the tree | For polish, align disclosure and mark columns by cell width. For hardening, try an empty tree, a two-cell glyph at the clipping edge, and a resize to one row while items are marked. |
+
 ## A split that still works at 30 columns
 
 A tree/detail browser has two jobs: locating an item and inspecting it or the marked set. Try the following arrangement, then choose widths for the actual labels and actions.
