@@ -3,6 +3,16 @@
 Checked 2026-11-01 against v1.93.0. Preserve the application's visual direction;
 the sample palette below is an API example, not a required design.
 
+## Apply design feedback to a native screen
+
+| Design direction | Example in a sidebar and editor |
+| --- | --- |
+| **Critique** the visual hierarchy | Identify what draws the eye first and whether it helps the user find the selected record and its next action. |
+| Make the sidebar **quieter** or the primary action **bolder** | Reduce competing accents on secondary controls or give the main action more emphasis. Keep selection and keyboard focus easy to distinguish. |
+| **Distill** the toolbar or **clarify** an action | Remove duplicate actions or replace a vague label such as “Apply” with “Save changes” when it actually saves. |
+| **Adapt** the layout | At narrow widths, turn the Clay sidebar into a compact picker. Keep the selected record and editor draft when the panes move. |
+| **Polish** or **harden** the inspector | For polish, align labels and make spacing consistent. For hardening, try long translated labels, an empty selection and a failed save. |
+
 ## Choose the least expensive customization
 
 Check [Modern Kit adoption](modern-kit.md) first. When compatible ImKit is
