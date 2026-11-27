@@ -39,6 +39,18 @@ from its owner.
   component APIs only within the agreed scope; some combinations across legacy
   and snippet interfaces require adapting callers.
 
+## Apply design feedback to a Svelte screen
+
+Consider a settings form where someone edits a value and saves it. Shape the screen around that task, then apply the requested change at the component that owns it.
+
+| Design direction | Example in the settings form |
+| --- | --- |
+| **Critique** the visual hierarchy | Can someone find the field, tell what changed, and identify how to save? Follow the same path with the keyboard and check where focus lands after an error. |
+| Make the form **quieter** or the primary action **bolder** | Use the project's color and spacing tokens in scoped CSS. Give Save the strongest emphasis and reduce competing accents on secondary actions. Keep focus rings and error messages visible. |
+| **Distill** the form or **clarify** the action | Remove a heading that repeats the fieldset legend, or rename “Apply” to “Save preferences” if that is what the handler does. Keep each input's associated label. |
+| **Adapt** the layout | Stack the label, field and actions at narrow widths using CSS grid or flex. Keep one mounted input and a logical DOM order. Type a draft, resize while the input is focused, then tab to Save and check the submitted value. |
+| **Polish** or **harden** the save flow | For polish, align labels and controls across field groups. For hardening, exercise a slow or failed save, preserve the draft and make the error and retry action discoverable. |
+
 ## Styling and element lifetimes
 
 Keep component CSS scoped. Pass dynamic values with style directives/custom
