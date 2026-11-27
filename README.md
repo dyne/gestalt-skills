@@ -23,6 +23,8 @@ The canonical tree is `skills/<name>/`. The collection contains:
   icon, builds a normal wizard or silent WinGet installer, and wires a
   `win-installer` target into CI. Executable, setup and manifest generation
   share one product record.
+- `js-ts-wasm` covers modern JavaScript and TypeScript, WASI-first native
+  builds, WIT components, Emscripten dependencies and JS host integration.
 - `modern-imgui` uses Clay for responsive pane layouts and ImKit for widgets
   and themes on Dear ImGui. Includes a working sidebar/editor example and
   headless interaction tests. It replaces the standalone `dear-imgui` skill.
