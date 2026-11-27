@@ -9,6 +9,9 @@ The canonical tree is `skills/<name>/`. The collection contains:
 - `c-cpp`: C/C++ implementation, CMake/Meson/Make builds, GDB debugging,
   static analysis, sanitizers and LLVM tooling. A short shared workflow loads
   focused references only for the task at hand.
+- `cpp-xtd` covers modern C++ projects using Gammasoft xtd, from CMake and
+  xtd.core to desktop forms, drawing and tunit. Its local source lookup finds
+  headers, implementation status, examples and tests for the project's revision.
 - `dear-imgui`: Testable panels, styling, Dear ImGui interaction, version-aware
   backend/font/texture integration, extension selection and UI automation, with
   optional read-only helpers and headless input-injection/Test Engine examples.
@@ -43,7 +46,7 @@ assets. No runtime downloads or Python dependencies are required.
 
 Download `<skill>-v<version>.zip` from
 [GitHub releases](https://github.com/dyne/gestalt-skills/releases). Each of the
-nine skills is published separately, using the same collection version. Each ZIP
+ten skills is published separately, using the same collection version. Each ZIP
 contains one unversioned `<skill>/` directory with `SKILL.md`, all its resources
 and upstream notices, and the root license as `LICENSE.collection`.
 
