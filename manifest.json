@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "repository": "dyne/gestalt-skills",
   "source": "https://github.com/dyne/gestalt-skills",
-  "version": "0.17.0",
+  "version": "0.18.0",
   "skills": [
     {
       "name": "c-cpp",
@@ -235,6 +235,72 @@
         {
           "path": "skills/inno-setup/references/wizard.md",
           "sha256": "9803c38725a1d0d22ec69b0dc4cba06197b4fc3ae1fff56b3421c4eb303ff149"
+        }
+      ]
+    },
+    {
+      "name": "js-ts-wasm",
+      "entry": "skills/js-ts-wasm/SKILL.md",
+      "files": [
+        {
+          "path": "skills/js-ts-wasm/SKILL.md",
+          "sha256": "efa634fce986c7cc7eabefcff74e0dcdf9b07aa5670ada92a80d93d8b6825dd4"
+        },
+        {
+          "path": "skills/js-ts-wasm/examples/browser.d.mts",
+          "sha256": "2d4ee3723732a4a03ab3a48ec535974a6251736b6a3e7c86375dcc90200e48c7"
+        },
+        {
+          "path": "skills/js-ts-wasm/examples/browser.mjs",
+          "sha256": "e873e2d07f1d6f2645aad42cfdfec071b496fab7655b360edf7be91fae8397ee"
+        },
+        {
+          "path": "skills/js-ts-wasm/examples/check.mjs",
+          "sha256": "41548e796eb5dfbb859369d56679954a004dbea6fa5db8d6bca3bc766f4d86b4"
+        },
+        {
+          "path": "skills/js-ts-wasm/examples/count.c",
+          "sha256": "d75acefd52a56bb7927df48265190b95d4b984d1821c992c5a3d5c78d87cca26"
+        },
+        {
+          "path": "skills/js-ts-wasm/examples/counter.mts",
+          "sha256": "3c77aa4f586d831c0394a5ad7fd9e36226802ede31d6fabff988d5fbb117a8c2"
+        },
+        {
+          "path": "skills/js-ts-wasm/examples/emscripten-host.d.mts",
+          "sha256": "f6bd55d2935d9881e873f8c298e216e302c465a84b2c6e411ccc0c4c21845c55"
+        },
+        {
+          "path": "skills/js-ts-wasm/examples/emscripten-host.mjs",
+          "sha256": "fffd56346fb57ecf13c7565d85620feeabf131c6f51688d6ffd59802f2d61ded"
+        },
+        {
+          "path": "skills/js-ts-wasm/examples/wasi-node.d.mts",
+          "sha256": "0323720f9a7df7954cb7292da2c2e88b70724c92dcfa9c5faed47fa8f6a26518"
+        },
+        {
+          "path": "skills/js-ts-wasm/examples/wasi-node.mjs",
+          "sha256": "f04fbe7b39a356b9715db85b73f6d317701513f79e52dc8af9b97a22418e7d25"
+        },
+        {
+          "path": "skills/js-ts-wasm/references/components.md",
+          "sha256": "f4537bd5ac8cfc724156e71b6e5caa8e65f2a3f97410eb0ce1ee07c2c10fb2fd"
+        },
+        {
+          "path": "skills/js-ts-wasm/references/emscripten.md",
+          "sha256": "7b675372a0aeb1b18422f3440dbfce4715a1f013238a25017316e9b81b530112"
+        },
+        {
+          "path": "skills/js-ts-wasm/references/hosting.md",
+          "sha256": "087e4823a9363c2d112422ff8abf58f03d332287740d6b19bc75a6828d713aa9"
+        },
+        {
+          "path": "skills/js-ts-wasm/references/language.md",
+          "sha256": "f17ed08a5a1ec0969a8a571d8c148a9bdedfc193ab171fb55d70eaee3140efa0"
+        },
+        {
+          "path": "skills/js-ts-wasm/references/wasi.md",
+          "sha256": "06f012e08f5446186bfee78d076ba3ec1b71ebde840155fa1edfb8a4c73c1d32"
         }
       ]
     },
