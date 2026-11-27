@@ -1,6 +1,6 @@
 ---
 name: svelte
-description: "Create, review, debug, and refactor Svelte components and reactive modules (.svelte, .svelte.js, .svelte.ts). Use for runes, props, events, bindings, snippets, scoped styles, DOM integrations, SSR/hydration, and Svelte-specific documentation and validation tooling."
+description: "Create, review, debug, and refactor Svelte components and reactive modules (.svelte, .svelte.js, .svelte.ts). Use for runes, props, events, bindings, snippets, responsive layouts, visual hierarchy, scoped styles, DOM integrations, SSR/hydration, and Svelte-specific documentation and validation tooling."
 ---
 
 # Svelte
@@ -19,6 +19,7 @@ description: "Create, review, debug, and refactor Svelte components and reactive
    | --- | --- |
    | State, derived values, effects, props, shared reactive modules | [Reactivity](references/reactivity.md) |
    | Events, bindings, snippets, lists, styling, DOM libraries | [Components](references/components.md) |
+   | Shape a screen, make a form quieter, or adapt a layout | [Design feedback for Svelte components](references/components.md#apply-design-feedback-to-a-svelte-screen) |
    | Context isolation, server rendering, hydration, asynchronous work | [SSR and async](references/ssr-async.md) |
    | Documentation lookup, autofixer, compiler/type checks, test selection | [Tooling](references/tooling.md) |
 
