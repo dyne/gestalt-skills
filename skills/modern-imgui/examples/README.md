@@ -4,6 +4,9 @@ For the reusable CMake/CTest runner and optional Modern Kit interaction tests,
 start with `references/headless-testing.md` under the skill root. The examples
 and historical commands below retain their original core baseline.
 
+For a responsive sidebar and document with a fixed action bar, see the
+`references/clay-layout.md` under the skill root.
+
 These twelve original examples target **Dear ImGui v1.93.0**. They demonstrate API contracts and application state ownership, and are intended to be adapted inside an existing Dear ImGui integration.
 
 | Example | Main contract |

@@ -24,7 +24,8 @@ The canonical tree is `skills/<name>/`. The collection contains:
   share one product record.
 - `modern-imgui`: Dear ImGui workflows with preference for suitable
   imgui-modern-kit components when available, including ImKit adoption,
-  architecture, semantic themes, skins and widget guidance. Includes the core
+  architecture, semantic themes, skins and widget guidance. An optional Clay
+  example reflows a sidebar around a native editor. Includes the core
   references, helpers and examples as a standalone skill; `dear-imgui` preserves
   the original guidance without the Modern Kit additions.
 - `nuklear-gui`: Nuklear C/C++ graphical interfaces and SDL2 integration.

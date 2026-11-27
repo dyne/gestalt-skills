@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "repository": "dyne/gestalt-skills",
   "source": "https://github.com/dyne/gestalt-skills",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "skills": [
     {
       "name": "c-cpp",
@@ -332,7 +332,7 @@
       "files": [
         {
           "path": "skills/modern-imgui/SKILL.md",
-          "sha256": "c99a702c37f92eca6d9fdf2ebe0957e20192298431060df3f66fd903f0a6857f"
+          "sha256": "1f4d53398364c27383a8fc543d06a9e89538f707c99d8ffca75c953faf32b843"
         },
         {
           "path": "skills/modern-imgui/evals/acceptance_cases.json",
@@ -360,7 +360,7 @@
         },
         {
           "path": "skills/modern-imgui/examples/README.md",
-          "sha256": "ea20bd7a6882f0bda3d25d6cd64848fc4f75613b48c11e8f1dc9a3227d0b55a2"
+          "sha256": "645eefaf41fbb55ce5a116fe8ec3bf9f8e9c9aa8b46e7968b69c7a37588d5bff"
         },
         {
           "path": "skills/modern-imgui/examples/automation_config.h",
@@ -369,6 +369,14 @@
         {
           "path": "skills/modern-imgui/examples/automation_main.cpp",
           "sha256": "4ea9bc8e67c0ed3a59dd3f7ba20bf14ec0dfdcafd6399566785cbe3f56736835"
+        },
+        {
+          "path": "skills/modern-imgui/examples/clay_workspace.h",
+          "sha256": "4c3c1d8ea57fa20d3b12063edbd9fe9c9cc360d34f542f2dba25ce3d71cc9496"
+        },
+        {
+          "path": "skills/modern-imgui/examples/clay_workspace_check.cpp",
+          "sha256": "d62d412315e12ba6a2c8da426503368858db8114ada1f6e20e7091b63240427b"
         },
         {
           "path": "skills/modern-imgui/examples/core_patterns.cpp",
@@ -453,6 +461,10 @@
         {
           "path": "skills/modern-imgui/references/automation.md",
           "sha256": "669f77d4c92de8f55f96fc0881c2c98b09defe5b32e9ae7bc354ab56989c9909"
+        },
+        {
+          "path": "skills/modern-imgui/references/clay-layout.md",
+          "sha256": "6482b862339128182f5ef3813338e3234a0be477372a004b4fde64717bd1df4e"
         },
         {
           "path": "skills/modern-imgui/references/core-interaction.md",
