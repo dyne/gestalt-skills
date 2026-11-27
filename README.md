@@ -12,9 +12,6 @@ The canonical tree is `skills/<name>/`. The collection contains:
 - `cpp-xtd` covers modern C++ projects using Gammasoft xtd, from CMake and
   xtd.core to desktop forms, drawing and tunit. Its local source lookup finds
   headers, implementation status, examples and tests for the project's revision.
-- `dear-imgui`: Testable panels, styling, Dear ImGui interaction, version-aware
-  backend/font/texture integration, extension selection and UI automation, with
-  optional read-only helpers and headless input-injection/Test Engine examples.
 - `golang`: Go implementation, design, errors/resources, concurrency, secure
   I/O, testing, performance and module/toolchain workflows. Adapted guidance
   retains its upstream MIT notice inside the skill.
@@ -24,7 +21,7 @@ The canonical tree is `skills/<name>/`. The collection contains:
   share one product record.
 - `modern-imgui` uses Clay for responsive pane layouts and ImKit for widgets
   and themes on Dear ImGui. Includes a working sidebar/editor example and
-  headless interaction tests.
+  headless interaction tests. It replaces the standalone `dear-imgui` skill.
 - `nuklear-gui`: Nuklear C/C++ graphical interfaces and SDL2 integration.
 - `svelte`: Svelte components and reactive modules, with focused guidance for
   reactivity, templates/DOM integration, SSR/async and documentation/validation.
@@ -43,8 +40,8 @@ assets. No runtime downloads or Python dependencies are required.
 ### Standalone ZIPs for ChatGPT and Codex
 
 Download `<skill>-v<version>.zip` from
-[GitHub releases](https://github.com/dyne/gestalt-skills/releases). Each of the
-ten skills is published separately, using the same collection version. Each ZIP
+[GitHub releases](https://github.com/dyne/gestalt-skills/releases). Each skill
+is published separately using the collection version. Each ZIP
 contains one unversioned `<skill>/` directory with `SKILL.md`, all its resources
 and upstream notices, and the root license as `LICENSE.collection`.
 

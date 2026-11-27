@@ -8,7 +8,7 @@ import types
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPTS = ROOT / "skills/dear-imgui/scripts"
+SCRIPTS = ROOT / "skills/modern-imgui/scripts"
 # Import without leaving bytecode artifacts in the canonical skill tree.
 inspector = types.ModuleType("inspect_imgui")
 source = SCRIPTS / "inspect_imgui.py"
