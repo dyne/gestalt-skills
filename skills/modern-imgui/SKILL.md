@@ -1,6 +1,6 @@
 ---
 name: modern-imgui
-description: "Build, style, debug, review, and test Dear ImGui interfaces and integrations. Use for imgui-modern-kit (ImKit) adoption, components, themes and skins; testable panels, stable IDs, editing/undo, tables, input capture, fonts/DPI, live scaling, backends, Windows/macOS ports, docking/viewports, extensions, accessibility and UI automation."
+description: "Build, style, debug, review, and test Dear ImGui interfaces and integrations. Use for imgui-modern-kit (ImKit) adoption, components, themes and skins; testable panels, stable IDs, editing/undo, tables, responsive pane layouts with optional Clay, input capture, fonts/DPI, live scaling, backends, Windows/macOS ports, docking/viewports, extensions, accessibility and UI automation."
 ---
 
 # Modern ImGui
@@ -40,6 +40,7 @@ description: "Build, style, debug, review, and test Dear ImGui interfaces and in
    | Modern Kit presets, semantic tokens, density, theme files, skins and icons | [ImKit themes](references/modern-kit-themes.md) |
    | Modern Kit widgets, settings, shell, data views, charts, node/timeline/CG/show controls | [ImKit components](references/modern-kit-components.md) |
    | Visual direction, theme tokens, style scopes, layout and visual regression | [Styling](references/styling.md) |
+   | Responsive sidebars, document panes and action bars across breakpoints | [Optional Clay workspace layout](references/clay-layout.md) |
    | IDs, scopes, text, editing, popups, shortcuts, custom widgets | [Core interaction](references/core-interaction.md) |
    | Tables, filtering, clipping, sorting, multi-selection | [Large data and selection](references/data-selection.md) |
    | Frames, input, rendering, threads, docking and OS viewports | [Integration](references/integration.md) |
